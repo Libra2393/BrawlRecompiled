@@ -1,0 +1,5 @@
+fn_17_0 = .text:0x00000000; // type:function size:0x8  // match:sequence
+fn_17_8 = .text:0x00000008; // type:function size:0x2C  // match:unique
+_prolog = .text:0x00000034; // type:function size:0x48  // match:sequence
+_epilog = .text:0x0000007C; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x000000C4; // type:function size:0xC  // match:sequence

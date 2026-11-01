@@ -1,0 +1,30 @@
+{
+ "sora_menu_name": [
+  "0x8066E060",
+  "0x80678220"
+ ],
+ "sora_menu_sel_char_access": [
+  "0x806783C0",
+  "0x80679EA0"
+ ],
+ "sora_menu_sel_char": [
+  "0x80679F80",
+  "0x8069B200"
+ ],
+ "sora_menu_rule": [
+  "0x8069B300",
+  "0x806A8160"
+ ],
+ "sora_menu_sel_stage": [
+  "0x806A8240",
+  "0x806B2CC0"
+ ],
+ "sora_scene": [
+  "0x806B2DC0",
+  "0x80703BC0"
+ ],
+ "sora_melee": [
+  "0x807058C0",
+  "0x80B80DC0"
+ ]
+}

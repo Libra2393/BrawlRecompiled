@@ -1,0 +1,9 @@
+create__24muChallengerApproachTaskFv = .text:0x00000000; // type:function size:0x34  // match:unique
+__ct__24muChallengerApproachTaskFv = .text:0x00000034; // type:function size:0x184  // match:changed
+__dt__24muChallengerApproachTaskFv = .text:0x000001B8; // type:function size:0x58  // match:unique
+fn_pal_210 = .text:0x00000210; // type:function size:0x498  // match:pal-only
+fn_pal_6A8 = .text:0x000006A8; // type:function size:0xC0  // match:pal-only
+fn_pal_768 = .text:0x00000768; // type:function size:0x178  // match:pal-only
+fn_pal_8E0 = .text:0x000008E0; // type:function size:0x48  // match:pal-only
+fn_pal_928 = .text:0x00000928; // type:function size:0x48  // match:pal-only
+fn_pal_970 = .text:0x00000970; // type:function size:0xC  // match:pal-only

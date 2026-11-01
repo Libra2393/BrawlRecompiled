@@ -1,0 +1,17 @@
+fn_pal_0 = .text:0x00000000; // type:function size:0x9C  // match:pal-only
+fn_pal_9C = .text:0x0000009C; // type:function size:0x58  // match:pal-only
+fn_pal_F4 = .text:0x000000F4; // type:function size:0x15D0  // match:pal-only
+fn_22_1454 = .text:0x000016C4; // type:function size:0x6C  // match:unique
+fn_pal_1730 = .text:0x00001730; // type:function size:0x10C  // match:pal-only
+fn_pal_183C = .text:0x0000183C; // type:function size:0x1F8  // match:pal-only
+fn_22_1688 = .text:0x00001A34; // type:function size:0x8C  // match:unique
+fn_22_1714 = .text:0x00001AC0; // type:function size:0x58  // match:sequence
+fn_22_176C = .text:0x00001B18; // type:function size:0x480  // match:unique
+fn_22_1BEC = .text:0x00001F98; // type:function size:0x54  // match:unique
+fn_22_1C40 = .text:0x00001FEC; // type:function size:0x4C  // match:unique
+fn_22_1C8C = .text:0x00002038; // type:function size:0x150  // match:unique
+fn_22_1DDC = .text:0x00002188; // type:function size:0x8C  // match:unique
+fn_22_1E68 = .text:0x00002214; // type:function size:0x2D0  // match:unique
+_prolog = .text:0x000024E4; // type:function size:0x48  // match:sequence
+_epilog = .text:0x0000252C; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x00002574; // type:function size:0xC  // match:sequence

@@ -1,0 +1,17 @@
+fn_pal_0 = .text:0x00000000; // type:function size:0xAC  // match:pal-only
+fn_pal_AC = .text:0x000000AC; // type:function size:0x390  // match:pal-only
+fn_13_444 = .text:0x0000043C; // type:function size:0xC  // match:sequence
+fn_13_450 = .text:0x00000448; // type:function size:0x58  // match:unique
+fn_pal_4A0 = .text:0x000004A0; // type:function size:0x15C  // match:pal-only
+fn_pal_5FC = .text:0x000005FC; // type:function size:0x680  // match:pal-only
+fn_13_894 = .text:0x00000C7C; // type:function size:0xBC  // match:unique
+fn_pal_D38 = .text:0x00000D38; // type:function size:0x224  // match:pal-only
+fn_pal_F5C = .text:0x00000F5C; // type:function size:0x74  // match:pal-only
+fn_pal_FD0 = .text:0x00000FD0; // type:function size:0x760  // match:pal-only
+fn_13_134C = .text:0x00001730; // type:function size:0xE4  // match:unique
+fn_13_1430 = .text:0x00001814; // type:function size:0xF0  // match:unique
+fn_13_1520 = .text:0x00001904; // type:function size:0x258  // match:unique
+fn_pal_1B5C = .text:0x00001B5C; // type:function size:0x404  // match:pal-only
+fn_pal_1F60 = .text:0x00001F60; // type:function size:0x48  // match:pal-only
+fn_pal_1FA8 = .text:0x00001FA8; // type:function size:0x48  // match:pal-only
+fn_pal_1FF0 = .text:0x00001FF0; // type:function size:0xC  // match:pal-only

@@ -1,0 +1,127 @@
+module	functions	identical	changed_placed	unplaced	bytes_not_identical	sections	us_code	pal_code
+ft_captain	801	797	2	2	888	sizes differ	0x15938	0x15a0c
+ft_dedede	0x427	0x427	0	0	0	same	0x23f04	0x23f04
+ft_diddy	954	954	0	0	0	same	0x1ba38	0x1ba38
+ft_donkey	775	775	0	0	0	same	0x15580	0x15580
+ft_falco	683	683	0	0	0	same	0x11080	0x11080
+ft_fox	686	686	0	0	0	same	0x11088	0x11088
+ft_gamewatch	979	979	0	0	0	same	0x21e18	0x21e18
+ft_ganon	805	805	0	0	0	same	0x12008	0x12008
+ft_iceclimber	964	964	0	0	0	same	0x2114c	0x2114c
+ft_ike	735	735	0	0	0	same	0x13e84	0x13e84
+ft_kirby	0x4d2	0x4d2	0	0	0	same	0x2f93c	0x2f93c
+ft_koopa	855	855	0	0	0	same	0x1c2d4	0x1c2d4
+ft_link	847	847	0	0	0	same	0x186d4	0x186d4
+ft_lucario	772	772	0	0	0	same	0x14148	0x14148
+ft_lucas	983	983	0	0	0	same	0x20f40	0x20f40
+ft_luigi	704	704	0	0	0	same	0x10f48	0x10f48
+ft_mario	841	841	0	0	0	same	0x19578	0x19578
+ft_marth	515	515	0	0	0	same	0xdc14	0xdc14
+ft_metaknight	700	700	0	0	0	same	0x11340	0x11340
+ft_ness	0x413	0x413	0	0	0	same	0x24bc4	0x24bc4
+ft_peach	767	767	0	0	0	same	0x1378c	0x1378c
+ft_pikachu	894	894	0	0	0	same	0x1c390	0x1c390
+ft_pikmin	0x551	0x551	0	0	0	same	0x2de74	0x2de74
+ft_pit	893	893	0	0	0	same	0x16cc8	0x16cc8
+ft_poke	0x44f	0x44f	0	0	0	same	0x267d4	0x267d4
+ft_purin	503	503	0	0	0	same	0xc53c	0xc53c
+ft_robot	816	816	0	0	0	same	0x18564	0x18564
+ft_samus	942	942	0	0	0	same	0x204b8	0x204b8
+ft_snake	0x434	0x434	0	0	0	same	0x27bc0	0x27bc0
+ft_sonic	821	821	0	0	0	same	0x1863c	0x1863c
+ft_toonlink	847	847	0	0	0	same	0x18720	0x18720
+ft_wario	0x41b	0x41b	0	0	0	same	0x212c8	0x212c8
+ft_wolf	686	686	0	0	0	same	0x10fa0	0x10fa0
+ft_yoshi	898	896	2	0	0x188c	sizes differ	0x1da6c	0x1daa0
+ft_zako	496	496	0	0	0	same	0xf8b0	0xf8b0
+ft_zelda	0x40e	0x40e	0	0	0	same	0x24dac	0x24dac
+sora_adv_menu_difficulty	22	14	1	7	0x654	sizes differ	0xd70	0xd24
+sora_adv_menu_ending	19	11	2	6	0x7d8	sizes differ	0x1900	0x17ec
+sora_adv_menu_game_over	31	19	2	10	0x21dc	sizes differ	0x3564	0x3538
+sora_adv_menu_name	34	26	4	4	0x1340	sizes differ	0x2fe8	0x2ffc
+sora_adv_menu_result	24	24	0	0	0	same	0x1750	0x1750
+sora_adv_menu_save_load	3	0	0	3	156	same	156	156
+sora_adv_menu_save_point	3	0	0	3	156	same	156	156
+sora_adv_menu_seal	3	0	0	3	156	same	156	156
+sora_adv_menu_sel_char	3	0	0	3	156	same	156	156
+sora_adv_menu_sel_map	37	27	3	7	0x1674	sizes differ	0x38b0	0x3a40
+sora_adv_menu_telop	9	9	0	0	0	same	0x7a4	0x7a4
+sora_adv_menu_visual	29	21	2	6	0xb50	sizes differ	0x2c70	0x2ab0
+sora_adv_stage	0x594	0x582	4	14	0x4034	sizes differ	0x48d8c	0x48650
+sora_enemy	0xa75	0xa74	1	0	268	sizes differ	0x6b7fc	0x6b824
+sora_melee	0x6820	0x67d7	35	38	0xdfa4	sizes differ	0x3cbe40	0x3cccd4
+sora_menu_boot	17	12	0	5	0x161c	sizes differ	0x21d4	0x2580
+sora_menu_challenger	10	2	1	7	0x7b8	section count differs	0x844	0x97c
+sora_menu_collect_viewer	178	164	10	4	0x3048	sizes differ	0xc020	0xb828
+sora_menu_edit	96	77	4	15	0x4d28	sizes differ	0x14c74	0x149cc
+sora_menu_event	35	33	2	0	0x85c	sizes differ	0x3644	0x3664
+sora_menu_fig_get_demo	20	11	0	9	0xf74	sizes differ	0x1458	0x1378
+sora_menu_friend_list	120	117	1	2	0x898	sizes differ	0x9d0c	0x9d44
+sora_menu_game_over	24	23	1	0	212	same	0x1348	0x1348
+sora_menu_intro	17	6	0	11	0x170c	sizes differ	0x1c58	0x1ffc
+sora_menu_main	651	589	22	40	0xb558	sizes differ	0x3d254	0x3d0b4
+sora_menu_name	98	92	4	2	0xea8	sizes differ	0x7704	0x76e0
+sora_menu_qm	24	8	3	13	0x81b4	sizes differ	0x8d54	0x8e18
+sora_menu_replay	45	34	3	8	0x984	sizes differ	0x1654	0x1500
+sora_menu_rule	74	71	3	0	0x14b4	sizes differ	0x96d4	0x97b0
+sora_menu_sel_char	355	346	7	2	0x1c88	sizes differ	0x1df2c	0x1e040
+sora_menu_sel_char_access	5	5	0	0	0	same	208	208
+sora_menu_sel_stage	77	75	2	0	0x40c	sizes differ	0x868c	0x8658
+sora_menu_simple_ending	20	17	1	2	652	sizes differ	0x1154	0x1214
+sora_menu_snap_shot	38	30	3	5	0x568	sizes differ	0xb7c	0xb6c
+sora_menu_time_result	10	10	0	0	0	same	0xc98	0xc98
+sora_menu_title	95	73	9	13	0xf54	sizes differ	0x3514	0x2f94
+sora_menu_title_sunset	56	47	0	9	0x730	sizes differ	0x3984	0x37c4
+sora_menu_tour	64	48	4	12	0xa428	sizes differ	0xef2c	0xf0d4
+sora_menu_watch	51	50	1	0	516	sizes differ	0x5004	0x5010
+sora_minigame	133	129	1	3	0x2440	sizes differ	0xdefc	0xdf98
+sora_scene	644	491	35	118	0x1bcd8	sizes differ	0x3d588	0x40760
+st_battle	67	67	0	0	0	same	0x1020	0x1020
+st_battles	64	64	0	0	0	same	0x86c	0x86c
+st_config	61	61	0	0	0	same	0x738	0x738
+st_crayon	411	411	0	0	0	same	0xb350	0xb350
+st_croll	105	100	5	0	0x1804	sizes differ	0x85cc	0x8834
+st_dolpic	150	150	0	0	0	same	0x7124	0x7124
+st_donkey	317	317	0	0	0	same	0xb744	0xb744
+st_dxbigblue	184	184	0	0	0	same	0x8324	0x8324
+st_dxcorneria	87	87	0	0	0	same	0x44f4	0x44f4
+st_dxgarden	254	254	0	0	0	same	0x6684	0x6684
+st_dxgreens	499	499	0	0	0	same	0xc278	0xc278
+st_dxonett	308	308	0	0	0	same	0x8a8c	0x8a8c
+st_dxpstadium	53	53	0	0	0	same	0x2ec4	0x2ec4
+st_dxrcruise	49	49	0	0	0	same	0x2be8	0x2be8
+st_dxshrine	64	64	0	0	0	same	0x7c4	0x7c4
+st_dxyorster	356	356	0	0	0	same	0x7b64	0x7b64
+st_dxzebes	60	60	0	0	0	same	0x4098	0x4098
+st_earth	547	547	0	0	0	same	0x13a60	0x13a60
+st_emblem	60	60	0	0	0	same	0x28b8	0x28b8
+st_famicom	545	545	0	0	0	same	0x139a8	0x139a8
+st_final	67	67	0	0	0	same	0xa80	0xa80
+st_fzero	403	403	0	0	0	same	0xe89c	0xe89c
+st_greenhill	461	461	0	0	0	same	0xce0c	0xce0c
+st_gw	677	677	0	0	0	same	0x17388	0x17388
+st_halberd	364	364	0	0	0	same	0x1202c	0x1202c
+st_heal	46	46	0	0	0	same	0x1038	0x1038
+st_homerun	208	204	4	0	0x1138	sizes differ	0x8618	0x85fc
+st_ice	546	546	0	0	0	same	0x118e8	0x118e8
+st_jungle	707	707	0	0	0	same	0x16740	0x16740
+st_kart	441	441	0	0	0	same	0xcaf4	0xcaf4
+st_madein	66	63	0	3	0x1728	sizes differ	0x6bc0	0x6bdc
+st_mansion	448	448	0	0	0	same	0xccc4	0xccc4
+st_mariopast	587	587	0	0	0	same	0xc7f4	0xc7f4
+st_metalgear	515	515	0	0	0	same	0x107b4	0x107b4
+st_newpork	78	78	0	0	0	same	0x2ffc	0x2ffc
+st_norfair	529	529	0	0	0	same	0x102ac	0x102ac
+st_oldin	75	75	0	0	0	same	0x43d8	0x43d8
+st_orpheon	56	56	0	0	0	same	0x2558	0x2558
+st_otrain	44	44	0	0	0	same	0x960	0x960
+st_palutena	395	395	0	0	0	same	0xd124	0xd124
+st_pictchat	532	531	1	0	904	sizes differ	0xf414	0xf438
+st_pirates	443	443	0	0	0	same	0x1370c	0x1370c
+st_plankton	435	435	0	0	0	same	0xd828	0xd828
+st_stadium	55	55	0	0	0	same	0x3720	0x3720
+st_stageedit	94	94	0	0	0	same	0x55f4	0x55f4
+st_starfox	65	65	0	0	0	same	0x1bd4	0x1bd4
+st_tbreak	69	69	0	0	0	same	0x1e1c	0x1e1c
+st_tengan	113	113	0	0	0	same	0x7850	0x7850
+st_village	418	418	0	0	0	same	0xdaf0	0xdaf0

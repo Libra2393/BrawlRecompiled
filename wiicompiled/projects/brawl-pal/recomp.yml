@@ -1,0 +1,50 @@
+schema_version: 1
+workspace_root: ../..
+
+# Super Smash Bros. Brawl, Europe (RSBP01 rev 1): main.dol. DRAFT: function map from the US rev 2 map by
+# masked-instruction matching (tools/); resident module homes estimated, not yet read from a PAL boot log. The game's .rel modules (files/module) are
+# pre-linked at their load addresses separately (see tools/).
+project:
+  id: brawl-rsbp01
+  display_name: Super Smash Bros. Brawl (Europe)
+  game_id: RSBP01
+  region: P
+  base_manifest_format: brawl-recomp-base-manifest
+  base_manifest_stem: brawl_pal_base
+
+memory:
+  base: 0x80000000
+  size: 0x15800000  # MEM1 plus MEM2 through the module homes (0x94004000..0x95800000): the translator's image window
+  sda_base: 0x805A6320
+  sda2_base: 0x805AB0E0
+
+inputs:
+  dol:
+    path: ../game/main_translate.dol  # main.dol plus the resident modules (tools/build_modules.py)
+    sha256: 1d884370f2013a6d2395d1afc92b2f1a5c13521f0b0394da81b873f8d738dc59
+  # All 126 files/module/*.rel, each pre-linked at its own home above the game's MEM2 arena, as one synthetic REL
+  # (projects/brawl/tools/build_modules.py; hle/brawl_modules.cpp links them at run time).
+  rel:
+    path: ../game/brawl_modules.rel
+    load_address: 0x94000000
+
+translation:
+  entry_points:
+    - 0x8000403C
+  # Function starts: the decomp's RSBE01_02 symbols placed on the PAL code (tools/match_dol.py, match_modules.py),
+  # plus PAL-only starts (tools/add_pal_only.py).
+  function_map:
+    path: projects/brawl-pal/MAP_full.txt  # MAP.txt (main.dol) + MAP_modules.txt, written by build_modules.py
+  allow_unsupported_instructions: false
+
+runtime:
+  native_registration_root: runtime/src
+  native_abi_directories:
+    - runtime/src/hle/gx
+
+output:
+  root: generated
+  functions: functions
+  runtime_config: RuntimeConfig.h
+  data_initializer: data_sections_init.cpp
+  base_manifest: ../build/base/brawl_pal_base_manifest.json

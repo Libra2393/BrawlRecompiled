@@ -1,0 +1,15 @@
+# Function starts in PAL-only code that the static rules miss (reached only through vtables or callbacks), as the
+# runtime reported them: "interpreter: running untranslated guest code at <address>". One per line:
+#   main <address>                     main.dol
+#   <module> <section> <offset>        a module's section-relative offset (address - the module's text start)
+# Each boot's log can add more; tools/add_pal_only.py reads this file.
+main 800305EC
+sora_scene .text 11204
+sora_scene .text 111FC
+sora_scene .text F718
+sora_scene .text 76A0
+sora_scene .text 5190
+sora_scene .text 468
+main 80080A58
+sora_melee .text 23BD44
+sora_melee .text 245614

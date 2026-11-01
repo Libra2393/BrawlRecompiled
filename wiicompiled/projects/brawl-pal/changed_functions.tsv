@@ -1,0 +1,827 @@
+where	name	us	us_size	pal	pal_size	how
+main.dol	__ct__13gfApplicationFv	800167C4	E4	800167C4	E8	changed
+main.dol	init__13gfApplicationFv	80016AC8	3A8	80016ACC	3BC	changed
+main.dol	fn_80016F8C	80016F8C	580	80016FA4	668	changed
+main.dol	fn_80017618	80017618	1BC	80017718	1DC	changed
+main.dol	fn_8001789C	8001789C	134	800179BC	180	changed
+main.dol	fn_80017C38	80017C38	648	80017DA4	6B8	changed
+main.dol	renderPre__14gfErrorManagerFv	8001B0E0	164	8001B2BC	1BC	changed
+main.dol	fn_8001B784	8001B784	8	8001B9B8	18	changed
+main.dol	fn_8001BBB8	8001BBB8	104	8001BDFC	1C0	changed
+main.dol	fn_8001C5D4	8001C5D4	418	8001C99C	2D8	changed
+main.dol	fn_8001D134	8001D134	474	8001D3BC	294	changed
+main.dol	fn_8001DA24	8001DA24	110	8001DACC	124	changed
+main.dol	fn_8001DF68	8001DF68	1A4	8001E024	1D0	changed
+main.dol	fn_8001E2F8	8001E2F8	218	8001E3E0	22C	changed
+main.dol	fn_8001EC10	8001EC10	284			region(2)
+main.dol	fn_8001EE94	8001EE94	1F0			region(2)
+main.dol	fn_8001F390	8001F390	120	8001F4AC	138	changed
+main.dol	fn_8002035C	8002035C	1FC			region(3)
+main.dol	fn_80020558	80020558	2A4			region(3)
+main.dol	fn_800207FC	800207FC	EC			region(3)
+main.dol	fn_80025314	80025314	20C	800252C8	1FC	changed
+main.dol	_alarmCallback__11gfPadSystemFP7OSAlarmP9OSContext	80028B20	54	80028AC4	54	changed
+main.dol	__ct__11gfPadSystemFv	80028C58	728	80028BFC	72C	changed
+main.dol	fn_8002B4E8	8002B4E8	1C			region(2)
+main.dol	fn_8002B504	8002B504	2C			region(2)
+main.dol	fn_8002F4B4	8002F4B4	104	8002F484	124	changed
+main.dol	update__17gfShutdownManagerFv	800303BC	14C			region(2)
+main.dol	__sinit_\gf_shutdown_manager_cpp	80030508	40			region(2)
+main.dol	fn_80030FA4	80030FA4	8C8	80031090	940	changed
+main.dol	fn_80037800	80037800	18C	80037964	1BC	changed
+main.dol	fn_80038254	80038254	278	800383E8	320	changed
+main.dol	fn_80038570	80038570	114	800387AC	164	changed
+main.dol	run__16gfJpegEncodeWorkFv	800387AC	E4	80038A38	F0	changed
+main.dol	fn_8004B9CC	8004B9CC	2D8	8004C728	300	changed
+main.dol	fn_8004C63C	8004C63C	9D4	8004D3C0	A24	changed
+main.dol	fn_8004D9E8	8004D9E8	14			region(2)
+main.dol	fn_8004D9FC	8004D9FC	18			region(2)
+main.dol	fn_8004E13C	8004E13C	444	8004EF8C	444	changed
+main.dol	fn_8004EAF8	8004EAF8	28			region(2)
+main.dol	fn_8004EB20	8004EB20	3A8			region(2)
+main.dol	fn_800555D8	800555D8	188	80056410	38C	changed
+main.dol	fn_80057158	80057158	B0C	80058194	AFC	changed
+main.dol	fn_80058544	80058544	2B8	80059570	2B0	changed
+main.dol	fn_8005925C	8005925C	490	8005A280	448	changed
+main.dol	fn_8005A238	8005A238	1B8			region(3)
+main.dol	create__9gmSysSaveFQ25Heaps8HeapType	8005A3F0	80			region(3)
+main.dol	fn_8005A470	8005A470	278			region(3)
+main.dol	fn_8006A76C	8006A76C	17C	8006B758	188	changed
+main.dol	printMsgBuf__7MessageFQ28FontData13FONT_RESOURCE	8006AB48	580	8006BB40	588	changed
+main.dol	fn_8006B698	8006B698	324	8006C6A8	328	changed
+main.dol	fn_8006CF54	8006CF54	26C	8006DF68	2B4	changed
+main.dol	fn_800729B0	800729B0	624	80073A0C	630	changed
+main.dol	fn_80073670	80073670	174			region(3)
+main.dol	fn_800737E4	800737E4	384			region(3)
+main.dol	loadSoundGroup__9sndSystemF10SndGroupIDib	80073B68	130			region(3)
+main.dol	fn_80073D08	80073D08	8			region(7)
+main.dol	fn_80073D10	80073D10	8			region(7)
+main.dol	isSoundGroupLoaded__9sndSystemF10SndGroupID	80073D18	8			region(7)
+main.dol	loadCommon__9sndSystemFv	80073D20	4			region(7)
+main.dol	fn_80073D24	80073D24	70			region(7)
+main.dol	fn_80073D94	80073D94	1C			region(7)
+main.dol	playBGM__9sndSystemFiUlb	80073DB0	1D4			region(7)
+main.dol	getBGMId__9sndSystemFv	80073FE8	30			region(2)
+main.dol	fn_80074018	80074018	16C			region(2)
+main.dol	playSE__9sndSystemF5SndIDiiii	800742B0	B3C			region(2)
+main.dol	isPlaySEID__9sndSystemF5SndID	80074DEC	E0			region(2)
+main.dol	fn_80074EF8	80074EF8	5F0			region(3)
+main.dol	fn_800754E8	800754E8	348			region(3)
+main.dol	fn_80075830	80075830	34C			region(3)
+main.dol	fn_80076274	80076274	33C	80077044	348	changed
+main.dol	fn_80076674	80076674	A0	80077450	A8	changed
+main.dol	fn_80076D00	80076D00	130	80077AE4	140	changed
+main.dol	fn_80077B98	80077B98	1BC	8007898C	1DC	changed
+main.dol	fn_80077E94	80077E94	1D4			region(3)
+main.dol	fn_80078068	80078068	318			region(3)
+main.dol	fn_80078380	80078380	6C			region(3)
+main.dol	fn_8007923C	8007923C	1D4	8007A724	220	changed
+main.dol	fn_8007A324	8007A324	2C8	8007B858	2C8	changed
+main.dol	fn_8007AD48	8007AD48	1FC	8007C27C	294	changed
+main.dol	fn_8007EA78	8007EA78	190	80080044	19C	changed
+main.dol	fn_8007F404	8007F404	1EC	800809DC	2E0	changed
+main.dol	changeInput__16CameraControllerFQ216CameraController4Kind	8009C69C	194	8009DD68	1AC	changed
+main.dol	fn_800AD8F8	800AD8F8	5C	800AEFDC		changed
+main.dol	exchangeGmCharacterKind2Something__6muMenuFi	800AF600	14	800B0C88	14	changed
+main.dol	fn_800AF6F0	800AF6F0	18	800B0D78	18	changed
+main.dol	exchangeSelchkind2SelCharVoice__6muMenuFi	800AF85C	18			region(4)
+main.dol	exchangeSelchkind2SelCharNarrationSndID__6muMenuFiii	800AF874	2C			region(4)
+main.dol	exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi	800AF8A0	18			region(4)
+main.dol	exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi	800AF8B8	18			region(4)
+main.dol	fn_800AF904	800AF904	18	800B0FD4	18	changed
+main.dol	exchangeMuStockchkind2MuCharName__6muMenuFi	800AFA30	5C			region(2)
+main.dol	fn_800AFA8C	800AFA8C	70			region(2)
+main.dol	fn_800AFDE4	800AFDE4	11C	800B1408	124	changed
+main.dol	fn_800B95A4	800B95A4	5C			region(5)
+main.dol	fn_800B9600	800B9600	40			region(5)
+main.dol	fn_800B9640	800B9640	38			region(5)
+main.dol	fn_800B9678	800B9678	38			region(5)
+main.dol	fn_800B96B0	800B96B0	38			region(5)
+main.dol	fn_800BA7C0	800BA7C0	4E4			region(3)
+main.dol	fn_800BACA4	800BACA4	1AA4			region(3)
+main.dol	fn_800BC748	800BC748	18C			region(3)
+main.dol	fn_800BD860	800BD860	1D8	800BF0E8	1F0	changed
+main.dol	fn_800BEEB8	800BEEB8	190			region(2)
+main.dol	fn_800BF048	800BF048	1BC			region(2)
+main.dol	fn_800C0164	800C0164	164			region(4)
+main.dol	fn_800C02C8	800C02C8	10			region(4)
+main.dol	fn_800C02D8	800C02D8	58			region(4)
+main.dol	fn_800C0330	800C0330	250			region(4)
+main.dol	fn_800C07D0	800C07D0	190	800C202C	140	changed
+main.dol	fn_800C11F4	800C11F4	188			region(3)
+main.dol	fn_800C137C	800C137C	4			region(3)
+main.dol	fn_800C1380	800C1380	22C			region(3)
+main.dol	fn_800C1890	800C1890	274	800C3084	250	changed
+main.dol	fn_800C1E68	800C1E68	D20	800C3638	D28	changed
+main.dol	fn_800C3A24	800C3A24	33EC	800C51FC	33EC	changed
+main.dol	fn_800C9430	800C9430	194	800CAC08	190	changed
+main.dol	fn_800C9DF4	800C9DF4	94	800CB5C8	94	changed
+main.dol	fn_800CB4AC	800CB4AC	BC	800CCC80	F0	changed
+main.dol	fn_800CC070	800CC070	134	800CD878	134	changed
+main.dol	fn_800CC2C0	800CC2C0	110	800CDAC8	110	changed
+main.dol	fn_800CD340	800CD340	5F4	800CEB48	604	changed
+main.dol	fn_800CFEB8	800CFEB8	4E0			region(2)
+main.dol	fn_800D0398	800D0398	184			region(2)
+main.dol	fn_800D353C	800D353C	C0			region(2)
+main.dol	fn_800D35FC	800D35FC	2F0			region(2)
+main.dol	fn_800D55E8	800D55E8	494	800D6EEC	4B4	changed
+main.dol	fn_800D69C8	800D69C8	EF8	800D82EC	F18	changed
+main.dol	fn_800E67A4	800E67A4	142C			region(2)
+main.dol	fn_800E7BD0	800E7BD0	D8			region(2)
+main.dol	fn_800E9878	800E9878	186C			region(2)
+main.dol	fn_800EB0E4	800EB0E4	21C			region(2)
+main.dol	fn_800EB684	800EB684	1DF0			region(11)
+main.dol	fn_800ED474	800ED474	49C			region(11)
+main.dol	fn_800ED910	800ED910	C0			region(11)
+main.dol	fn_800ED9D0	800ED9D0	120			region(11)
+main.dol	fn_800EDAF0	800EDAF0	770			region(11)
+main.dol	fn_800EE260	800EE260	38C			region(11)
+main.dol	fn_800EE5EC	800EE5EC	14			region(11)
+main.dol	fn_800EE600	800EE600	190			region(11)
+main.dol	fn_800EE790	800EE790	844			region(11)
+main.dol	fn_800EEFD4	800EEFD4	1A0			region(11)
+main.dol	fn_800EF174	800EF174	33C			region(11)
+main.dol	fn_800EFC08	800EFC08	84	800F1350	88	changed
+main.dol	fn_800EFF2C	800EFF2C	178	800F1678	168	changed
+main.dol	fn_800F00D4	800F00D4	E4	800F1810	59C	changed
+main.dol	fn_800F1014	800F1014	4AC			region(2)
+main.dol	fn_800F14C0	800F14C0	290			region(2)
+main.dol	fn_800F57F0	800F57F0	1B4	800F7430	1BC	changed
+main.dol	fn_800F609C	800F609C	1E4	800F7CE4	220	changed
+main.dol	fn_800F63B8	800F63B8	168	800F803C	140	changed
+main.dol	fn_800F6788	800F6788	20C			region(4)
+main.dol	fn_800F6994	800F6994	D4			region(4)
+main.dol	fn_800F6A68	800F6A68	44			region(4)
+main.dol	fn_800F6AAC	800F6AAC	1A4			region(4)
+main.dol	fn_800F6FB4	800F6FB4	1B4			region(4)
+main.dol	fn_800F7168	800F7168	D4			region(4)
+main.dol	fn_800F723C	800F723C	44			region(4)
+main.dol	fn_800F7280	800F7280	1D0			region(4)
+main.dol	fn_800F9D8C	800F9D8C	1C8	800FBAE4	1D0	changed
+main.dol	fn_800FAEB8	800FAEB8	1E0			region(6)
+main.dol	fn_800FB098	800FB098	30C			region(6)
+main.dol	fn_800FB3A4	800FB3A4	8			region(6)
+main.dol	fn_800FB3AC	800FB3AC	8			region(6)
+main.dol	fn_800FB3B4	800FB3B4	54			region(6)
+main.dol	fn_800FB408	800FB408	14C			region(6)
+main.dol	fn_800FB8BC	800FB8BC	1E4	800FD58C	2E0	changed
+main.dol	fn_800FC290	800FC290	70			region(7)
+main.dol	fn_800FC300	800FC300	D8			region(7)
+main.dol	fn_800FC3D8	800FC3D8	C			region(7)
+main.dol	fn_800FC3E4	800FC3E4	58			region(7)
+main.dol	fn_800FC43C	800FC43C	224			region(7)
+main.dol	fn_800FC660	800FC660	1E0			region(7)
+main.dol	fn_800FC840	800FC840	E0			region(7)
+main.dol	fn_80101C0C	80101C0C	37C			region(4)
+main.dol	fn_80101F88	80101F88	76C			region(4)
+main.dol	fn_801026F4	801026F4	114			region(4)
+main.dol	fn_80102808	80102808	11AC			region(4)
+main.dol	fn_8010C004	8010C004	5C	8010D788	60	changed
+main.dol	fn_8010C6C8	8010C6C8	310	8010DE50	3C0	changed
+main.dol	fn_8010F310	8010F310	8C			region(5)
+main.dol	fn_8010F39C	8010F39C	110			region(5)
+main.dol	fn_8010F4AC	8010F4AC	178			region(5)
+main.dol	fn_8010F624	8010F624	130			region(5)
+main.dol	fn_8010F754	8010F754	98			region(5)
+main.dol	fn_80146950	80146950	230	80147F4C	268	changed
+main.dol	fn_80146CE4	80146CE4	E0			region(2)
+main.dol	fn_80146DC4	80146DC4	80			region(2)
+main.dol	fn_80149644	80149644	1AC	8014AC78	1C0	changed
+main.dol	fn_8014A834	8014A834	8FC			region(2)
+main.dol	fn_8014B130	8014B130	1B4			region(2)
+main.dol	fn_80154C60	80154C60	2C	801562FC	8C	changed
+main.dol	fn_80157BC4	80157BC4	2C8	801592C0	2AC	changed
+main.dol	fn_801ADDD4	801ADDD4	28	801AF4B4		changed
+main.dol	fn_801B07A0	801B07A0	80	801B1E58		changed
+main.dol	fn_801B3CBC	801B3CBC	8			region(25)
+main.dol	fn_801B3CC4	801B3CC4	130			region(25)
+main.dol	fn_801B3DF4	801B3DF4	24			region(25)
+main.dol	fn_801B3E18	801B3E18	24			region(25)
+main.dol	fn_801B3E3C	801B3E3C	178			region(25)
+main.dol	fn_801B3FB4	801B3FB4	8			region(25)
+main.dol	fn_801B3FBC	801B3FBC	3B8			region(25)
+main.dol	fn_801B4374	801B4374	8C			region(25)
+main.dol	fn_801B4400	801B4400	C			region(25)
+main.dol	fn_801B440C	801B440C	158			region(25)
+main.dol	fn_801B4564	801B4564	3C			region(25)
+main.dol	fn_801B45A0	801B45A0	338			region(25)
+main.dol	fn_801B48D8	801B48D8	40			region(25)
+main.dol	fn_801B4918	801B4918	3C			region(25)
+main.dol	fn_801B4954	801B4954	A4			region(25)
+main.dol	fn_801B49F8	801B49F8	40			region(25)
+main.dol	fn_801B4A38	801B4A38	4			region(25)
+main.dol	fn_801B4A3C	801B4A3C	4			region(25)
+main.dol	fn_801B4A40	801B4A40	4			region(25)
+main.dol	fn_801B4A44	801B4A44	4			region(25)
+main.dol	fn_801B4A48	801B4A48	4			region(25)
+main.dol	fn_801B4A4C	801B4A4C	4			region(25)
+main.dol	fn_801B4A50	801B4A50	68			region(25)
+main.dol	fn_801B4AB8	801B4AB8	30			region(25)
+main.dol	fn_801B4AE8	801B4AE8	C			region(25)
+main.dol	BATConfig	801DE97C	150	801DF17C	150	changed
+main.dol	fn_801FB1DC	801FB1DC	13C	801FB9DC	13C	changed
+main.dol	__DVDPrepareReset	801FB56C	134	801FBD6C	134	changed
+main.dol	fn_801FC318	801FC318	88	801FCB18		changed
+main.dol	btm_dev_timeout	8023A6B0	298			region(2)
+main.dol	btm_reset_complete	8023A948	1C4			region(2)
+main.dol	DWC_LoginAsync	80339B30	368	8033A2FC	368	changed
+main.dol	fn_8033A534	8033A534	11C	8033AD00	168	changed
+main.dol	fn_8033B208	8033B208	254	8033BA20	250	changed
+main.dol	fn_8033BA40	8033BA40	5D8	8033C254	5D8	changed
+main.dol	fn_8033DB6C	8033DB6C	1F4	8033E380		changed
+main.dol	fn_80341454	80341454	30	80341A74	70	changed
+main.dol	fn_803425D8	803425D8	394	80342C38	39C	changed
+main.dol	fn_80342A90	80342A90	118	803430F8	12C	changed
+main.dol	fn_803439D4	803439D4	284C			region(3)
+main.dol	fn_80346220	80346220	27C			region(3)
+main.dol	fn_8034649C	8034649C	350			region(3)
+main.dol	fn_80347990	80347990	B30	80347D98	B3C	changed
+main.dol	fn_80348ACC	80348ACC	34C	80348EE0	364	changed
+main.dol	fn_8034AA48	8034AA48	734	8034AE74	744	changed
+main.dol	fn_8034C99C	8034C99C	D54			region(2)
+main.dol	fn_8034D6F0	8034D6F0	248			region(2)
+main.dol	fn_80355EFC	80355EFC	B0	80356368	90	changed
+main.dol	fn_803EEFCC	803EEFCC	6C	803EF418	74	changed
+main.dol	fn_803EF1F0	803EF1F0	BC			region(3)
+main.dol	fn_803EF2AC	803EF2AC	120			region(3)
+main.dol	fn_803EF3CC	803EF3CC	AC			region(3)
+main.dol	fn_803EF4A8	803EF4A8	198			region(5)
+main.dol	fn_803EF640	803EF640	414			region(5)
+main.dol	fn_803EFA54	803EFA54	450			region(5)
+main.dol	fn_803EFEA4	803EFEA4	1A8			region(5)
+main.dol	fn_803F004C	803F004C	5F4			region(5)
+main.dol	fn_804051A8	804051A8	8	80407FD0		changed
+ft_captain	fn_100_DF54	.text+DF54	68			region(2)
+ft_captain	fn_100_DFBC	.text+DFBC	34			region(2)
+ft_captain	fn_100_10288	.text+10288	E8	.text+10300	F0	changed
+ft_captain	fn_100_10518	.text+10518	1F4	.text+10598	248	changed
+ft_yoshi	fn_95_AECC	.text+AECC	CC	.text+AECC	E8	changed
+ft_yoshi	fn_95_17974	.text+17974	17C0	.text+17990	17D8	changed
+sora_adv_menu_difficulty	fn_32_94	.text+94	19C			region(7)
+sora_adv_menu_difficulty	fn_32_230	.text+230	34			region(7)
+sora_adv_menu_difficulty	fn_32_264	.text+264	40			region(7)
+sora_adv_menu_difficulty	fn_32_2A4	.text+2A4	C			region(7)
+sora_adv_menu_difficulty	fn_32_2B0	.text+2B0	34			region(7)
+sora_adv_menu_difficulty	fn_32_2E4	.text+2E4	40			region(7)
+sora_adv_menu_difficulty	fn_32_324	.text+324	18C			region(7)
+sora_adv_menu_difficulty	fn_32_7F0	.text+7F0	238	.text+7B8	224	changed
+sora_adv_menu_ending	fn_37_34	.text+34	D0			region(2)
+sora_adv_menu_ending	fn_37_104	.text+104	80			region(2)
+sora_adv_menu_ending	fn_37_E04	.text+E04	1F4			region(4)
+sora_adv_menu_ending	fn_37_FF8	.text+FF8	80			region(4)
+sora_adv_menu_ending	fn_37_1078	.text+1078	1C			region(4)
+sora_adv_menu_ending	fn_37_1094	.text+1094	68			region(4)
+sora_adv_menu_ending	fn_37_114C	.text+114C	284	.text+FF4	2C0	changed
+sora_adv_menu_ending	fn_37_1488	.text+1488	10C	.text+136C	114	changed
+sora_adv_menu_game_over	create__17muAdvGameOverTaskFPC22muAdvGameOverTaskParam	.text+0	44			region(2)
+sora_adv_menu_game_over	fn_33_44	.text+44	418			region(2)
+sora_adv_menu_game_over	fn_33_708	.text+708	28C	.text+720	23C	changed
+sora_adv_menu_game_over	fn_33_9F0	.text+9F0	158			region(6)
+sora_adv_menu_game_over	fn_33_B48	.text+B48	4C			region(6)
+sora_adv_menu_game_over	fn_33_B94	.text+B94	2B8			region(6)
+sora_adv_menu_game_over	fn_33_E4C	.text+E4C	4			region(6)
+sora_adv_menu_game_over	fn_33_E50	.text+E50	CEC			region(6)
+sora_adv_menu_game_over	fn_33_1B3C	.text+1B3C	330			region(6)
+sora_adv_menu_game_over	fn_33_25D4	.text+25D4	4DC	.text+25C4	4DC	changed
+sora_adv_menu_game_over	fn_33_2B24	.text+2B24	E4			region(2)
+sora_adv_menu_game_over	fn_33_2C08	.text+2C08	B8			region(2)
+sora_adv_menu_name	fn_28_60	.text+60	1F0			region(2)
+sora_adv_menu_name	fn_28_250	.text+250	C			region(2)
+sora_adv_menu_name	fn_28_2D0	.text+2D0	180	.text+2E4	184	changed
+sora_adv_menu_name	fn_28_51C	.text+51C	354	.text+534	36C	changed
+sora_adv_menu_name	fn_28_C04	.text+C04	7A4			region(2)
+sora_adv_menu_name	fn_28_13A8	.text+13A8	1F8			region(2)
+sora_adv_menu_name	fn_28_1924	.text+1924	140	.text+1978	100	changed
+sora_adv_menu_name	fn_28_1D10	.text+1D10	194	.text+1D24	194	changed
+sora_adv_menu_save_load	_prolog	.text+0	48			region(3)
+sora_adv_menu_save_load	_epilog	.text+48	48			region(3)
+sora_adv_menu_save_load	_unresolved	.text+90	C			region(3)
+sora_adv_menu_save_point	_prolog	.text+0	48			region(3)
+sora_adv_menu_save_point	_epilog	.text+48	48			region(3)
+sora_adv_menu_save_point	_unresolved	.text+90	C			region(3)
+sora_adv_menu_seal	_prolog	.text+0	48			region(3)
+sora_adv_menu_seal	_epilog	.text+48	48			region(3)
+sora_adv_menu_seal	_unresolved	.text+90	C			region(3)
+sora_adv_menu_sel_char	_prolog	.text+0	48			region(3)
+sora_adv_menu_sel_char	_epilog	.text+48	48			region(3)
+sora_adv_menu_sel_char	_unresolved	.text+90	C			region(3)
+sora_adv_menu_sel_map	fn_31_6B4	.text+6B4	448	.text+6B4	530	changed
+sora_adv_menu_sel_map	fn_31_1064	.text+1064	B1C	.text+114C	B2C	changed
+sora_adv_menu_sel_map	fn_31_2AF4	.text+2AF4	E0			region(3)
+sora_adv_menu_sel_map	fn_31_2BD4	.text+2BD4	8			region(3)
+sora_adv_menu_sel_map	fn_31_2BDC	.text+2BDC	54			region(3)
+sora_adv_menu_sel_map	fn_31_3294	.text+3294	374	.text+3360	418	changed
+sora_adv_menu_sel_map	fn_31_3650	.text+3650	1C4			region(4)
+sora_adv_menu_sel_map	_prolog	.text+3814	48			region(4)
+sora_adv_menu_sel_map	_epilog	.text+385C	48			region(4)
+sora_adv_menu_sel_map	_unresolved	.text+38A4	C			region(4)
+sora_adv_menu_visual	fn_29_0	.text+0	F8			region(4)
+sora_adv_menu_visual	fn_29_F8	.text+F8	1B4			region(4)
+sora_adv_menu_visual	fn_29_2AC	.text+2AC	C			region(4)
+sora_adv_menu_visual	fn_29_2B8	.text+2B8	58			region(4)
+sora_adv_menu_visual	fn_29_384	.text+384	144			region(2)
+sora_adv_menu_visual	fn_29_4C8	.text+4C8	400			region(2)
+sora_adv_menu_visual	fn_29_998	.text+998	164	.text+828	148	changed
+sora_adv_menu_visual	fn_29_BEC	.text+BEC	198	.text+A60	164	changed
+sora_adv_stage	fn_40_5780	.text+5780	94	.text+5780	C0	changed
+sora_adv_stage	fn_40_1777C	.text+1777C	54C	.text+177A8	66C	changed
+sora_adv_stage	fn_40_3DE68	.text+3DE68	320			region(3)
+sora_adv_stage	fn_40_3E188	.text+3E188	C			region(3)
+sora_adv_stage	fn_40_3E194	.text+3E194	58			region(3)
+sora_adv_stage	fn_40_3E260	.text+3E260	1B8			region(2)
+sora_adv_stage	fn_40_3E418	.text+3E418	174			region(2)
+sora_adv_stage	fn_40_3F6DC	.text+3F6DC	56C	.text+3F6AC	454	changed
+sora_adv_stage	fn_40_432C0	.text+432C0	3F8			region(3)
+sora_adv_stage	fn_40_436B8	.text+436B8	58			region(3)
+sora_adv_stage	fn_40_43710	.text+43710	C0			region(3)
+sora_adv_stage	fn_40_43A04	.text+43A04	6FC			region(6)
+sora_adv_stage	fn_40_44100	.text+44100	C			region(6)
+sora_adv_stage	fn_40_4410C	.text+4410C	12C			region(6)
+sora_adv_stage	fn_40_44238	.text+44238	13C0			region(6)
+sora_adv_stage	fn_40_455F8	.text+455F8	124			region(6)
+sora_adv_stage	fn_40_4571C	.text+4571C	2F8			region(6)
+sora_adv_stage	fn_40_45B90	.text+45B90	918	.text+45454	918	changed
+sora_enemy	fn_41_B7C8	.text+B7C8	10C	.text+B7C8	134	changed
+sora_melee	fn_27_37D3C	.text+37D3C	40	.text+37D3C	88	changed
+sora_melee	fn_27_37FA8	.text+37FA8	A0	.text+37FF0	D8	changed
+sora_melee	fn_27_7B920	.text+7B920	8	.text+7B9A0	10	changed
+sora_melee	fn_27_C30A4	.text+C30A4	60			region(6)
+sora_melee	fn_27_C3104	.text+C3104	4			region(6)
+sora_melee	fn_27_C3108	.text+C3108	4			region(6)
+sora_melee	fn_27_C310C	.text+C310C	4			region(6)
+sora_melee	fn_27_C3110	.text+C3110	10			region(6)
+sora_melee	fn_27_C3120	.text+C3120	8			region(6)
+sora_melee	fn_27_C3380	.text+C3380	8			region(6)
+sora_melee	fn_27_C3388	.text+C3388	4			region(6)
+sora_melee	fn_27_C338C	.text+C338C	4			region(6)
+sora_melee	fn_27_C3390	.text+C3390	4			region(6)
+sora_melee	fn_27_C3394	.text+C3394	10			region(6)
+sora_melee	fn_27_C33A4	.text+C33A4	8			region(6)
+sora_melee	fn_27_112640	.text+112640	3E4			region(2)
+sora_melee	fn_27_112A24	.text+112A24	98			region(2)
+sora_melee	fn_27_116D48	.text+116D48	8C	.text+116E28	9C	changed
+sora_melee	fn_27_124830	.text+124830	24	.text+124CF4	5C	changed
+sora_melee	fn_27_13DF5C	.text+13DF5C	A1C	.text+13E458	9E4	changed
+sora_melee	fn_27_14CD88	.text+14CD88	168	.text+14D24C	16C	changed
+sora_melee	fn_27_14D050	.text+14D050	8	.text+14D518	10	changed
+sora_melee	fn_27_14D0E0	.text+14D0E0	90	.text+14D5B0	A0	changed
+sora_melee	fn_27_154A40	.text+154A40	19C	.text+154F20	1A4	changed
+sora_melee	fn_27_154C78	.text+154C78	19C	.text+155160	1A4	changed
+sora_melee	fn_27_154FA8	.text+154FA8	1A8	.text+155498	1B0	changed
+sora_melee	fn_27_1556D4	.text+1556D4	3A8	.text+155BCC	398	changed
+sora_melee	fn_27_156064	.text+156064	160	.text+15654C	168	changed
+sora_melee	fn_27_156550	.text+156550	238	.text+156A40	240	changed
+sora_melee	fn_27_15DC14	.text+15DC14	A74	.text+15E10C	A7C	changed
+sora_melee	fn_27_1903AC	.text+1903AC	10C	.text+1908AC	140	changed
+sora_melee	fn_27_194390	.text+194390	C8	.text+1948C4	0	changed
+sora_melee	fn_27_1E8FEC	.text+1E8FEC	66C	.text+1E9698	684	changed
+sora_melee	fn_27_23AE0C	.text+23AE0C	10	.text+23B4D0	B8	changed
+sora_melee	fn_27_23B4F4	.text+23B4F4	8C			region(5)
+sora_melee	fn_27_23B580	.text+23B580	58			region(5)
+sora_melee	fn_27_23B5D8	.text+23B5D8	18			region(5)
+sora_melee	fn_27_23B5F0	.text+23B5F0	520			region(5)
+sora_melee	fn_27_23BB10	.text+23BB10	FC			region(5)
+sora_melee	fn_27_23C7DC	.text+23C7DC	710	.text+23D240	740	changed
+sora_melee	fn_27_243030	.text+243030	D18	.text+243AC4	D30	changed
+sora_melee	fn_27_244974	.text+244974	1DC			region(3)
+sora_melee	fn_27_244B50	.text+244B50	8			region(3)
+sora_melee	fn_27_244B58	.text+244B58	4DC			region(3)
+sora_melee	fn_27_245178	.text+245178	310	.text+245C4C	330	changed
+sora_melee	fn_27_249AE0	.text+249AE0	34			region(3)
+sora_melee	fn_27_249B14	.text+249B14	26C			region(3)
+sora_melee	fn_27_249D80	.text+249D80	F8			region(3)
+sora_melee	fn_27_24A86C	.text+24A86C	3D0	.text+24B390	3D0	changed
+sora_melee	fn_27_24ADF4	.text+24ADF4	118C	.text+24B918	1194	changed
+sora_melee	fn_27_24D6A0	.text+24D6A0	338			region(2)
+sora_melee	fn_27_24D9D8	.text+24D9D8	360			region(2)
+sora_melee	fn_27_24E85C	.text+24E85C	844	.text+24F388	850	changed
+sora_melee	fn_27_24FE38	.text+24FE38	FC	.text+250970	104	changed
+sora_melee	fn_27_2506D4	.text+2506D4	3D8	.text+251214	3EC	changed
+sora_melee	fn_27_250F50	.text+250F50	A0			region(3)
+sora_melee	fn_27_250FF0	.text+250FF0	58			region(3)
+sora_melee	fn_27_251048	.text+251048	F10			region(3)
+sora_melee	fn_27_253888	.text+253888	AD8	.text+2544D4	AD8	changed
+sora_melee	fn_27_2575E4	.text+2575E4	78			region(3)
+sora_melee	fn_27_25765C	.text+25765C	5C			region(3)
+sora_melee	fn_27_2576B8	.text+2576B8	B60			region(3)
+sora_melee	fn_27_27AE60	.text+27AE60	D78	.text+27BAA8	D78	changed
+sora_melee	fn_27_2A1724	.text+2A1724	60C	.text+2A236C	610	changed
+sora_melee	fn_27_2A66B8	.text+2A66B8	900	.text+2A7304	90C	changed
+sora_melee	fn_27_2C2D24	.text+2C2D24	28C			region(3)
+sora_melee	fn_27_2C2FB0	.text+2C2FB0	1F0			region(3)
+sora_melee	fn_27_2C31A0	.text+2C31A0	C4			region(3)
+sora_melee	fn_27_2C364C	.text+2C364C	224			region(2)
+sora_melee	fn_27_2C3870	.text+2C3870	774			region(2)
+sora_melee	fn_27_2CAAA4	.text+2CAAA4	128	.text+2CB938	11C	changed
+sora_melee	fn_27_3845F4	.text+3845F4	384	.text+38547C	3B4	changed
+sora_melee	fn_27_3944BC	.text+3944BC	510	.text+395374	4EC	changed
+sora_menu_boot	fn_22_0	.text+0	8C			region(3)
+sora_menu_boot	fn_22_8C	.text+8C	58			region(3)
+sora_menu_boot	fn_22_E4	.text+E4	1370			region(3)
+sora_menu_boot	fn_22_14C0	.text+14C0	A4			region(2)
+sora_menu_boot	fn_22_1564	.text+1564	124			region(2)
+sora_menu_challenger	__ct__24muChallengerApproachTaskFv	.text+34	178	.text+34	184	changed
+sora_menu_challenger	processDefault__24muChallengerApproachTaskFv	.text+204	3B8			region(7)
+sora_menu_challenger	initialize__24muChallengerApproachTaskFi	.text+5BC	1C			region(7)
+sora_menu_challenger	release__24muChallengerApproachTaskFv	.text+5D8	98			region(7)
+sora_menu_challenger	createData__24muChallengerApproachTaskFP9gfArchive	.text+670	138			region(7)
+sora_menu_challenger	_prolog	.text+7A8	48			region(7)
+sora_menu_challenger	_epilog	.text+7F0	48			region(7)
+sora_menu_challenger	_unresolved	.text+838	C			region(7)
+sora_menu_collect_viewer	fn_6_278	.text+278	58C			region(2)
+sora_menu_collect_viewer	fn_6_804	.text+804	C0			region(2)
+sora_menu_collect_viewer	fn_6_930	.text+930	804			region(2)
+sora_menu_collect_viewer	fn_6_1134	.text+1134	F4			region(2)
+sora_menu_collect_viewer	fn_6_1ECC	.text+1ECC	2F0	.text+16E8	2E4	changed
+sora_menu_collect_viewer	fn_6_28E0	.text+28E0	56C	.text+20F0	56C	changed
+sora_menu_collect_viewer	fn_6_2EC0	.text+2EC0	E0	.text+26D0	D4	changed
+sora_menu_collect_viewer	fn_6_4A8C	.text+4A8C	58C	.text+4290	5B4	changed
+sora_menu_collect_viewer	fn_6_5418	.text+5418	5E0	.text+4C44	5D0	changed
+sora_menu_collect_viewer	fn_6_64C8	.text+64C8	58	.text+5CE4	18	changed
+sora_menu_collect_viewer	fn_6_6AE8	.text+6AE8	340	.text+62C4	328	changed
+sora_menu_collect_viewer	fn_6_7914	.text+7914	37C	.text+70D8	378	changed
+sora_menu_collect_viewer	fn_6_7E18	.text+7E18	35C	.text+75D8	358	changed
+sora_menu_collect_viewer	fn_6_AC44	.text+AC44	1EC	.text+A400	238	changed
+sora_menu_edit	fn_5_0	.text+0	918			region(3)
+sora_menu_edit	fn_5_918	.text+918	C			region(3)
+sora_menu_edit	fn_5_924	.text+924	248			region(3)
+sora_menu_edit	fn_5_1188	.text+1188	1194			region(3)
+sora_menu_edit	fn_5_231C	.text+231C	388			region(3)
+sora_menu_edit	fn_5_26A4	.text+26A4	19DC			region(3)
+sora_menu_edit	fn_5_1210C	.text+1210C	158			region(4)
+sora_menu_edit	fn_5_12264	.text+12264	58			region(4)
+sora_menu_edit	fn_5_122BC	.text+122BC	C0			region(4)
+sora_menu_edit	fn_5_1237C	.text+1237C	138			region(4)
+sora_menu_edit	fn_5_12500	.text+12500	FC	.text+122B8	B8	changed
+sora_menu_edit	fn_5_13008	.text+13008	74			region(2)
+sora_menu_edit	fn_5_1307C	.text+1307C	74			region(2)
+sora_menu_edit	fn_5_1335C	.text+1335C	3D4	.text+130C8	3CC	changed
+sora_menu_edit	fn_5_137C4	.text+137C4	1CC	.text+13528	1E8	changed
+sora_menu_edit	fn_5_14348	.text+14348	428	.text+140C8	418	changed
+sora_menu_edit	fn_5_147F4	.text+147F4	20C			region(3)
+sora_menu_edit	fn_5_14A00	.text+14A00	1C			region(3)
+sora_menu_edit	fn_5_14A1C	.text+14A1C	148			region(3)
+sora_menu_event	fn_9_2618	.text+2618	538	.text+2618	548	changed
+sora_menu_event	fn_9_31CC	.text+31CC	324	.text+31DC	334	changed
+sora_menu_fig_get_demo	fn_26_0	.text+0	F8			region(4)
+sora_menu_fig_get_demo	fn_26_F8	.text+F8	4D0			region(4)
+sora_menu_fig_get_demo	fn_26_5C8	.text+5C8	C			region(4)
+sora_menu_fig_get_demo	fn_26_5D4	.text+5D4	20C			region(4)
+sora_menu_fig_get_demo	fn_26_A0C	.text+A0C	12C			region(5)
+sora_menu_fig_get_demo	fn_26_B38	.text+B38	8			region(5)
+sora_menu_fig_get_demo	fn_26_B40	.text+B40	4			region(5)
+sora_menu_fig_get_demo	fn_26_B44	.text+B44	208			region(5)
+sora_menu_fig_get_demo	fn_26_D4C	.text+D4C	454			region(5)
+sora_menu_friend_list	fn_14_1600	.text+1600	680	.text+1600	690	changed
+sora_menu_friend_list	fn_14_72DC	.text+72DC	B8			region(2)
+sora_menu_friend_list	fn_14_7394	.text+7394	160			region(2)
+sora_menu_game_over	fn_12_1068	.text+1068	D4	.text+1068	D4	changed
+sora_menu_intro	fn_13_0	.text+0	DC			region(2)
+sora_menu_intro	fn_13_DC	.text+DC	368			region(2)
+sora_menu_intro	fn_13_4A8	.text+4A8	178			region(2)
+sora_menu_intro	fn_13_620	.text+620	274			region(2)
+sora_menu_intro	fn_13_950	.text+950	254			region(3)
+sora_menu_intro	fn_13_BA4	.text+BA4	60			region(3)
+sora_menu_intro	fn_13_C04	.text+C04	748			region(3)
+sora_menu_intro	fn_13_1778	.text+1778	444			region(4)
+sora_menu_intro	_prolog	.text+1BBC	48			region(4)
+sora_menu_intro	_epilog	.text+1C04	48			region(4)
+sora_menu_intro	_unresolved	.text+1C4C	C			region(4)
+sora_menu_main	fn_2_0	.text+0	348			region(1)
+sora_menu_main	fn_2_3C8	.text+3C8	18C			region(3)
+sora_menu_main	fn_2_554	.text+554	404			region(3)
+sora_menu_main	fn_2_958	.text+958	73C			region(3)
+sora_menu_main	fn_2_2628	.text+2628	27C			region(2)
+sora_menu_main	fn_2_28A4	.text+28A4	6FC			region(2)
+sora_menu_main	fn_2_6304	.text+6304	16C			region(5)
+sora_menu_main	fn_2_6470	.text+6470	C			region(5)
+sora_menu_main	fn_2_647C	.text+647C	58			region(5)
+sora_menu_main	fn_2_64D4	.text+64D4	1B8			region(5)
+sora_menu_main	fn_2_668C	.text+668C	100			region(5)
+sora_menu_main	fn_2_6DBC	.text+6DBC	1F0			region(2)
+sora_menu_main	fn_2_6FAC	.text+6FAC	694			region(2)
+sora_menu_main	fn_2_7764	.text+7764	260	.text+7598	238	changed
+sora_menu_main	fn_2_8228	.text+8228	E8	.text+8034	160	changed
+sora_menu_main	fn_2_86B8	.text+86B8	340			region(2)
+sora_menu_main	fn_2_89F8	.text+89F8	27C			region(2)
+sora_menu_main	fn_2_8F7C	.text+8F7C	4E4	.text+8DF4	3D4	changed
+sora_menu_main	fn_2_9708	.text+9708	1AC	.text+9470	178	changed
+sora_menu_main	fn_2_BA2C	.text+BA2C	198			region(2)
+sora_menu_main	fn_2_BBC4	.text+BBC4	218			region(2)
+sora_menu_main	__ct__14tySealListTaskFv	.text+EEBC	5E4			region(3)
+sora_menu_main	fn_2_F4A0	.text+F4A0	678			region(3)
+sora_menu_main	fn_2_FB18	.text+FB18	1C8			region(3)
+sora_menu_main	fn_2_12570	.text+12570	6FC	.text+121BC	6FC	changed
+sora_menu_main	fn_2_1C3B0	.text+1C3B0	1E8	.text+1BFFC	254	changed
+sora_menu_main	fn_2_1C6F0	.text+1C6F0	1BC	.text+1C3A8	170	changed
+sora_menu_main	fn_2_1CBF0	.text+1CBF0	280	.text+1C85C	280	changed
+sora_menu_main	fn_2_21D40	.text+21D40	684	.text+219AC	6E0	changed
+sora_menu_main	fn_2_2307C	.text+2307C	330	.text+22D44	350	changed
+sora_menu_main	fn_2_23960	.text+23960	3D4			region(5)
+sora_menu_main	fn_2_23D34	.text+23D34	4EC			region(5)
+sora_menu_main	fn_2_24220	.text+24220	90			region(5)
+sora_menu_main	fn_2_242B0	.text+242B0	408			region(5)
+sora_menu_main	fn_2_246B8	.text+246B8	228			region(5)
+sora_menu_main	fn_2_25BD8	.text+25BD8	1E4	.text+25A68	164	changed
+sora_menu_main	fn_2_28EB8	.text+28EB8	2FC	.text+28CC8	30C	changed
+sora_menu_main	fn_2_2CC28	.text+2CC28	1F0	.text+2CA48	25C	changed
+sora_menu_main	fn_2_30568	.text+30568	148			region(2)
+sora_menu_main	fn_2_306B0	.text+306B0	1C4			region(2)
+sora_menu_main	fn_2_32298	.text+32298	A0			region(2)
+sora_menu_main	fn_2_32338	.text+32338	1D0			region(2)
+sora_menu_main	fn_2_36824	.text+36824	E4	.text+3656C	114	changed
+sora_menu_main	fn_2_36DB4	.text+36DB4	208			region(5)
+sora_menu_main	fn_2_36FBC	.text+36FBC	5AC			region(5)
+sora_menu_main	fn_2_37568	.text+37568	14C			region(5)
+sora_menu_main	fn_2_376B4	.text+376B4	1C			region(5)
+sora_menu_main	fn_2_376D0	.text+376D0	3E4			region(5)
+sora_menu_main	fn_2_37F28	.text+37F28	608	.text+37E24	808	changed
+sora_menu_main	fn_2_38A54	.text+38A54	224	.text+38B50	234	changed
+sora_menu_main	fn_2_38F54	.text+38F54	15C	.text+39200	124	changed
+sora_menu_main	fn_2_39258	.text+39258	F4	.text+394CC	B0	changed
+sora_menu_main	fn_2_3941C	.text+3941C	F0	.text+3964C	AC	changed
+sora_menu_main	fn_2_395E0	.text+395E0	448	.text+397CC	410	changed
+sora_menu_main	fn_2_39F58	.text+39F58	44			region(4)
+sora_menu_main	fn_2_39F9C	.text+39F9C	18			region(4)
+sora_menu_main	fn_2_39FB4	.text+39FB4	294			region(4)
+sora_menu_main	fn_2_3A248	.text+3A248	C0			region(4)
+sora_menu_main	fn_2_3A384	.text+3A384	3CC	.text+3A364	1C4	changed
+sora_menu_main	fn_2_3A940	.text+3A940	B0			region(2)
+sora_menu_main	fn_2_3A9F0	.text+3A9F0	C7C			region(2)
+sora_menu_main	fn_2_3BF0C	.text+3BF0C	878	.text+3BD34	85C	changed
+sora_menu_name	fn_16_1670	.text+1670	400			region(2)
+sora_menu_name	fn_16_1A70	.text+1A70	130			region(2)
+sora_menu_name	fn_16_26A4	.text+26A4	1F0	.text+2660	200	changed
+sora_menu_name	fn_16_32E8	.text+32E8	194	.text+32B4	19C	changed
+sora_menu_name	fn_16_6E10	.text+6E10	290	.text+6DE4	294	changed
+sora_menu_name	fn_16_7154	.text+7154	364	.text+712C	368	changed
+sora_menu_qm	fn_4_0	.text+0	350			region(2)
+sora_menu_qm	fn_4_350	.text+350	C			region(2)
+sora_menu_qm	fn_4_57C	.text+57C	1BAC			region(2)
+sora_menu_qm	fn_4_2128	.text+2128	1E0			region(2)
+sora_menu_qm	fn_4_2614	.text+2614	780			region(2)
+sora_menu_qm	fn_4_2D94	.text+2D94	51C			region(2)
+sora_menu_qm	fn_4_3444	.text+3444	BB4			region(2)
+sora_menu_qm	fn_4_3FF8	.text+3FF8	6E8			region(2)
+sora_menu_qm	fn_4_4758	.text+4758	1FE4	.text+488C	1FE4	changed
+sora_menu_qm	fn_4_6844	.text+6844	1AC	.text+6978	174	changed
+sora_menu_qm	fn_4_6C2C	.text+6C2C	BD8	.text+6D28	BD8	changed
+sora_menu_qm	fn_4_7928	.text+7928	125C			region(5)
+sora_menu_qm	fn_4_8B84	.text+8B84	134			region(5)
+sora_menu_qm	_prolog	.text+8CB8	48			region(5)
+sora_menu_qm	_epilog	.text+8D00	48			region(5)
+sora_menu_qm	_unresolved	.text+8D48	C			region(5)
+sora_menu_replay	fn_7_0	.text+0	FC			region(4)
+sora_menu_replay	fn_7_FC	.text+FC	58			region(4)
+sora_menu_replay	fn_7_154	.text+154	C0			region(4)
+sora_menu_replay	fn_7_214	.text+214	E0			region(4)
+sora_menu_replay	fn_7_558	.text+558	74	.text+4AC	70	changed
+sora_menu_replay	fn_7_734	.text+734	244	.text+684	240	changed
+sora_menu_replay	fn_7_11A8	.text+11A8	26C	.text+10F4	244	changed
+sora_menu_replay	fn_7_14E8	.text+14E8	D0			region(4)
+sora_menu_replay	_prolog	.text+15B8	48			region(4)
+sora_menu_replay	_epilog	.text+1600	48			region(4)
+sora_menu_replay	_unresolved	.text+1648	C			region(4)
+sora_menu_rule	fn_18_B54	.text+B54	124	.text+B54	17C	changed
+sora_menu_rule	fn_18_2BBC	.text+2BBC	77C	.text+2C14	798	changed
+sora_menu_rule	fn_18_8648	.text+8648	C14	.text+86BC	C7C	changed
+sora_menu_sel_char	fn_10_1E1C	.text+1E1C	6A4	.text+1E1C	740	changed
+sora_menu_sel_char	fn_10_39F0	.text+39F0	984	.text+3A8C	994	changed
+sora_menu_sel_char	fn_10_FDDC	.text+FDDC	100	.text+FE88	E4	changed
+sora_menu_sel_char	fn_10_114FC	.text+114FC	224	.text+1158C	244	changed
+sora_menu_sel_char	fn_10_12E58	.text+12E58	1BC	.text+12F08	1BC	changed
+sora_menu_sel_char	fn_10_1AA34	.text+1AA34	1C0	.text+1AAE4	1E0	changed
+sora_menu_sel_char	fn_10_1B52C	.text+1B52C	224	.text+1B5FC	238	changed
+sora_menu_sel_char	fn_10_1BF94	.text+1BF94	1C0			region(2)
+sora_menu_sel_char	fn_10_1C154	.text+1C154	1DC			region(2)
+sora_menu_sel_stage	fn_11_1F84	.text+1F84	39C	.text+1F84	35C	changed
+sora_menu_sel_stage	fn_11_7590	.text+7590	70	.text+7550	7C	changed
+sora_menu_simple_ending	fn_19_0	.text+0	88			region(2)
+sora_menu_simple_ending	fn_19_88	.text+88	58			region(2)
+sora_menu_simple_ending	fn_19_390	.text+390	1AC	.text+3B8	244	changed
+sora_menu_snap_shot	fn_8_0	.text+0	C4			region(1)
+sora_menu_snap_shot	fn_8_11C	.text+11C	C8	.text+150	8C	changed
+sora_menu_snap_shot	fn_8_3C0	.text+3C0	74	.text+3B8	70	changed
+sora_menu_snap_shot	fn_8_6A8	.text+6A8	25C	.text+69C	258	changed
+sora_menu_snap_shot	fn_8_A70	.text+A70	70			region(4)
+sora_menu_snap_shot	_prolog	.text+AE0	48			region(4)
+sora_menu_snap_shot	_epilog	.text+B28	48			region(4)
+sora_menu_snap_shot	_unresolved	.text+B70	C			region(4)
+sora_menu_title	fn_24_44	.text+44	168	.text+44	1C8	changed
+sora_menu_title	fn_24_3CC	.text+3CC	6C	.text+42C	88	changed
+sora_menu_title	fn_24_4C8	.text+4C8	114	.text+544	118	changed
+sora_menu_title	fn_24_920	.text+920	C8	.text+9A0	CC	changed
+sora_menu_title	fn_24_AC0	.text+AC0	84	.text+B44	0	changed
+sora_menu_title	fn_24_D68	.text+D68	1C	.text+D68	0	changed
+sora_menu_title	fn_24_E2C	.text+E2C	204	.text+E10	208	changed
+sora_menu_title	fn_24_1344	.text+1344	BC	.text+132C	C0	changed
+sora_menu_title	fn_24_1A94	.text+1A94	2AC	.text+1A80	28C	changed
+sora_menu_title	fn_24_2960	.text+2960	8C			region(13)
+sora_menu_title	fn_24_29EC	.text+29EC	74			region(13)
+sora_menu_title	fn_24_2A60	.text+2A60	5C			region(13)
+sora_menu_title	fn_24_2ABC	.text+2ABC	54			region(13)
+sora_menu_title	fn_24_2B10	.text+2B10	5C			region(13)
+sora_menu_title	fn_24_2B6C	.text+2B6C	AC			region(13)
+sora_menu_title	fn_24_2C18	.text+2C18	80			region(13)
+sora_menu_title	fn_24_2C98	.text+2C98	80			region(13)
+sora_menu_title	fn_24_2D18	.text+2D18	120			region(13)
+sora_menu_title	fn_24_2E38	.text+2E38	48			region(13)
+sora_menu_title	fn_24_2E80	.text+2E80	18			region(13)
+sora_menu_title	fn_24_2E98	.text+2E98	18			region(13)
+sora_menu_title	fn_24_2EB0	.text+2EB0	48			region(13)
+sora_menu_title_sunset	fn_25_0	.text+0	90			region(2)
+sora_menu_title_sunset	fn_25_90	.text+90	8C			region(2)
+sora_menu_title_sunset	fn_25_430	.text+430	13C			region(4)
+sora_menu_title_sunset	fn_25_56C	.text+56C	CC			region(4)
+sora_menu_title_sunset	fn_25_638	.text+638	80			region(4)
+sora_menu_title_sunset	fn_25_6B8	.text+6B8	2C4			region(4)
+sora_menu_title_sunset	fn_25_123C	.text+123C	24			region(3)
+sora_menu_title_sunset	fn_25_1260	.text+1260	2C			region(3)
+sora_menu_title_sunset	fn_25_128C	.text+128C	78			region(3)
+sora_menu_tour	fn_3_0	.text+0	468			region(2)
+sora_menu_tour	fn_3_468	.text+468	198			region(2)
+sora_menu_tour	fn_3_22D8	.text+22D8	454			region(3)
+sora_menu_tour	fn_3_272C	.text+272C	69C			region(3)
+sora_menu_tour	fn_3_2DC8	.text+2DC8	C			region(3)
+sora_menu_tour	fn_3_2FA0	.text+2FA0	3648			region(2)
+sora_menu_tour	fn_3_65E8	.text+65E8	1B4			region(2)
+sora_menu_tour	fn_3_69C8	.text+69C8	600	.text+68C0	8CC	changed
+sora_menu_tour	fn_3_8994	.text+8994	578	.text+8B58	58C	changed
+sora_menu_tour	fn_3_9038	.text+9038	1368	.text+9210	1390	changed
+sora_menu_tour	fn_3_A72C	.text+A72C	5A8			region(5)
+sora_menu_tour	fn_3_ACD4	.text+ACD4	2F4			region(5)
+sora_menu_tour	fn_3_AFC8	.text+AFC8	241C			region(5)
+sora_menu_tour	fn_3_D3E4	.text+D3E4	178			region(5)
+sora_menu_tour	fn_3_D55C	.text+D55C	13C			region(5)
+sora_menu_tour	fn_3_DD5C	.text+DD5C	CE4	.text+DEF0	CF8	changed
+sora_menu_watch	fn_15_4A8	.text+4A8	204	.text+4A8	210	changed
+sora_minigame	fn_20_AF0	.text+AF0	1A7C	.text+AF0	1AFC	changed
+sora_minigame	fn_20_6E0C	.text+6E0C	7FC			region(3)
+sora_minigame	fn_20_7608	.text+7608	C			region(3)
+sora_minigame	fn_20_7614	.text+7614	1BC			region(3)
+sora_scene	fn_1_40C	.text+40C	58			region(3)
+sora_scene	fn_1_464	.text+464	C			region(3)
+sora_scene	fn_1_470	.text+470	200			region(3)
+sora_scene	fn_1_A40	.text+A40	26F4	.text+B2C	2710	changed
+sora_scene	fn_1_3930	.text+3930	190	.text+3A38	1CC	changed
+sora_scene	fn_1_41AC	.text+41AC	898			region(5)
+sora_scene	fn_1_4A44	.text+4A44	440			region(5)
+sora_scene	fn_1_4E84	.text+4E84	30			region(5)
+sora_scene	fn_1_4EB4	.text+4EB4	34			region(5)
+sora_scene	fn_1_4EE8	.text+4EE8	FC			region(5)
+sora_scene	fn_1_5058	.text+5058	58			region(11)
+sora_scene	fn_1_50B0	.text+50B0	10			region(11)
+sora_scene	fn_1_50C0	.text+50C0	D0			region(11)
+sora_scene	fn_1_5190	.text+5190	A0			region(11)
+sora_scene	fn_1_5230	.text+5230	7C			region(11)
+sora_scene	fn_1_52AC	.text+52AC	34			region(11)
+sora_scene	fn_1_52E0	.text+52E0	B84			region(11)
+sora_scene	fn_1_5E64	.text+5E64	C			region(11)
+sora_scene	fn_1_5E70	.text+5E70	31C			region(11)
+sora_scene	fn_1_618C	.text+618C	8			region(11)
+sora_scene	fn_1_6194	.text+6194	10			region(11)
+sora_scene	fn_1_65B8	.text+65B8	6C			region(6)
+sora_scene	fn_1_6624	.text+6624	4			region(6)
+sora_scene	fn_1_6628	.text+6628	70			region(6)
+sora_scene	fn_1_6698	.text+6698	6C			region(6)
+sora_scene	fn_1_6704	.text+6704	50			region(6)
+sora_scene	fn_1_6754	.text+6754	84			region(6)
+sora_scene	fn_1_6B08	.text+6B08	50			region(3)
+sora_scene	fn_1_6B58	.text+6B58	84			region(3)
+sora_scene	fn_1_6BDC	.text+6BDC	D8			region(3)
+sora_scene	fn_1_7834	.text+7834	8C			region(5)
+sora_scene	fn_1_78C0	.text+78C0	64			region(5)
+sora_scene	fn_1_7924	.text+7924	90			region(5)
+sora_scene	fn_1_79B4	.text+79B4	70			region(5)
+sora_scene	fn_1_7A24	.text+7A24	70			region(5)
+sora_scene	fn_1_80C4	.text+80C4	84			region(3)
+sora_scene	fn_1_8148	.text+8148	8			region(3)
+sora_scene	fn_1_8150	.text+8150	1DC			region(3)
+sora_scene	fn_1_8BC8	.text+8BC8	94			region(5)
+sora_scene	fn_1_8C5C	.text+8C5C	64			region(5)
+sora_scene	fn_1_8CC0	.text+8CC0	84			region(5)
+sora_scene	fn_1_8D44	.text+8D44	8			region(5)
+sora_scene	fn_1_8D4C	.text+8D4C	C0			region(5)
+sora_scene	fn_1_90E0	.text+90E0	CC	.text+A6F0	BC	changed
+sora_scene	fn_1_9598	.text+9598	7F4	.text+AB98	7FC	changed
+sora_scene	fn_1_A8C4	.text+A8C4	48			region(5)
+sora_scene	fn_1_A90C	.text+A90C	6C			region(5)
+sora_scene	fn_1_A978	.text+A978	44			region(5)
+sora_scene	fn_1_A9BC	.text+A9BC	3C			region(5)
+sora_scene	fn_1_A9F8	.text+A9F8	84			region(5)
+sora_scene	fn_1_B478	.text+B478	D4			region(14)
+sora_scene	fn_1_B54C	.text+B54C	C			region(14)
+sora_scene	fn_1_B558	.text+B558	4C			region(14)
+sora_scene	fn_1_B5A4	.text+B5A4	154			region(14)
+sora_scene	fn_1_B6F8	.text+B6F8	304			region(14)
+sora_scene	fn_1_B9FC	.text+B9FC	DC			region(14)
+sora_scene	fn_1_BAD8	.text+BAD8	154			region(14)
+sora_scene	fn_1_BC2C	.text+BC2C	34			region(14)
+sora_scene	fn_1_BC60	.text+BC60	128			region(14)
+sora_scene	fn_1_BD88	.text+BD88	10			region(14)
+sora_scene	fn_1_BD98	.text+BD98	184			region(14)
+sora_scene	fn_1_BF1C	.text+BF1C	530			region(14)
+sora_scene	fn_1_C44C	.text+C44C	254			region(14)
+sora_scene	fn_1_C6A0	.text+C6A0	184			region(14)
+sora_scene	fn_1_CBA0	.text+CBA0	8C			region(5)
+sora_scene	fn_1_CC2C	.text+CC2C	10			region(5)
+sora_scene	fn_1_CC3C	.text+CC3C	1B0			region(5)
+sora_scene	fn_1_CDEC	.text+CDEC	98			region(5)
+sora_scene	fn_1_CE84	.text+CE84	48			region(5)
+sora_scene	fn_1_D0B4	.text+D0B4	18C	.text+E3D4	19C	changed
+sora_scene	fn_1_D56C	.text+D56C	154	.text+E89C	160	changed
+sora_scene	fn_1_DEE0	.text+DEE0	F0			region(2)
+sora_scene	fn_1_DFD0	.text+DFD0	D0			region(2)
+sora_scene	fn_1_E268	.text+E268	1D4			region(9)
+sora_scene	fn_1_E43C	.text+E43C	C4			region(9)
+sora_scene	fn_1_E500	.text+E500	30			region(9)
+sora_scene	fn_1_E530	.text+E530	34			region(9)
+sora_scene	fn_1_E564	.text+E564	1FC			region(9)
+sora_scene	fn_1_E760	.text+E760	C			region(9)
+sora_scene	fn_1_E76C	.text+E76C	254			region(9)
+sora_scene	fn_1_E9C0	.text+E9C0	8			region(9)
+sora_scene	fn_1_E9C8	.text+E9C8	10			region(9)
+sora_scene	fn_1_EB44	.text+EB44	6FC	.text+FF58	7B4	changed
+sora_scene	fn_1_F5B8	.text+F5B8	64	.text+10A84	68	changed
+sora_scene	fn_1_F6D0	.text+F6D0	63C			region(5)
+sora_scene	fn_1_FD0C	.text+FD0C	8			region(5)
+sora_scene	fn_1_FD14	.text+FD14	10			region(5)
+sora_scene	fn_1_FD24	.text+FD24	1FC			region(5)
+sora_scene	fn_1_FF20	.text+FF20	E8			region(5)
+sora_scene	fn_1_102BC	.text+102BC	6C			region(5)
+sora_scene	fn_1_10328	.text+10328	10			region(5)
+sora_scene	fn_1_10338	.text+10338	C4			region(5)
+sora_scene	fn_1_103FC	.text+103FC	5C			region(5)
+sora_scene	fn_1_10458	.text+10458	60			region(5)
+sora_scene	fn_1_10A3C	.text+10A3C	164	.text+121D4	174	changed
+sora_scene	fn_1_11FBC	.text+11FBC	CBC	.text+13764	CD0	changed
+sora_scene	fn_1_130FC	.text+130FC	4E4	.text+148B8	50C	changed
+sora_scene	fn_1_136A4	.text+136A4	158			region(2)
+sora_scene	fn_1_137FC	.text+137FC	84			region(2)
+sora_scene	fn_1_139E0	.text+139E0	20C	.text+16240	208	changed
+sora_scene	fn_1_16220	.text+16220	75C	.text+18A7C	7A0	changed
+sora_scene	fn_1_16BDC	.text+16BDC	270C	.text+1947C	271C	changed
+sora_scene	fn_1_194A4	.text+194A4	4C4			region(2)
+sora_scene	fn_1_19968	.text+19968	B74			region(2)
+sora_scene	fn_1_1B004	.text+1B004	48			region(4)
+sora_scene	fn_1_1B04C	.text+1B04C	68			region(4)
+sora_scene	fn_1_1B0B4	.text+1B0B4	54			region(4)
+sora_scene	fn_1_1B108	.text+1B108	3C			region(4)
+sora_scene	fn_1_1D948	.text+1D948	4BC			region(2)
+sora_scene	fn_1_1DE04	.text+1DE04	4C8			region(2)
+sora_scene	fn_1_1E5BC	.text+1E5BC	6C	.text+21238	70	changed
+sora_scene	fn_1_1E6C4	.text+1E6C4	268			region(6)
+sora_scene	fn_1_1E92C	.text+1E92C	4B4			region(6)
+sora_scene	fn_1_1EDE0	.text+1EDE0	C			region(6)
+sora_scene	fn_1_1EDEC	.text+1EDEC	2AC			region(6)
+sora_scene	fn_1_1F098	.text+1F098	BB4			region(6)
+sora_scene	fn_1_1FC4C	.text+1FC4C	1A0			region(6)
+sora_scene	fn_1_2006C	.text+2006C	58	.text+22D74	50	changed
+sora_scene	fn_1_200F0	.text+200F0	3FC			region(6)
+sora_scene	fn_1_204EC	.text+204EC	8			region(6)
+sora_scene	fn_1_204F4	.text+204F4	4C			region(6)
+sora_scene	fn_1_20540	.text+20540	C8			region(6)
+sora_scene	fn_1_20608	.text+20608	F8			region(6)
+sora_scene	fn_1_20700	.text+20700	B4			region(6)
+sora_scene	fn_1_2159C	.text+2159C	3A0	.text+242E0	3E8	changed
+sora_scene	fn_1_22D3C	.text+22D3C	530	.text+25AC8	568	changed
+sora_scene	fn_1_234F4	.text+234F4	44C	.text+262B8	48C	changed
+sora_scene	fn_1_2442C	.text+2442C	420	.text+27230	44C	changed
+sora_scene	fn_1_24BA0	.text+24BA0	970	.text+279D0	9A8	changed
+sora_scene	fn_1_25674	.text+25674	82C	.text+284DC	830	changed
+sora_scene	fn_1_279E0	.text+279E0	7FC	.text+2A84C	85C	changed
+sora_scene	fn_1_2943C	.text+2943C	884	.text+2C308	8E4	changed
+sora_scene	fn_1_2B484	.text+2B484	3AB0	.text+2E3B0	3AD4	changed
+sora_scene	fn_1_2F7D4	.text+2F7D4	DB8	.text+32724	EAC	changed
+sora_scene	fn_1_3113C	.text+3113C	7B4	.text+34180	7C0	changed
+sora_scene	fn_1_32C3C	.text+32C3C	454	.text+35C8C	470	changed
+sora_scene	fn_1_34398	.text+34398	454	.text+37404	470	changed
+sora_scene	fn_1_34A80	.text+34A80	334	.text+37B08	350	changed
+sora_scene	fn_1_34FA0	.text+34FA0	158	.text+38044	190	changed
+sora_scene	fn_1_35330	.text+35330	670	.text+3840C	6A0	changed
+sora_scene	fn_1_35FBC	.text+35FBC	434	.text+390C8	450	changed
+sora_scene	fn_1_36744	.text+36744	1EC			region(5)
+sora_scene	fn_1_36930	.text+36930	4			region(5)
+sora_scene	fn_1_36934	.text+36934	50			region(5)
+sora_scene	fn_1_36984	.text+36984	C			region(5)
+sora_scene	fn_1_36990	.text+36990	2B0			region(5)
+sora_scene	fn_1_36CBC	.text+36CBC	8C	.text+39E1C	94	changed
+sora_scene	fn_1_3A610	.text+3A610	450	.text+3D778	488	changed
+sora_scene	fn_1_3CDAC	.text+3CDAC	1BC			region(5)
+sora_scene	fn_1_3CF68	.text+3CF68	4			region(5)
+sora_scene	fn_1_3CF6C	.text+3CF6C	50			region(5)
+sora_scene	fn_1_3CFBC	.text+3CFBC	C			region(5)
+sora_scene	fn_1_3CFC8	.text+3CFC8	160			region(5)
+st_croll	fn_90_B8	.text+B8	94	.text+B8	248	changed
+st_croll	fn_90_40C	.text+40C	E1C	.text+5C0	E20	changed
+st_croll	fn_90_72D8	.text+72D8	500	.text+7490	508	changed
+st_croll	fn_90_7970	.text+7970	80	.text+7B30	84	changed
+st_croll	fn_90_7E5C	.text+7E5C	3D4	.text+8020	478	changed
+st_homerun	fn_88_1B18	.text+1B18	A78	.text+1B18	A90	changed
+st_homerun	fn_88_2858	.text+2858	1A8	.text+2870	1A0	changed
+st_homerun	fn_88_674C	.text+674C	37C	.text+675C	374	changed
+st_homerun	fn_88_80F4	.text+80F4	19C	.text+80FC	178	changed
+st_madein	fn_65_334	.text+334	E0			region(3)
+st_madein	fn_65_414	.text+414	8			region(3)
+st_madein	fn_65_41C	.text+41C	1640			region(3)
+st_pictchat	fn_73_2FF0	.text+2FF0	388	.text+2FF0	3AC	changed

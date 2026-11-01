@@ -1,0 +1,2 @@
+fn_pal_0 = .text:0x00000000; // type:function size:0x48  // match:pal-only
+fn_pal_48 = .text:0x00000048; // type:function size:0x54  // match:pal-only

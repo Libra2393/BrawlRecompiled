@@ -1,0 +1,9 @@
+fn_38_0 = .text:0x00000000; // type:function size:0xD4  // match:unique
+fn_38_D4 = .text:0x000000D4; // type:function size:0x98  // match:unique
+fn_38_16C = .text:0x0000016C; // type:function size:0x330  // match:unique
+fn_38_49C = .text:0x0000049C; // type:function size:0x1C  // match:sequence
+fn_38_4B8 = .text:0x000004B8; // type:function size:0x1C  // match:sequence
+fn_38_4D4 = .text:0x000004D4; // type:function size:0x234  // match:unique
+_prolog = .text:0x00000708; // type:function size:0x48  // match:sequence
+_epilog = .text:0x00000750; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x00000798; // type:function size:0xC  // match:sequence
