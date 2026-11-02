@@ -1,7 +1,7 @@
 schema_version: 1
 workspace_root: ../..
 
-# Dairantou Smash Brothers X, Japan (RSBJ01 rev 0): main.dol. Function map from the US rev 2 map by masked-instruction
+# Dairantou Smash Brothers X, Japan (RSBJ01 rev 1): main.dol. Function map from the US rev 2 map by masked-instruction
 # matching (projects/brawl-regions/tools); resident module homes in resident_estimate.json.
 # The game's .rel modules (files/module) are pre-linked at their load addresses separately.
 project:
@@ -21,7 +21,7 @@ memory:
 inputs:
   dol:
     path: ../game/main_translate.dol  # main.dol plus the resident modules (tools/build_modules.py)
-    sha256: faab791932890f522376ad8ae3c80326eb3181e55359669aaef95d7a719cce16
+    sha256: 868c2bcd2a8bc8e17815fed33ff787551d9341bd9d90bb8da8f6dd4317d58eba
   # All 126 files/module/*.rel, each pre-linked at its own home above the game's MEM2 arena, as one synthetic REL
   # (projects/brawl/tools/build_modules.py; hle/brawl_modules.cpp links them at run time).
   rel:

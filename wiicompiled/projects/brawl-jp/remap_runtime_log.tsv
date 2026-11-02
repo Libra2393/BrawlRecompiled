@@ -64,9 +64,8 @@ src/fiber_manager.cpp	493	805A06F0	805A0278	data referenced
 src/fiber_manager.cpp	493	805A0828	805A03B0	data referenced
 src/fiber_manager.cpp	494	805A082C	805A03B4	data referenced lbl_805A0828
 src/fiber_manager.cpp	632	802BA860	802BA8D8	code unique
-src/game_folder.cpp	0	constexpr int kRevision = 1;	constexpr int kRevision = 0;  // the Japanese disc's boot.bin	identity x1
-src/game_folder.cpp	0	This port runs only revision 0 (Dolphin shows it under Properties > Info).	This port runs only the Japanese disc, revision 0 (Dolphin shows it under Properties > Info).	identity x1
-src/game_folder.cpp	0	(USA, RSBE01, revision 1)	(Japan, RSBJ01, revision 0)	identity x1
+src/game_folder.cpp	0	This port runs only revision 0 (Dolphin shows it under Properties > Info).	This port runs only the Japanese disc, revision 1 (Dolphin shows it under Properties > Info).	identity x1
+src/game_folder.cpp	0	(USA, RSBE01, revision 1)	(Japan, RSBJ01, revision 1)	identity x1
 src/game_folder.cpp	0	RSBE01	RSBJ01	identity x1
 src/guest_profiler.cpp	54	80004000	80004000	code unique
 src/guest_profiler.cpp	54	804064E0	80406040	data referenced
@@ -890,7 +889,6 @@ src/system_bridge.cpp	412	805B7160	805B6CC0	arena +-0x4a0 after main.dol bss (ch
 src/system_bridge.cpp	414	805B5160	805B4CC0	arena +-0x4a0 after main.dol bss (check)
 src/system_bridge.cpp	415	817DA5A0	817DA5E0	fst arena hi (MEM1 end - the disc's FST)
 src/system_bridge.cpp	0	0x52534245	0x5253424A	identity x3
-src/system_bridge.cpp	0	{0x80000004u, 0x30310001u, "Disc maker/id"});  // "01", disc 0, revision 1 (boot.bin)	{0x80000004u, 0x30310000u, "Disc maker/id"});  // "01", disc 0, revision 0 (the Japanese disc's boot.bin)	identity x1
 src/virtual_remote.cpp	46	80234528	802345A0	code sequence
 src/virtual_remote.cpp	47	80235180	802351F8	code unique
 src/virtual_remote.cpp	85	805A1608	805A1188	data referenced
