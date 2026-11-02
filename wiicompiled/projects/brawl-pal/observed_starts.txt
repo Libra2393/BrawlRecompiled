@@ -2,7 +2,7 @@
 # runtime reported them: "interpreter: running untranslated guest code at <address>". One per line:
 #   main <address>                     main.dol
 #   <module> <section> <offset>        a module's section-relative offset (address - the module's text start)
-# Each boot's log can add more; tools/add_pal_only.py reads this file.
+# Each boot's log can add more; brawl-regions/tools/add_region_only.py reads this file.
 main 800305EC
 sora_scene .text 11204
 sora_scene .text 111FC

@@ -1,0 +1,60 @@
+where	name	us	us_size	pal	pal_size	how
+main.dol	_alarmCallback__11gfPadSystemFP7OSAlarmP9OSContext	80028B20	54	80028B20	54	changed
+main.dol	fn_80030FA4	80030FA4	8C8	80030FA4	8C8	changed
+main.dol	fn_80037800	80037800	18C	80037800	168	changed
+main.dol	fn_8004C63C	8004C63C	9D4	8004C618	9D4	changed
+main.dol	fn_80057158	80057158	B0C	80057134	B0C	changed
+main.dol	fn_80058544	80058544	2B8	80058520	2B0	changed
+main.dol	fn_8005925C	8005925C	490			region(2)
+main.dol	fn_800596EC	800596EC	1A4			region(2)
+main.dol	fn_8007B070	8007B070	34	8007B008	34	changed
+main.dol	fn_800C9DF4	800C9DF4	94	800C9D8C	94	changed
+main.dol	fn_800CC070	800CC070	134	800CC008	134	changed
+main.dol	fn_800CC2C0	800CC2C0	110	800CC258	110	changed
+main.dol	fn_800E7BD0	800E7BD0	D8	800E7B68	1B8	changed
+main.dol	fn_800E9878	800E9878	186C	800E98F0	186C	changed
+main.dol	fn_80146CE4	80146CE4	E0			region(2)
+main.dol	fn_80146DC4	80146DC4	80			region(2)
+main.dol	fn_80157BC4	80157BC4	2C8	80157C3C	2C8	changed
+main.dol	BATConfig	801DE97C	150	801DE9F4	150	changed
+main.dol	fn_801FB1DC	801FB1DC	13C	801FB254	13C	changed
+main.dol	__DVDPrepareReset	801FB56C	134	801FB5E4	134	changed
+main.dol	btm_dev_timeout	8023A6B0	298			region(2)
+main.dol	btm_reset_complete	8023A948	1C4			region(2)
+main.dol	DWC_LoginAsync	80339B30	368	80339BA8	368	changed
+main.dol	fn_803EF2AC	803EF2AC	120	803EF324	148	changed
+main.dol	fn_803EF4A8	803EF4A8	198			region(5)
+main.dol	fn_803EF640	803EF640	414			region(5)
+main.dol	fn_803EFA54	803EFA54	450			region(5)
+main.dol	fn_803EFEA4	803EFEA4	1A8			region(5)
+main.dol	fn_803F004C	803F004C	5F4			region(5)
+sora_adv_menu_save_load	_prolog	.text+0	48			region(3)
+sora_adv_menu_save_load	_epilog	.text+48	48			region(3)
+sora_adv_menu_save_load	_unresolved	.text+90	C			region(3)
+sora_adv_menu_save_point	_prolog	.text+0	48			region(3)
+sora_adv_menu_save_point	_epilog	.text+48	48			region(3)
+sora_adv_menu_save_point	_unresolved	.text+90	C			region(3)
+sora_adv_menu_seal	_prolog	.text+0	48			region(3)
+sora_adv_menu_seal	_epilog	.text+48	48			region(3)
+sora_adv_menu_seal	_unresolved	.text+90	C			region(3)
+sora_adv_menu_sel_char	_prolog	.text+0	48			region(3)
+sora_adv_menu_sel_char	_epilog	.text+48	48			region(3)
+sora_adv_menu_sel_char	_unresolved	.text+90	C			region(3)
+sora_melee	fn_27_24E85C	.text+24E85C	844	.text+24E85C	844	changed
+sora_melee	fn_27_2C364C	.text+2C364C	224			region(2)
+sora_melee	fn_27_2C3870	.text+2C3870	774			region(2)
+sora_melee	fn_27_2C9714	.text+2C9714	5C8	.text+2C9714	5D0	changed
+sora_menu_collect_viewer	fn_6_64C8	.text+64C8	58	.text+64C8	70	changed
+sora_menu_main	fn_2_21678	.text+21678	460	.text+21678	460	changed
+sora_menu_main	fn_2_2EFA4	.text+2EFA4	414	.text+2EFA4	418	changed
+sora_menu_main	fn_2_36FBC	.text+36FBC	5AC	.text+36FC0	57C	changed
+sora_menu_main	fn_2_37F28	.text+37F28	608	.text+37EFC	6B0	changed
+sora_menu_main	fn_2_3A750	.text+3A750	1F0	.text+3A7CC	1A0	changed
+sora_menu_title	fn_24_AC0	.text+AC0	84	.text+AC0	0	changed
+sora_menu_title	fn_24_D68	.text+D68	1C	.text+CE4	0	changed
+sora_menu_title	fn_24_1A94	.text+1A94	2AC	.text+19F4	2AC	changed
+sora_scene	fn_1_FD24	.text+FD24	1FC	.text+FD24	1E0	changed
+st_homerun	fn_88_1B18	.text+1B18	A78	.text+1B18	A90	changed
+st_homerun	fn_88_2858	.text+2858	1A8	.text+2870	1A0	changed
+st_homerun	fn_88_674C	.text+674C	37C	.text+675C	374	changed
+st_homerun	fn_88_80F4	.text+80F4	19C	.text+80FC	178	changed

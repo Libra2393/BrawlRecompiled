@@ -1,0 +1,46 @@
+{
+ "game_id": "RSBP01",
+ "label": "PAL",
+ "config": "RSBP01_01",
+ "only_tag": "pal-only",
+ "only_prefix": "fn_pal_",
+ "identity_note": "Partition boot.bin, which the game reads at 0x80000000 and game_folder.cpp checks, says revision 0 on the PAL disc (its outer header says 1).",
+ "identity": [
+  [
+   "0x52534245",
+   "0x52534250"
+  ],
+  [
+   "/52534245/",
+   "/52534250/"
+  ],
+  [
+   "{0x80000004u, 0x30310001u, \"Disc maker/id\"});  // \"01\", disc 0, revision 1 (boot.bin)",
+   "{0x80000004u, 0x30310000u, \"Disc maker/id\"});  // \"01\", disc 0, revision 0 (the PAL partition's boot.bin)"
+  ],
+  [
+   "constexpr int kRevision = 1;",
+   "constexpr int kRevision = 0;  // the PAL partition's boot.bin (Dolphin shows 1)"
+  ],
+  [
+   "This port runs only revision 0 (Dolphin shows it under Properties > Info).",
+   "This port runs only the PAL disc Dolphin shows as revision 1 (Properties > Info)."
+  ],
+  [
+   "(USA, RSBE01, revision 1)",
+   "(Europe, RSBP01, revision 1)"
+  ],
+  [
+   "(USA, RSBE01)",
+   "(Europe, RSBP01)"
+  ],
+  [
+   "(RSBE01 revision 1)",
+   "(Europe, RSBP01)"
+  ],
+  [
+   "RSBE01",
+   "RSBP01"
+  ]
+ ]
+}

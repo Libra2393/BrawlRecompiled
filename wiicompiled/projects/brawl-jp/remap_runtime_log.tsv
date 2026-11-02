@@ -1,0 +1,896 @@
+file	line	us	region	how
+include/abi_bridge.h	30	8023BD38	8023BDB0	code unique
+include/abi_bridge.h	32	801CCC00	801CCC78	code sequence
+include/abi_bridge.h	275	801D80B4	801D812C	code unique
+include/native_cpu_calls.inc	52	801EF280	801EF2F8	code unique
+include/native_cpu_calls.inc	53	801EFB10	801EFB88	code unique
+include/native_cpu_calls.inc	54	801EFB44	801EFBBC	code unique
+include/native_cpu_calls.inc	55	801F0258	801F02D0	code unique
+include/native_cpu_calls.inc	56	801F0480	801F04F8	code unique
+include/native_cpu_calls.inc	57	801F0A30	801F0AA8	code unique
+include/native_cpu_calls.inc	58	801F1088	801F1100	code unique
+include/native_cpu_calls.inc	59	801F12AC	801F1324	code unique
+include/native_cpu_calls.inc	60	801F12FC	801F1374	code unique
+include/native_cpu_calls.inc	61	801F136C	801F13E4	code unique
+include/native_cpu_calls.inc	62	801F2644	801F26BC	code unique
+include/native_cpu_calls.inc	63	801F2668	801F26E0	code unique
+include/native_cpu_calls.inc	64	801F28F0	801F2968	code unique
+include/native_cpu_calls.inc	65	801F2B44	801F2BBC	code unique
+include/native_cpu_calls.inc	66	801F3194	801F320C	code unique
+include/native_cpu_calls.inc	67	801F2FB0	801F3028	code unique
+include/native_cpu_calls.inc	68	801F3ADC	801F3B54	code unique
+include/native_cpu_calls.inc	69	801F3AFC	801F3B74	code unique
+include/native_cpu_calls.inc	70	801F3C30	801F3CA8	code unique
+include/native_cpu_calls.inc	71	801F3C70	801F3CE8	code unique
+include/native_cpu_calls.inc	72	801F3CB0	801F3D28	code sequence
+include/native_cpu_calls.inc	73	801F3D08	801F3D80	code sequence
+include/native_cpu_calls.inc	74	801F3DC0	801F3E38	code unique
+include/native_cpu_calls.inc	75	801F3E24	801F3E9C	code unique
+include/native_cpu_calls.inc	76	801F3E80	801F3EF8	code unique
+include/native_cpu_calls.inc	77	801F3ED0	801F3F48	code unique
+include/native_cpu_calls.inc	78	801F3F20	801F3F98	code unique
+include/native_cpu_calls.inc	79	801F3F5C	801F3FD4	code unique
+include/native_cpu_calls.inc	80	801F409C	801F4114	code unique
+include/native_cpu_calls.inc	81	801F41F8	801F4270	code unique
+include/native_cpu_calls.inc	82	801F46CC	801F4744	code unique
+include/native_cpu_calls.inc	83	801F51DC	801F5254	code unique
+include/native_cpu_calls.inc	84	801F52E4	801F535C	code unique
+include/native_cpu_calls.inc	96	80248E40	80248EB8	code unique
+include/native_cpu_calls.inc	99	802493A0	80249418	code unique
+include/runtime_config.h	0	(USA, RSBE01)	(Japan, RSBJ01)	identity x1
+include/runtime_config.h	0	const std::string value = Get().language.value_or("en");	const std::string value = Get().language.value_or("jp");  // the Japanese disc has only Japanese text	identity x1
+include/system_bridge.h	70	8000403C	8000403C	code unique
+src/dynamic_aspect.cpp	27	802360A8	80236120	code unique
+src/dynamic_aspect.cpp	28	802360B4	8023612C	code unique
+src/dynamic_aspect.cpp	29	80386F14	80386F8C	code unique
+src/dynamic_aspect.cpp	31	80386F20	80386F98	code unique
+src/dynamic_aspect.cpp	32	80386F24	80386F9C	code unique
+src/dynamic_aspect.cpp	34	8021DC20	8021DC98	code unique
+src/dynamic_aspect.cpp	36	804FB66C	804FB1EC	data referenced lbl_804FB4A0
+src/dynamic_aspect.cpp	37	809C1830	809C1370	module-code sora_melee fn_27_2B6CA0
+src/dynamic_aspect.cpp	38	80386000	80386078	code unique
+src/dynamic_aspect.cpp	42	80228FF0	80229068	code unique
+src/dynamic_aspect.cpp	45	809C183C	809C137C	module-code sora_melee fn_27_2B6CA0
+src/dynamic_aspect.cpp	48	802360CC	80236144	code unique
+src/dynamic_aspect.cpp	49	808B4C20	808B4760	module-code sora_melee fn_27_1AA1F4
+src/dynamic_aspect.cpp	119	809C1830	809C1370	module-code sora_melee fn_27_2B6CA0
+src/dynamic_aspect.cpp	119	809C183C	809C137C	module-code sora_melee fn_27_2B6CA0
+src/fiber_manager.cpp	52	804DD870	804DD3F0	data referenced
+src/fiber_manager.cpp	53	805A06F8	805A0280	data referenced
+src/fiber_manager.cpp	54	805A06F4	805A027C	data referenced
+src/fiber_manager.cpp	55	805A06F0	805A0278	data referenced
+src/fiber_manager.cpp	492	805A06F8	805A0280	data referenced
+src/fiber_manager.cpp	493	805A06F0	805A0278	data referenced
+src/fiber_manager.cpp	493	805A0828	805A03B0	data referenced
+src/fiber_manager.cpp	494	805A082C	805A03B4	data referenced lbl_805A0828
+src/fiber_manager.cpp	632	802BA860	802BA8D8	code unique
+src/game_folder.cpp	0	constexpr int kRevision = 1;	constexpr int kRevision = 0;  // the Japanese disc's boot.bin	identity x1
+src/game_folder.cpp	0	This port runs only revision 0 (Dolphin shows it under Properties > Info).	This port runs only the Japanese disc, revision 0 (Dolphin shows it under Properties > Info).	identity x1
+src/game_folder.cpp	0	(USA, RSBE01, revision 1)	(Japan, RSBJ01, revision 0)	identity x1
+src/game_folder.cpp	0	RSBE01	RSBJ01	identity x1
+src/guest_profiler.cpp	54	80004000	80004000	code unique
+src/guest_profiler.cpp	54	804064E0	80406040	data referenced
+src/hle/audio/audio.cpp	26	805A09E0	805A0560	data referenced
+src/hle/audio/audio.cpp	27	805A09E4	805A0564	data referenced
+src/hle/audio/audio.cpp	28	805A0A14	805A0594	data referenced
+src/hle/audio/audio.cpp	29	805A0A18	805A0598	data referenced
+src/hle/audio/audio.cpp	177	801D71F4	801D726C	override code unique
+src/hle/audio/audio.cpp	189	801D7414	801D748C	override code unique
+src/hle/audio/audio.cpp	204	801D75DC	801D7654	override code unique
+src/hle/audio/audio.cpp	239	801FECE8	801FED60	override code unique
+src/hle/audio/audio.cpp	249	8019F1E0	8019F258	code unique
+src/hle/audio/audio.cpp	261	80209864	802098DC	override code unique
+src/hle/audio/audio.cpp	267	80209924	8020999C	code sequence
+src/hle/audio/audio.cpp	273	8020992C	802099A4	code unique
+src/hle/audio/audio.cpp	282	8020A0C0	8020A138	override code unique
+src/hle/audio/audio.cpp	291	80200D90	80200E08	override code unique
+src/hle/audio/audio.cpp	304	801FEC04	801FEC7C	override code unique
+src/hle/audio/audio.cpp	308	8056DE08	8056D988	data bracketed lbl_805658F0
+src/hle/audio/audio.cpp	322	801FEBC0	801FEC38	override code sequence
+src/hle/audio/audio.cpp	341	801FEC80	801FECF8	override code sequence
+src/hle/audio/audio.cpp	348	801FECA8	801FED20	override code sequence
+src/hle/audio/audio.cpp	357	8019F1B0	8019F228	override code unique
+src/hle/audio/audio.cpp	368	8019F1D0	8019F248	override code unique
+src/hle/audio/audio.cpp	379	8012409C	80124114	code unique
+src/hle/audio/audio.cpp	381	8012409C	80124114	override code unique
+src/hle/audio/audio.cpp	390	80209850	802098C8	override code sequence
+src/hle/audio/audio.cpp	398	800A35E0	800A3578	code unique
+src/hle/audio/audio.cpp	400	800A35E0	800A3578	override code unique
+src/hle/audio/audio.cpp	410	8020981C	80209894	override code sequence
+src/hle/audio/audio.cpp	416	8020982C	802098A4	code sequence
+src/hle/audio/audio.cpp	422	8020983C	802098B4	code sequence
+src/hle/audio/audio.cpp	428	802099DC	80209A54	override code unique
+src/hle/audio/ax_effects.cpp	13	func_801A6D30	func_801A6DA8	symbol code unique
+src/hle/audio/ax_effects.cpp	27	805A3920	805A3480	data referenced
+src/hle/audio/ax_effects.cpp	28	805A3924	805A3484	data referenced
+src/hle/audio/ax_effects.cpp	349	func_801A6D30	func_801A6DA8	symbol code unique
+src/hle/audio/ax_effects.cpp	367	func_801A6D30	func_801A6DA8	symbol code unique
+src/hle/audio/ax_effects.cpp	376	801A6D30	801A6DA8	code unique
+src/hle/audio/ax_internal.h	34	804E8940	804E84C0	data referenced
+src/hle/audio/ax_internal.h	35	805A0B78	805A06F8	data referenced
+src/hle/audio/ax_internal.h	36	805A0B80	805A0700	data referenced
+src/hle/audio/ax_internal.h	37	805A0B84	805A0704	data referenced
+src/hle/audio/ax_internal.h	38	805A0B8C	805A070C	data referenced
+src/hle/audio/ax_internal.h	39	805A0B90	805A0710	data referenced
+src/hle/audio/ax_internal.h	40	805A0B94	805A0714	data referenced
+src/hle/audio/ax_internal.h	41	80479140	80478E80	data referenced
+src/hle/audio/ax_internal.h	42	804E89A0	804E8520	data referenced
+src/hle/audio/ax_internal.h	45	80200D1C	80200D94	code sequence
+src/hle/audio/ax_internal.h	46	80200D28	80200DA0	code unique
+src/hle/audio/ax_internal.h	47	80200D7C	80200DF4	code sequence
+src/hle/audio/ax_internal.h	48	80200D8C	80200E04	code sequence
+src/hle/audio/ax_memory.cpp	71	805A0B88	805A0708	data referenced
+src/hle/audio/ax_mix.cpp	1472	r13-5904=8059EB1C	r13-5904=8059E69C	sda data referenced
+src/hle/audio/ax_mix.cpp	1473	r13-5908=8059EB18	r13-5908=8059E698	sda data referenced
+src/hle/audio/ax_mix.cpp	1474	r13-5906=8059EB1A	r13-5906=8059E69A	sda data referenced
+src/hle/audio/ax_mix.cpp	1480	r13-3960=805A0AC0	r13-3960=805A0640	sda data referenced
+src/hle/audio/ax_mix.cpp	1481	r13-3964=805A0ABC	r13-3964=805A063C	sda data referenced
+src/hle/brawl_modules.cpp	26	func_801DD964	func_801DD9DC	symbol code unique
+src/hle/brawl_modules.cpp	27	func_801DD6A4	func_801DD71C	symbol code unique
+src/hle/brawl_modules.cpp	263	func_801DD6A4	func_801DD71C	symbol code unique
+src/hle/brawl_modules.cpp	269	func_801DD964	func_801DD9DC	symbol code unique
+src/hle/brawl_modules.cpp	307	801DDC44	801DDCBC	code sequence
+src/hle/brawl_modules.cpp	307	801DDC4C	801DDCC4	code unique
+src/hle/brawl_modules.cpp	310	801DDC44	801DDCBC	override code sequence
+src/hle/brawl_modules.cpp	320	801DDC4C	801DDCC4	override code unique
+src/hle/c_stdio.cpp	14	802E149C	802E1514	code unique
+src/hle/c_stdio.cpp	48	803FC8AC	803FC420	override code unique
+src/hle/c_stdio.cpp	268	801EA8F0	801EA968	code unique
+src/hle/egg_decomp.cpp	73	80218C2C	80218CA4	code unique
+src/hle/egg_decomp.cpp	75	80218C2C	80218CA4	override code unique
+src/hle/esp.cpp	51	801D6230	801D62A8	code unique
+src/hle/esp.cpp	59	801D6230	801D62A8	override code unique
+src/hle/esp.cpp	63	801D6290	801D6308	code unique
+src/hle/esp.cpp	71	801D6290	801D6308	override code unique
+src/hle/esp.cpp	75	801D66E0	801D6758	code unique
+src/hle/esp.cpp	93	801D66E0	801D6758	override code unique
+src/hle/esp.cpp	97	801D6640	801D66B8	code unique
+src/hle/esp.cpp	131	80299BF8	80299C70	override code unique
+src/hle/esp.cpp	0	0x52534245	0x5253424A	identity x1
+src/hle/gecko.cpp	43	805B5100	805B4C60	arena +-0x4a0 after main.dol bss (check)
+src/hle/gecko.cpp	43	805B5150	805B4CB0	arena +-0x4a0 after main.dol bss (check)
+src/hle/gecko.cpp	45	801E9A2C	801E9AA4	code unique
+src/hle/gecko.cpp	46	80200984	802009FC	code unique
+src/hle/gecko.cpp	339	80004000	80004000	code unique
+src/hle/gecko.cpp	339	800064E0	800064E0	data after _bss_init_info (check)
+src/hle/gecko.cpp	340	8000C860	8000C860	code sequence
+src/hle/gecko.cpp	340	804064E0	80406040	data referenced
+src/hle/gecko.cpp	0	RSBE01	RSBJ01	identity x13
+src/hle/gecko.h	0	RSBE01	RSBJ01	identity x2
+src/hle/gx/gx_copy.cpp	104	801F1524	801F159C	override code sequence
+src/hle/gx/gx_copy.cpp	107	801F15A4	801F161C	override code unique
+src/hle/gx/gx_copy.cpp	118	801F1564	801F15DC	override code sequence
+src/hle/gx/gx_copy.cpp	125	801F15C8	801F1640	override code unique
+src/hle/gx/gx_copy.cpp	133	801F1B2C	801F1BA4	override code unique
+src/hle/gx/gx_copy.cpp	136	801F1D10	801F1D88	override code sequence
+src/hle/gx/gx_copy.cpp	162	801F1D24	801F1D9C	override code unique
+src/hle/gx/gx_copy.cpp	238	801F1E60	801F1ED8	override code unique
+src/hle/gx/gx_copy.cpp	240	8028DC64	8028DCDC	code unique
+src/hle/gx/gx_copy.cpp	240	8028DA34	8028DAAC	code unique
+src/hle/gx/gx_copy.cpp	244	801F19E8	801F1A60	override code unique
+src/hle/gx/gx_copy.cpp	250	801F17B8	801F1830	override code unique
+src/hle/gx/gx_dl.cpp	70	80808081		skip not an address
+src/hle/gx/gx_dl.cpp	1566	801F4EAC	801F4F24	override code unique
+src/hle/gx/gx_dl.cpp	1584	80248E40	80248EB8	code unique
+src/hle/gx/gx_dl.cpp	1604	802493A0	80249418	code unique
+src/hle/gx/gx_dynamic_aspect.h	8	802A3EE8	802A3F60	code unique
+src/hle/gx/gx_dynamic_aspect.h	9	80386F20	80386F98	code unique
+src/hle/gx/gx_egg.cpp	26	803F4F4C	803F4AC0	code unique
+src/hle/gx/gx_egg.cpp	27	803F4F8C	803F4B00	code unique
+src/hle/gx/gx_egg.cpp	49	803F4FCC	803F4B40	code unique
+src/hle/gx/gx_egg.cpp	49	80388B80	80388BF8	code unique
+src/hle/gx/gx_egg.cpp	55	803F4FEC	803F4B60	code unique
+src/hle/gx/gx_egg.cpp	55	80388BA0	80388C18	code unique
+src/hle/gx/gx_egg.cpp	62	80388BE0	80388C58	code unique
+src/hle/gx/gx_egg.cpp	62	80388BC0	80388C38	code unique
+src/hle/gx/gx_egg.cpp	64	80388BE0	80388C58	code unique
+src/hle/gx/gx_egg.cpp	74	8021B344	8021B3BC	code unique
+src/hle/gx/gx_egg.cpp	76	8021B344	8021B3BC	override code unique
+src/hle/gx/gx_egg.cpp	81	8021B688	8021B700	code unique
+src/hle/gx/gx_egg.cpp	83	8021B688	8021B700	override code unique
+src/hle/gx/gx_egg.cpp	126	8022E2BC	8022E334	code sequence
+src/hle/gx/gx_egg.cpp	128	8022E2BC	8022E334	override code sequence
+src/hle/gx/gx_egg.cpp	138	8024D9E0	8024DA58	code unique
+src/hle/gx/gx_egg.cpp	139	8024D090	8024D108	code unique
+src/hle/gx/gx_egg.cpp	140	801C51B0	801C5228	code unique
+src/hle/gx/gx_egg.cpp	142	802BB820	802BB898	code unique
+src/hle/gx/gx_egg.cpp	144	8024D9E0	8024DA58	override code unique
+src/hle/gx/gx_indirect.cpp	9	801F3ADC	801F3B54	override code unique
+src/hle/gx/gx_indirect.cpp	14	801F3A10	801F3A88	override code unique
+src/hle/gx/gx_indirect.cpp	19	801F390C	801F3984	override code unique
+src/hle/gx/gx_indirect.cpp	25	801F37B8	801F3830	override code unique
+src/hle/gx/gx_indirect.cpp	32	801F3AFC	801F3B74	override code unique
+src/hle/gx/gx_indirect.cpp	39	8028FDAC	8028FE24	override code unique
+src/hle/gx/gx_indirect.cpp	47	801F3750	801F37C8	override code unique
+src/hle/gx/gx_init.cpp	32	804DE6E0	804DE260	data referenced
+src/hle/gx/gx_init.cpp	33	804DE760	804DE2E0	data bracketed lbl_804DE760
+src/hle/gx/gx_init.cpp	91	801ED908	801ED980	override code unique
+src/hle/gx/gx_init.cpp	100	801EEA04	801EEA7C	override code unique
+src/hle/gx/gx_init.cpp	103	801EEBE4	801EEC5C	override code unique
+src/hle/gx/gx_init.cpp	106	801EEE74	801EEEEC	override code unique
+src/hle/gx/gx_init.cpp	109	801EEF7C	801EEFF4	override code unique
+src/hle/gx/gx_init.cpp	115	801EE720	801EE798	code unique
+src/hle/gx/gx_init.cpp	116	805A08AC	805A0434	data referenced
+src/hle/gx/gx_init.cpp	117	805A08A8	805A0430	data referenced
+src/hle/gx/gx_init.cpp	118	804DED84	804DE904	data referenced
+src/hle/gx/gx_init.cpp	119	804DED60	804DE8E0	data referenced
+src/hle/gx/gx_init.cpp	121	805A0898	805A0420	data referenced
+src/hle/gx/gx_init.cpp	122	805A0899	805A0421	data referenced
+src/hle/gx/gx_init.cpp	149	801F0C64	801F0CDC	code unique
+src/hle/gx/gx_init.cpp	150	801F0D2C	801F0DA4	code unique
+src/hle/gx/gx_init.cpp	151	805A08B8	805A0440	data referenced
+src/hle/gx/gx_init.cpp	167	801F0DAC	801F0E24	override code unique
+src/hle/gx/gx_init.cpp	221	804DF0B0	804DEC30	data referenced
+src/hle/gx/gx_init.cpp	222	804DF034	804DEBB4	data referenced
+src/hle/gx/gx_init.cpp	223	804DF04C	804DEBCC	data referenced
+src/hle/gx/gx_init.cpp	224	804DF030	804DEBB0	data referenced
+src/hle/gx/gx_init.cpp	225	804DF038	804DEBB8	data referenced
+src/hle/gx/gx_init.cpp	226	804DF044	804DEBC4	data referenced
+src/hle/gx/gx_init.cpp	227	804DF048	804DEBC8	data referenced
+src/hle/gx/gx_init.cpp	246	804DF6B0	804DF230	data referenced
+src/hle/gx/gx_init.cpp	247	804DF030	804DEBB0	data referenced
+src/hle/gx/gx_init.cpp	250	801F4D50	801F4DC8	override code unique
+src/hle/gx/gx_init.cpp	288	804DF030	804DEBB0	data referenced
+src/hle/gx/gx_init.cpp	290	804DF6B0	804DF230	data referenced
+src/hle/gx/gx_init.cpp	298	804DF0B0	804DEC30	data referenced
+src/hle/gx/gx_init.cpp	324	801F4E00	801F4E78	override code unique
+src/hle/gx/gx_init.cpp	331	801F0530	801F05A8	override code unique
+src/hle/gx/gx_internal.h	57	805A37B0	805A3310	data referenced
+src/hle/gx/gx_internal.h	58	804DF030	804DEBB0	data referenced
+src/hle/gx/gx_internal.h	59	804DF044	804DEBC4	data referenced
+src/hle/gx/gx_internal.h	60	804DF04C	804DEBCC	data referenced
+src/hle/gx/gx_internal.h	63	805A08C0	805A0448	data referenced
+src/hle/gx/gx_lighting.cpp	75	801F2418	801F2490	override code unique
+src/hle/gx/gx_lighting.cpp	86	801F2494	801F250C	override code sequence
+src/hle/gx/gx_lighting.cpp	93	801F256C	801F25E4	override code sequence
+src/hle/gx/gx_lighting.cpp	96	801F2644	801F26BC	override code unique
+src/hle/gx/gx_lighting.cpp	101	801F2668	801F26E0	override code unique
+src/hle/gx/gx_nsmbw.cpp	27	8028D6A4	8028D71C	override code unique
+src/hle/gx/gx_nsmbw.cpp	36	801F0724	801F079C	override code unique
+src/hle/gx/gx_nsmbw.cpp	49	801F0B14	801F0B8C	override code sequence
+src/hle/gx/gx_nsmbw.cpp	51	801F0B24	801F0B9C	override code sequence
+src/hle/gx/gx_nsmbw.cpp	53	801F0B3C	801F0BB4	override code sequence
+src/hle/gx/gx_nsmbw.cpp	55	801F0B50	801F0BC8	override code unique
+src/hle/gx/gx_nsmbw.cpp	58	801F0BAC	801F0C24	override code sequence
+src/hle/gx/gx_nsmbw.cpp	60	801F0BC0	801F0C38	override code sequence
+src/hle/gx/gx_nsmbw.cpp	62	801F0BD8	801F0C50	override code sequence
+src/hle/gx/gx_nsmbw.cpp	65	801F0BEC	801F0C64	override code sequence
+src/hle/gx/gx_pixel.cpp	15	801F46CC	801F4744	override code unique
+src/hle/gx/gx_pixel.cpp	20	801F471C	801F4794	override code unique
+src/hle/gx/gx_pixel.cpp	25	801F4748	801F47C0	override code unique
+src/hle/gx/gx_pixel.cpp	35	801F4774	801F47EC	override code unique
+src/hle/gx/gx_pixel.cpp	40	801F47A8	801F4820	override code unique
+src/hle/gx/gx_pixel.cpp	49	801F47D8	801F4850	override code unique
+src/hle/gx/gx_pixel.cpp	54	801F4880	801F48F8	override code unique
+src/hle/gx/gx_pixel.cpp	59	801F48AC	801F4924	override code unique
+src/hle/gx/gx_pixel.cpp	68	801F421C	801F4294	override code unique
+src/hle/gx/gx_pixel.cpp	77	801F3FD8	801F4050	override code unique
+src/hle/gx/gx_pixel.cpp	80	801F4010	801F4088	override code unique
+src/hle/gx/gx_pixel.cpp	91	801F136C	801F13E4	override code unique
+src/hle/gx/gx_pixel.cpp	94	801F1394	801F140C	override code unique
+src/hle/gx/gx_pixel.cpp	97	801F55EC	801F5664	override code unique
+src/hle/gx/gx_stubs.cpp	30	8028CC90	8028CD08	code unique
+src/hle/gx/gx_stubs.cpp	35	805A0878	805A0400	data referenced
+src/hle/gx/gx_stubs.cpp	42	801F08D8	801F0950	override code unique
+src/hle/gx/gx_stubs.cpp	44	8016E9FC	8016EA74	code unique
+src/hle/gx/gx_stubs.cpp	46	8016E9FC	8016EA74	override code unique
+src/hle/gx/gx_stubs.cpp	54	805A08C4	805A044C	data referenced
+src/hle/gx/gx_stubs.cpp	55	805A08B8	805A0440	data referenced
+src/hle/gx/gx_stubs.cpp	75	801F0D2C	801F0DA4	override code unique
+src/hle/gx/gx_stubs.cpp	81	801F0A30	801F0AA8	override code unique
+src/hle/gx/gx_stubs.cpp	87	801F0AF0	801F0B68	override code sequence
+src/hle/gx/gx_stubs.cpp	94	801ED7D8	801ED850	override code unique
+src/hle/gx/gx_stubs.cpp	104	801F3294	801F330C	override code unique
+src/hle/gx/gx_stubs.cpp	110	801F33FC	801F3474	override code unique
+src/hle/gx/gx_stubs.cpp	116	801F3B78	801F3BF0	override code sequence
+src/hle/gx/gx_stubs.cpp	132	801F16E4	801F175C	override code unique
+src/hle/gx/gx_stubs.cpp	145	801F1704	801F177C	override code unique
+src/hle/gx/gx_stubs.cpp	155	801F1FB8	801F2030	override code unique
+src/hle/gx/gx_stubs.cpp	157	8028E26C	8028E2E4	code unique
+src/hle/gx/gx_stubs.cpp	178	8028E26C	8028E2E4	override code unique
+src/hle/gx/gx_stubs.cpp	190	801F0E10	801F0E88	override code unique
+src/hle/gx/gx_stubs.cpp	195	801F058C	801F0604	override code unique
+src/hle/gx/gx_stubs.cpp	0	RSBE01	RSBJ01	identity x1
+src/hle/gx/gx_tev.cpp	36	801F41F8	801F4270	override code unique
+src/hle/gx/gx_tev.cpp	42	801F3B9C	801F3C14	override code unique
+src/hle/gx/gx_tev.cpp	49	801F409C	801F4114	override code unique
+src/hle/gx/gx_tev.cpp	59	801F3C30	801F3CA8	override code unique
+src/hle/gx/gx_tev.cpp	65	801F3C70	801F3CE8	override code unique
+src/hle/gx/gx_tev.cpp	75	801F3CB0	801F3D28	override code sequence
+src/hle/gx/gx_tev.cpp	81	801F3D08	801F3D80	override code sequence
+src/hle/gx/gx_tev.cpp	91	8004ED88	8004ED64	code unique
+src/hle/gx/gx_tev.cpp	93	805A161C	805A119C	data after lbl_805A1618 (check)
+src/hle/gx/gx_tev.cpp	93	805A1608	805A1188	data referenced
+src/hle/gx/gx_tev.cpp	98	8056F21C	8056ED9C	data bracketed lbl_805658F0
+src/hle/gx/gx_tev.cpp	98	8056F220	8056EDA0	data bracketed lbl_805658F0
+src/hle/gx/gx_tev.cpp	104	801F3D60	801F3DD8	override code unique
+src/hle/gx/gx_tev.cpp	113	801F3DC0	801F3E38	override code unique
+src/hle/gx/gx_tev.cpp	120	801F3E24	801F3E9C	override code unique
+src/hle/gx/gx_tev.cpp	123	801F3E80	801F3EF8	override code unique
+src/hle/gx/gx_tev.cpp	126	801F3ED0	801F3F48	override code unique
+src/hle/gx/gx_tev.cpp	136	801F3F5C	801F3FD4	override code unique
+src/hle/gx/gx_tev.cpp	142	801F3F20	801F3F98	override code unique
+src/hle/gx/gx_texture.cpp	263	801F28F0	801F2968	override code unique
+src/hle/gx/gx_texture.cpp	267	80170938	801709B0	code unique
+src/hle/gx/gx_texture.cpp	269	80170938	801709B0	override code unique
+src/hle/gx/gx_texture.cpp	276	8017093C	801709B4	code unique
+src/hle/gx/gx_texture.cpp	278	8017093C	801709B4	override code unique
+src/hle/gx/gx_texture.cpp	285	80170950	801709C8	code unique
+src/hle/gx/gx_texture.cpp	287	80170950	801709C8	override code unique
+src/hle/gx/gx_texture.cpp	294	80170964	801709DC	code unique
+src/hle/gx/gx_texture.cpp	296	80170964	801709DC	override code unique
+src/hle/gx/gx_texture.cpp	303	80170978	801709F0	code unique
+src/hle/gx/gx_texture.cpp	305	80170978	801709F0	override code unique
+src/hle/gx/gx_texture.cpp	312	8017098C	80170A04	code unique
+src/hle/gx/gx_texture.cpp	314	8017098C	80170A04	override code unique
+src/hle/gx/gx_texture.cpp	321	801709A0	80170A18	code unique
+src/hle/gx/gx_texture.cpp	323	801709A0	80170A18	override code unique
+src/hle/gx/gx_texture.cpp	352	801F2AFC	801F2B74	override code unique
+src/hle/gx/gx_texture.cpp	362	801F2B44	801F2BBC	override code unique
+src/hle/gx/gx_texture.cpp	378	801F2C58	801F2CD0	override code sequence
+src/hle/gx/gx_texture.cpp	392	801F2C6C	801F2CE4	override code sequence
+src/hle/gx/gx_texture.cpp	420	801F2C74	801F2CEC	override code unique
+src/hle/gx/gx_texture.cpp	451	80170B94	80170C0C	code unique
+src/hle/gx/gx_texture.cpp	453	80170B94	80170C0C	override code unique
+src/hle/gx/gx_texture.cpp	474	801C7160	801C71D8	override code unique
+src/hle/gx/gx_texture.cpp	734	801F2FB0	801F3028	override code unique
+src/hle/gx/gx_texture.cpp	739	801F2E4C	801F2EC4	override code unique
+src/hle/gx/gx_texture.cpp	759	801C7180	801C71F8	override code unique
+src/hle/gx/gx_texture.cpp	778	801C7260	801C72D8	override code unique
+src/hle/gx/gx_texture.cpp	800	801F3004	801F307C	override code unique
+src/hle/gx/gx_texture.cpp	828	801F302C	801F30A4	override code unique
+src/hle/gx/gx_texture.cpp	840	801F3194	801F320C	override code unique
+src/hle/gx/gx_texture.cpp	845	801C7750	801C77C8	override code unique
+src/hle/gx/gx_texture.cpp	852	801C77D0	801C7848	override code unique
+src/hle/gx/gx_texture.cpp	856	8028ED7C	8028EDF4	code unique
+src/hle/gx/gx_texture.cpp	874	801F2C48	801F2CC0	override code sequence
+src/hle/gx/gx_transform.cpp	52	801F5448	801F54C0	override code unique
+src/hle/gx/gx_transform.cpp	58	801F5484	801F54FC	override code sequence
+src/hle/gx/gx_transform.cpp	61	802418D0	80241948	code unique
+src/hle/gx/gx_transform.cpp	62	802D1900	802D1978	code unique
+src/hle/gx/gx_transform.cpp	73	801F54B0	801F5528	override code sequence
+src/hle/gx/gx_transform.cpp	88	80173400	80173478	code unique
+src/hle/gx/gx_transform.cpp	90	80173400	80173478	override code unique
+src/hle/gx/gx_transform.cpp	102	801F55B0	801F5628	override code unique
+src/hle/gx/gx_transform.cpp	122	801F5500	801F5578	override code unique
+src/hle/gx/gx_transform.cpp	176	801F50EC	801F5164	override code unique
+src/hle/gx/gx_transform.cpp	228	801F5150	801F51C8	override code unique
+src/hle/gx/gx_transform.cpp	236	801F519C	801F5214	override code unique
+src/hle/gx/gx_transform.cpp	305	801F51DC	801F5254	override code unique
+src/hle/gx/gx_transform.cpp	315	801C9990	801C9A08	override code unique
+src/hle/gx/gx_transform.cpp	323	801F5258	801F52D0	override code unique
+src/hle/gx/gx_transform.cpp	343	801C9A20	801C9A98	override code unique
+src/hle/gx/gx_transform.cpp	352	801F5304	801F537C	override code unique
+src/hle/gx/gx_transform.cpp	355	801F52E4	801F535C	override code unique
+src/hle/gx/gx_vertex.cpp	49	801EFB10	801EFB88	override code unique
+src/hle/gx/gx_vertex.cpp	63	801EF280	801EF2F8	override code unique
+src/hle/gx/gx_vertex.cpp	74	801EF4E4	801EF55C	override code unique
+src/hle/gx/gx_vertex.cpp	86	801EF8CC	801EF944	override code unique
+src/hle/gx/gx_vertex.cpp	104	801EFA80	801EFAF8	override code unique
+src/hle/gx/gx_vertex.cpp	130	801EFB44	801EFBBC	override code unique
+src/hle/gx/gx_vertex.cpp	141	801EFCE4	801EFD5C	override code unique
+src/hle/gx/gx_vertex.cpp	159	801EFF28	801EFFA0	override code unique
+src/hle/gx/gx_vertex.cpp	180	801F0194	801F020C	override code unique
+src/hle/gx/gx_vertex.cpp	191	801F0208	801F0280	override code unique
+src/hle/gx/gx_vertex.cpp	196	8016E1C4	8016E23C	code unique
+src/hle/gx/gx_vertex.cpp	197	801F0208	801F0280	override code unique
+src/hle/gx/gx_vertex.cpp	208	801F0480	801F04F8	override code unique
+src/hle/gx/gx_vertex.cpp	224	801F0258	801F02D0	override code unique
+src/hle/gx/gx_vertex.cpp	231	801F1330	801F13A8	override code unique
+src/hle/gx/gx_vertex.cpp	236	801F12AC	801F1324	override code unique
+src/hle/gx/gx_vertex.cpp	241	801F12FC	801F1374	override code unique
+src/hle/gx/gx_vertex.cpp	343	801F1088	801F1100	override code unique
+src/hle/gx/gx_vertex.cpp	347	80235770	802357E8	override code unique
+src/hle/gx/gx_vertex.cpp	352	80239E50	80239EC8	override code unique
+src/hle/gx/gx_vertex.cpp	458	801F4980	801F49F8	override code unique
+src/hle/input/kpad.cpp	68	801EB030	801EB0A8	code unique
+src/hle/input/kpad.cpp	328	80227728	802277A0	override code unique
+src/hle/input/kpad.cpp	332	802BCE0C	802BCE84	code unique
+src/hle/input/kpad.cpp	349	801ED3B0	801ED428	override code unique
+src/hle/input/kpad.cpp	378	8019812C	801981A4	code unique
+src/hle/input/kpad.cpp	380	8019812C	801981A4	override code unique
+src/hle/input/pad.cpp	162	80215E68	80215EE0	override code unique
+src/hle/input/pad.cpp	263	80215FC4	8021603C	override code unique
+src/hle/input/pad.cpp	270	80215C54	80215CCC	override code unique
+src/hle/input/pad.cpp	277	80215D5C	80215DD4	override code unique
+src/hle/input/pad.cpp	287	802162A4	8021631C	override code unique
+src/hle/input/pad.cpp	0	RSBE01	RSBJ01	identity x5
+src/hle/input/wpad.cpp	65	802CCBB4	802CCC2C	override code unique
+src/hle/input/wpad.cpp	72	8021C930	8021C9A8	override code sequence
+src/hle/input/wpad.cpp	81	8021C938	8021C9B0	override code sequence
+src/hle/input/wpad.cpp	92	801BF3B4	801BF42C	code sequence
+src/hle/input/wpad.cpp	94	801BF3B4	801BF42C	override code sequence
+src/hle/input/wpad.cpp	103	80218D00	80218D78	code unique
+src/hle/input/wpad.cpp	103	80218AF0	80218B68	code unique
+src/hle/input/wpad.cpp	105	80218D00	80218D78	override code unique
+src/hle/input/wpad.cpp	111	8022BB2C	8022BBA4	override code unique
+src/hle/input/wpad.cpp	120	8021A1E8	8021A260	override code unique
+src/hle/input/wpad.cpp	127	8021A230	8021A2A8	override code unique
+src/hle/input/wpad.cpp	174	8021A024	8021A09C	override code unique
+src/hle/input/wpad.cpp	181	8021A558	8021A5D0	override code unique
+src/hle/input/wpad.cpp	192	8021A338	8021A3B0	override code unique
+src/hle/input/wpad.cpp	205	801E1630	801E16A8	override code unique
+src/hle/input/wpad.cpp	219	801BF634	801BF6AC	code unique
+src/hle/input/wpad.cpp	221	801BF634	801BF6AC	override code unique
+src/hle/input/wpad.cpp	226	801BF638	801BF6B0	code unique
+src/hle/input/wpad.cpp	228	801BF638	801BF6B0	override code unique
+src/hle/input/wpad.cpp	246	80218D58	80218DD0	override code sequence
+src/hle/input/wpad.cpp	255	801BF640	801BF6B8	code unique
+src/hle/input/wpad.cpp	257	801BF640	801BF6B8	override code unique
+src/hle/ios.cpp	90	80225500	80225578	code unique
+src/hle/ios.cpp	119	80212C08	80212C80	override code unique
+src/hle/ios.cpp	121	80224B50	80224BC8	code unique
+src/hle/ios.cpp	137	80212290	80212308	override code unique
+src/hle/ios.cpp	139	80224DA0	80224E18	code unique
+src/hle/ios.cpp	152	802124C8	80212540	override code unique
+src/hle/ios.cpp	154	80224F10	80224F88	code unique
+src/hle/ios.cpp	158	80212630	802126A8	override code unique
+src/hle/ios.cpp	160	80225120	80225198	code unique
+src/hle/ios.cpp	164	80212838	802128B0	override code unique
+src/hle/ios.cpp	166	80225330	802253A8	code sequence
+src/hle/ios.cpp	176	80212A40	80212AB8	override code unique
+src/hle/ios.cpp	178	802258B0	80225928	code unique
+src/hle/ios.cpp	206	80212FAC	80213024	override code unique
+src/hle/net/network_config.cpp	9	func_801D8D30	func_801D8DA8	symbol code unique
+src/hle/net/network_config.cpp	12	func_801D9E94	func_801D9F0C	symbol code unique
+src/hle/net/network_config.cpp	20	func_801D9E94	func_801D9F0C	symbol code unique
+src/hle/net/network_config.cpp	57	func_801D8D30	func_801D8DA8	symbol code unique
+src/hle/net/network_config.cpp	75	801D8D30	801D8DA8	code unique
+src/hle/net/network_config.cpp	77	801D8D30	801D8DA8	code unique
+src/hle/net/network_deferred.cpp	630	804DD558	804DD0D8	data referenced
+src/hle/os/os_alarm.cpp	18	func_801E1BB8	func_801E1C30	symbol code unique
+src/hle/os/os_alarm.cpp	19	func_801D66A8	func_801D6720	symbol code unique
+src/hle/os/os_alarm.cpp	213	func_801D66A8	func_801D6720	symbol code unique
+src/hle/os/os_alarm.cpp	374	801D68F8	801D6970	override code unique
+src/hle/os/os_alarm.cpp	453	func_801E1BB8	func_801E1C30	symbol code unique
+src/hle/os/os_alarm.cpp	461	func_801D66A8	func_801D6720	symbol code unique
+src/hle/os/os_alarm.cpp	467	801D6968	801D69E0	override code unique
+src/hle/os/os_alarm.cpp	472	800BD860	800BD7F8	code unique
+src/hle/os/os_alarm.cpp	473	80386298	80386310	code unique
+src/hle/os/os_alarm.cpp	491	80386298	80386310	code unique
+src/hle/os/os_alarm.cpp	507	800BD860	800BD7F8	code unique
+src/hle/os/os_alarm.cpp	509	800BD860	800BD7F8	override code unique
+src/hle/os/os_cache.cpp	109	8002F554	8002F554	code unique
+src/hle/os/os_cache.cpp	148	801D76BC	801D7734	override code unique
+src/hle/os/os_cache.cpp	149	801D76E8	801D7760	override code unique
+src/hle/os/os_cache.cpp	150	801D7718	801D7790	override code unique
+src/hle/os/os_cache.cpp	151	801D7748	801D77C0	override code unique
+src/hle/os/os_cache.cpp	154	801AC500	801AC578	override code unique
+src/hle/os/os_cache.cpp	279	801D76A8	801D7720	override code sequence
+src/hle/os/os_cache.cpp	280	801D77A0	801D7818	override code unique
+src/hle/os/os_cache.cpp	281	801D77CC	801D7844	override code unique
+src/hle/os/os_cache.cpp	282	801D7800	801D7878	override code sequence
+src/hle/os/os_cache.cpp	283	801D7810	801D7888	override code sequence
+src/hle/os/os_cache.cpp	286	801AC5D0	801AC648	override code unique
+src/hle/os/os_cache.cpp	291	801AC6A0	801AC718	override code unique
+src/hle/os/os_cache.cpp	294	801D7928	801D79A0	override code unique
+src/hle/os/os_cache.cpp	297	801AC710	801AC788	override code unique
+src/hle/os/os_cache.cpp	302	801AC740	801AC7B8	override code unique
+src/hle/os/os_cache.cpp	307	801AC770	801AC7E8	override code unique
+src/hle/os/os_cache.cpp	312	801AC810	801AC888	override code unique
+src/hle/os/os_cache.cpp	317	801AC820	801AC898	override code unique
+src/hle/os/os_cache.cpp	320	801D7C40	801D7CB8	override code unique
+src/hle/os/os_context.cpp	80	801D81F4	801D826C	override code unique
+src/hle/os/os_context.cpp	81	801D7FCC	801D8044	override code unique
+src/hle/os/os_context.cpp	82	801E0714	801E078C	code sequence
+src/hle/os/os_context.cpp	84	801ACE30	801ACEA8	code sequence
+src/hle/os/os_context.cpp	167	801D80B4	801D812C	override code unique
+src/hle/os/os_font.cpp	30	801B00A0	801B0118	code sequence
+src/hle/os/os_font.cpp	37	801DC2C4	801DC33C	override code unique
+src/hle/os/os_font.cpp	39	801B00F0	801B0168	code sequence
+src/hle/os/os_font.cpp	48	801DC318	801DC390	override code unique
+src/hle/os/os_font.cpp	50	801B0D60	801B0DD8	code unique
+src/hle/os/os_font.cpp	50	801B0480	801B04F8	code sequence
+src/hle/os/os_font.cpp	64	801B0D60	801B0DD8	override code unique
+src/hle/os/os_font.cpp	76	801DC698	801DC710	override code unique
+src/hle/os/os_font.cpp	78	80271428	802714A0	code unique
+src/hle/os/os_font.cpp	96	801DCA78	801DCAF0	override code unique
+src/hle/os/os_init.cpp	21	func_801E0480	func_801E04F8	symbol code unique
+src/hle/os/os_init.cpp	23	func_8055531C	func_80554E9C	symbol data referenced lbl_8053B248
+src/hle/os/os_init.cpp	27	func_801E0480	func_801E04F8	symbol code unique
+src/hle/os/os_init.cpp	30	801E0480	801E04F8	code unique
+src/hle/os/os_init.cpp	35	func_8055531C	func_80554E9C	symbol data referenced lbl_8053B248
+src/hle/os/os_init.cpp	41	8055531C	80554E9C	data referenced lbl_8053B248
+src/hle/os/os_init.cpp	42	8055531C	80554E9C	data referenced lbl_8053B248
+src/hle/os/os_init.cpp	89	801DB7E8	801DB860	code unique
+src/hle/os/os_init.cpp	102	80529CF8	80529878	data referenced
+src/hle/os/os_init.cpp	116	80230458	802304D0	override code sequence
+src/hle/os/os_init.cpp	117	8023A5A4	8023A61C	override code sequence
+src/hle/os/os_init.cpp	121	801BAEF0	801BAF68	code unique
+src/hle/os/os_init.cpp	127	801BB840	801BB8B8	code unique
+src/hle/os/os_init.cpp	135	801BE010	801BE088	code unique
+src/hle/os/os_init.cpp	144	801E67DC	801E6854	code unique
+src/hle/os/os_init.cpp	145	801E74C8	801E7540	override code unique
+src/hle/os/os_init.cpp	147	801B2D50	801B2DC8	code unique
+src/hle/os/os_init.cpp	156	801DEACC	801DEB44	override code unique
+src/hle/os/os_init.cpp	158	801A9EE0	801A9F58	code unique
+src/hle/os/os_init.cpp	177	801D536C	801D53E4	override code unique
+src/hle/os/os_init.cpp	179	801B3C90	801B3D08	code sequence
+src/hle/os/os_init.cpp	193	801DF7FC	801DF874	override code unique
+src/hle/os/os_init.cpp	195	801B6820	801B6898	code unique
+src/hle/os/os_init.cpp	215	r13-3D14=805A070C	r13-3D0C=805A0294	sda data referenced
+src/hle/os/os_init.cpp	218	r13-3D10=805A0710	r13-3D08=805A0298	sda data referenced
+src/hle/os/os_init.cpp	219	r13-3D0C=805A0714	r13-3D04=805A029C	sda data referenced
+src/hle/os/os_init.cpp	234	801E25C0	801E2638	override code unique
+src/hle/os/os_init.cpp	242	801D6528	801D65A0	override code unique
+src/hle/os/os_init.cpp	251	800042E0	800042E0	override code unique
+src/hle/os/os_init.cpp	263	801D5078	801D50F0	override code sequence
+src/hle/os/os_init.cpp	266	801D5080	801D50F8	override code sequence
+src/hle/os/os_init.cpp	279	801D5098	801D5110	override code sequence
+src/hle/os/os_init.cpp	287	801D50A0	801D5118	override code sequence
+src/hle/os/os_init.cpp	290	801D50BC	801D5134	override code sequence
+src/hle/os/os_init.cpp	293	801D50C4	801D513C	override code sequence
+src/hle/os/os_init.cpp	296	801D50CC	801D5144	override code sequence
+src/hle/os/os_init.cpp	299	801D50D4	801D514C	override code sequence
+src/hle/os/os_init.cpp	302	801D50DC	801D5154	override code sequence
+src/hle/os/os_init.cpp	305	801D50E4	801D515C	override code sequence
+src/hle/os/os_init.cpp	322	801D5134	801D51AC	code sequence
+src/hle/os/os_init.cpp	334	801D513C	801D51B4	override code sequence
+src/hle/os/os_init.cpp	338	801D5144	801D51BC	override code sequence
+src/hle/os/os_init.cpp	342	801D5150	801D51C8	override code sequence
+src/hle/os/os_init.cpp	345	801D5158	801D51D0	override code unique
+src/hle/os/os_init.cpp	348	801D5188	801D5200	override code unique
+src/hle/os/os_internal.h	28	805A06D0	805A0258	data referenced
+src/hle/os/os_internal.h	40	804DD558	804DD0D8	data referenced
+src/hle/os/os_internal.h	41	804DD970	804DD4F0	data referenced
+src/hle/os/os_internal.h	42	804DD870	804DD3F0	data referenced
+src/hle/os/os_internal.h	44	8059E9F0	8059E570	data referenced
+src/hle/os/os_internal.h	45	805A06F4	805A027C	data referenced
+src/hle/os/os_internal.h	46	805A06F8	805A0280	data referenced
+src/hle/os/os_internal.h	49	805A06F0	805A0278	data referenced
+src/hle/os/os_internal.h	50	8056DB30	8056D6B0	data bracketed lbl_805658F0
+src/hle/os/os_internal.h	50	r13-3DA8=805A0678	r13-3DA0=805A0200	sda data referenced
+src/hle/os/os_internal.h	50	r13-73F0=8059D030	r13-73F0=8059CBB0	sda data bracketed lbl_8059D030
+src/hle/os/os_interrupt.cpp	210	801B12B0	801B1328	code unique
+src/hle/os/os_interrupt.cpp	236	801DCF10	801DCF88	override code sequence
+src/hle/os/os_interrupt.cpp	237	801DCF24	801DCF9C	override code sequence
+src/hle/os/os_interrupt.cpp	238	801DCF38	801DCFB0	override code unique
+src/hle/os/os_interrupt.cpp	239	801DCF80	801DCFF8	override code unique
+src/hle/os/os_interrupt.cpp	240	801DD044	801DD0BC	override code unique
+src/hle/os/os_interrupt.cpp	241	801D6168	801D61E0	override code unique
+src/hle/os/os_interrupt.cpp	242	801E531C	801E5394	override code unique
+src/hle/os/os_interrupt.cpp	243	801DCF5C	801DCFD4	code sequence
+src/hle/os/os_interrupt.cpp	244	801DD320	801DD398	code unique
+src/hle/os/os_interrupt.cpp	246	801B1510	801B1588	code unique
+src/hle/os/os_interrupt.cpp	275	801DD2A0	801DD318	override code unique
+src/hle/os/os_interrupt.cpp	278	801B95C0	801B9638	code unique
+src/hle/os/os_interrupt.cpp	278	801B96F0	801B9768	code unique
+src/hle/os/os_interrupt.cpp	312	801E4D4C	801E4DC4	override code unique
+src/hle/os/os_interrupt.cpp	313	801E4E7C	801E4EF4	override code unique
+src/hle/os/os_interrupt.cpp	316	801B8A30	801B8AA8	code unique
+src/hle/os/os_interrupt.cpp	327	801E41F4	801E426C	override code unique
+src/hle/os/os_interrupt.cpp	334	801B8B20	801B8B98	code unique
+src/hle/os/os_interrupt.cpp	360	801B8E50	801B8EC8	code unique
+src/hle/os/os_interrupt.cpp	373	801B8F50	801B8FC8	code unique
+src/hle/os/os_interrupt.cpp	379	801B9E70	801B9EE8	code unique
+src/hle/os/os_interrupt.cpp	385	801B6730	801B67A8	code unique
+src/hle/os/os_interrupt.cpp	397	801E2984	801E29FC	code sequence
+src/hle/os/os_interrupt.cpp	400	r13-3D00=805A0720	r13-3CF8=805A02A8	sda data referenced
+src/hle/os/os_interrupt.cpp	401	r13-3D08=805A0718	r13-3D00=805A02A0	sda data referenced
+src/hle/os/os_interrupt.cpp	444	801E2504	801E257C	override code sequence
+src/hle/os/os_interrupt.cpp	446	801E42E4	801E435C	override code unique
+src/hle/os/os_interrupt.cpp	447	801E4604	801E467C	override code unique
+src/hle/os/os_interrupt.cpp	448	801E46FC	801E4774	override code unique
+src/hle/os/os_interrupt.cpp	449	801E55DC	801E5654	override code unique
+src/hle/os/os_interrupt.cpp	452	80224350	802243C8	code unique
+src/hle/os/os_interrupt.cpp	452	80224340	802243B8	code unique
+src/hle/os/os_interrupt.cpp	479	80211AD0	80211B48	override code sequence
+src/hle/os/os_interrupt.cpp	480	80211AC0	80211B38	override code sequence
+src/hle/os/os_interrupt.cpp	483	802247D0	80224848	code unique
+src/hle/os/os_interrupt.cpp	484	802242A0	80224318	code unique
+src/hle/os/os_interrupt.cpp	491	8056E004	8056DB84	data bracketed lbl_805658F0
+src/hle/os/os_interrupt.cpp	492	80211A2C	80211AA4	code unique
+src/hle/os/os_interrupt.cpp	506	80211F28	80211FA0	override code unique
+src/hle/os/os_message.cpp	42	801DE094	801DE10C	code unique
+src/hle/os/os_message.cpp	168	801DE0F4	801DE16C	code unique
+src/hle/os/os_message.cpp	196	801DE1BC	801DE234	code unique
+src/hle/os/os_message.cpp	219	801A7500	801A7578	code unique
+src/hle/os/os_message.cpp	221	801A7500	801A7578	code unique
+src/hle/os/os_report.cpp	207	801D8600	801D8678	override code unique
+src/hle/os/os_reset.cpp	38	801A9BA0	801A9C18	code sequence
+src/hle/os/os_reset.cpp	55	801D50A8	801D5120	override code sequence
+src/hle/os/os_reset.cpp	57	801AD4E0	801AD558	code unique
+src/hle/os/os_reset.cpp	124	801D8690	801D8708	override code unique
+src/hle/os/os_reset.cpp	126	801B3CC0	801B3D38	code sequence
+src/hle/os/os_reset.cpp	140	801DF82C	801DF8A4	override code sequence
+src/hle/os/os_reset.cpp	142	801B89E0	801B8A58	code unique
+src/hle/os/os_reset.cpp	145	801E41A8	801E4220	code unique
+src/hle/os/os_reset.cpp	159	801E41A8	801E4220	override code unique
+src/hle/os/os_scheduler.cpp	156	func_801D8034	func_801D80AC	symbol code unique
+src/hle/os/os_scheduler.cpp	160	801B4EA0	801B4F18	code unique
+src/hle/os/os_scheduler.cpp	237	func_801D8034	func_801D80AC	symbol code unique
+src/hle/os/os_scheduler.cpp	415	801E0A80	801E0AF8	override code unique
+src/hle/os/os_scheduler.cpp	419	801B5D80	801B5DF8	code sequence
+src/hle/os/os_scheduler.cpp	502	801E187C	801E18F4	override code unique
+src/hle/os/os_scheduler.cpp	554	801DEBB4	801DEC2C	override code unique
+src/hle/os/os_scheduler.cpp	600	801DEC90	801DED08	override code unique
+src/hle/os/os_sleep.cpp	352	801AACA8	801AAD20	code unique
+src/hle/os/os_sleep.cpp	354	801AACA8	801AAD20	code unique
+src/hle/os/os_sleep.cpp	417	801B5C90	801B5D08	code unique
+src/hle/os/os_sleep.cpp	516	801E1790	801E1808	override code unique
+src/hle/os/os_thread.cpp	76	805529A8	80552528	data referenced lbl_8053B248
+src/hle/os/os_thread.cpp	76	80552A74	805525F4	data referenced lbl_8053B248
+src/hle/os/os_thread.cpp	216	801DED58	801DEDD0	code unique
+src/hle/os/os_thread.cpp	247	801B5130	801B51A8	code unique
+src/hle/os/os_thread.cpp	311	801D8218	801D8290	code unique
+src/hle/os/os_thread.cpp	325	801E0F68	801E0FE0	code unique
+src/hle/os/os_thread.cpp	341	804DD1D0	804DCD50	data referenced
+src/hle/os/os_thread.cpp	341	80274F64	80274FDC	code unique
+src/hle/os/os_thread.cpp	342	8059E9C0	8059E540	data referenced
+src/hle/os/os_thread.cpp	398	801E0CFC	801E0D74	override code unique
+src/hle/os/os_thread.cpp	424	801E0F68	801E0FE0	override code unique
+src/hle/os/os_thread.cpp	466	801E104C	801E10C4	override code unique
+src/hle/os/os_thread.cpp	527	801B5670	801B56E8	override code unique
+src/hle/os/os_thread.cpp	561	801B57C0	801B5838	override code unique
+src/hle/os/os_thread.cpp	619	801E15FC	801E1674	override code unique
+src/hle/os/os_thread.cpp	621	801B5860	801B58D8	code unique
+src/hle/os/os_thread.cpp	722	801E1364	801E13DC	override code unique
+src/hle/os/os_time.cpp	66	801E1B34	801E1BAC	override code sequence
+src/hle/os/os_time.cpp	93	801E1B54	801E1BCC	override code unique
+src/hle/sc.cpp	42	801DB8E0	801DB958	code unique
+src/hle/sc.cpp	50	8020E18C	8020E204	override code unique
+src/hle/sc.cpp	52	801DD1D0	801DD248	code unique
+src/hle/sc.cpp	60	8020FB50	8020FBC8	override code sequence
+src/hle/sc.cpp	62	8029B9AC	8029BA24	code unique
+src/hle/sc.cpp	68	8020FC24	8020FC9C	override code unique
+src/hle/sc.cpp	70	801DD2B0	801DD328	code unique
+src/hle/sc.cpp	82	801DD2B0	801DD328	override code unique
+src/hle/sc.cpp	90	8047C4E0	8047C220	data referenced
+src/hle/sc.cpp	94	80210284	802102FC	override code sequence
+src/hle/sc.cpp	100	803869E0	80386A58	code unique
+src/hle/sc.cpp	113	801B2424	801B249C	code unique
+src/hle/sc.cpp	115	801B2424	801B249C	override code unique
+src/hle/sc.cpp	129	801B2460	801B24D8	code unique
+src/hle/sc.cpp	131	801B2460	801B24D8	override code unique
+src/hle/sc.cpp	138	8047FAB0	8047F7F0	data referenced
+src/hle/sc.cpp	144	801DD940	801DD9B8	override code unique
+src/hle/sc.cpp	151	801AE4A0	801AE518	code unique
+src/hle/sc.cpp	161	801AE4A0	801AE518	code unique
+src/hle/sc.cpp	163	801AE4A0	801AE518	override code unique
+src/hle/sc.cpp	168	801AD1D4	801AD24C	code unique
+src/hle/sc.cpp	182	801AD1D4	801AD24C	code unique
+src/hle/sc.cpp	184	801AD1D4	801AD24C	override code unique
+src/hle/storage/dvd.cpp	906	804E43F0	804E3F70	data referenced
+src/hle/storage/dvd.cpp	920	805A0910	805A0490	data referenced
+src/hle/storage/dvd.cpp	921	805A0914	805A0494	data referenced
+src/hle/storage/dvd.cpp	922	805A0908	805A0488	data referenced
+src/hle/storage/dvd.cpp	924	805A0948	805A04C8	data referenced
+src/hle/storage/dvd.cpp	925	805A0990	805A0510	data referenced
+src/hle/storage/dvd.cpp	928	801CAD30	801CADA8	code unique
+src/hle/storage/dvd.cpp	942	805A09C4	805A0544	data referenced
+src/hle/storage/dvd.cpp	943	805A09C5	805A0545	data referenced
+src/hle/storage/dvd.cpp	944	805A09C0	805A0540	data referenced
+src/hle/storage/dvd.cpp	945	805A0940	805A04C0	data referenced
+src/hle/storage/dvd.cpp	949	804E46A0	804E4220	data referenced
+src/hle/storage/dvd.cpp	1003	801F5ED8	801F5F50	code unique
+src/hle/storage/dvd.cpp	1011	801F6A90	801F6B08	override code unique
+src/hle/storage/dvd.cpp	1015	801CAB20	801CAB98	code unique
+src/hle/storage/dvd.cpp	1084	801F67F0	801F6868	override code unique
+src/hle/storage/dvd.cpp	1086	801CAA30	801CAAA8	code unique
+src/hle/storage/dvd.cpp	1101	801F6708	801F6780	override code unique
+src/hle/storage/dvd.cpp	1105	801CECC0	801CED38	code unique
+src/hle/storage/dvd.cpp	1166	801FA940	801FA9B8	override code unique
+src/hle/storage/dvd.cpp	1175	801D1230	801D12A8	code sequence
+src/hle/storage/dvd.cpp	1181	801FC938	801FC9B0	override code unique
+src/hle/storage/dvd.cpp	1194	801FDB20	801FDB98	override code unique
+src/hle/storage/dvd.cpp	1196	801D14A0	801D1518	code sequence
+src/hle/storage/dvd.cpp	1209	801FCB9C	801FCC14	override code unique
+src/hle/storage/dvd.cpp	1211	801D2F20	801D2F98	code unique
+src/hle/storage/dvd.cpp	1211	801D2130	801D21A8	code unique
+src/hle/storage/dvd.cpp	1270	801FE420	801FE498	override code unique
+src/hle/storage/dvd.cpp	1276	801FD7F8	801FD870	override code unique
+src/hle/storage/dvd.cpp	1285	801D0980	801D09F8	override code unique
+src/hle/storage/dvd.cpp	1290	801FEA54	801FEACC	override code sequence
+src/hle/storage/dvd.cpp	1296	801FAC98	801FAD10	override code unique
+src/hle/storage/dvd.cpp	1327	801FC228	801FC2A0	override code unique
+src/hle/storage/dvd.cpp	0	0x52534245	0x5253424A	identity x1
+src/hle/storage/dvd.cpp	0	(RSBE01 revision 1)	(Japan, RSBJ01)	identity x1
+src/hle/storage/nand_api.cpp	112	80522780	80522300	data bracketed lbl_804FFF02
+src/hle/storage/nand_api.cpp	113	804ED040	804ECBC0	data referenced
+src/hle/storage/nand_api.cpp	115	8056E030	8056DBB0	data bracketed lbl_805658F0
+src/hle/storage/nand_api.cpp	116	805A0BA8	805A0728	data referenced
+src/hle/storage/nand_api.cpp	120	8020CDB8	8020CE30	override code unique
+src/hle/storage/nand_api.cpp	127	801DAA70	801DAAE8	override code unique
+src/hle/storage/nand_api.cpp	150	8020D900	8020D978	code unique
+src/hle/storage/nand_api.cpp	151	8020D900	8020D978	override code unique
+src/hle/storage/nand_api.cpp	242	8020B9BC	8020BA34	override code sequence
+src/hle/storage/nand_api.cpp	253	801D9850	801D98C8	code unique
+src/hle/storage/nand_api.cpp	276	8020BC3C	8020BCB4	override code unique
+src/hle/storage/nand_api.cpp	298	8020AA78	8020AAF0	override code sequence
+src/hle/storage/nand_api.cpp	321	8020AB58	8020ABD0	override code sequence
+src/hle/storage/nand_api.cpp	339	8020AC38	8020ACB0	override code unique
+src/hle/storage/nand_api.cpp	355	8020B0E4	8020B15C	override code unique
+src/hle/storage/nand_api.cpp	383	801D84E0	801D8558	override code unique
+src/hle/storage/nand_api.cpp	406	8020A870	8020A8E8	override code unique
+src/hle/storage/nand_api.cpp	431	8019BBE0	8019BC58	code sequence
+src/hle/storage/nand_api.cpp	433	8019BBE0	8019BC58	override code sequence
+src/hle/storage/nand_api.cpp	585	801D8FD0	801D9048	override code unique
+src/hle/storage/nand_api.cpp	610	8019C380	8019C3F8	code sequence
+src/hle/storage/nand_api.cpp	612	8019C380	8019C3F8	override code sequence
+src/hle/storage/nand_api.cpp	637	801DAE70	801DAEE8	override code unique
+src/hle/storage/nand_api.cpp	650	8015BC80	8015BCF8	code unique
+src/hle/storage/nand_api.cpp	652	8015BC80	8015BCF8	override code unique
+src/hle/storage/nand_api.cpp	661	8015BCF8	8015BD70	code unique
+src/hle/storage/nand_api.cpp	663	8015BCF8	8015BD70	override code unique
+src/hle/storage/nand_async.cpp	131	8020BAD4	8020BB4C	override code sequence
+src/hle/storage/nand_async.cpp	138	8020BCA8	8020BD20	override code unique
+src/hle/storage/nand_async.cpp	145	8020AAE0	8020AB58	override code sequence
+src/hle/storage/nand_async.cpp	152	8020ABC0	8020AC38	override code sequence
+src/hle/storage/nand_async.cpp	159	8020ACD8	8020AD50	override code unique
+src/hle/storage/nand_async.cpp	166	8020B268	8020B2E0	override code unique
+src/hle/storage/nand_async.cpp	180	8020BB4C	8020BBC4	override code sequence
+src/hle/storage/nand_async.cpp	189	8019D104	8019D17C	code unique
+src/hle/storage/nand_async.cpp	191	8019D104	8019D17C	override code unique
+src/hle/storage/nand_async.cpp	203	8019D720	8019D798	code unique
+src/hle/storage/nand_async.cpp	205	8019D720	8019D798	override code unique
+src/hle/storage/nand_async.cpp	215	8020A7F8	8020A870	override code sequence
+src/hle/storage/nand_async.cpp	222	8020B06C	8020B0E4	override code sequence
+src/hle/storage/nand_async.cpp	229	8020A9B8	8020AA30	override code unique
+src/hle/storage/nand_async.cpp	236	8020B668	8020B6E0	override code unique
+src/hle/storage/nand_async.cpp	243	8020D6F0	8020D768	override code unique
+src/hle/storage/nand_async.cpp	248	8019CB80	8019CBF8	code unique
+src/hle/storage/nand_async.cpp	248	8019CF30	8019CFA8	code unique
+src/hle/storage/nand_async.cpp	500	8019CB74	8019CBEC	code unique
+src/hle/storage/nand_async.cpp	502	8019CB74	8019CBEC	override code unique
+src/hle/storage/nand_async.cpp	513	801D9950	801D99C8	override code unique
+src/hle/storage/nand_async.cpp	556	8019CF28	8019CFA0	code unique
+src/hle/storage/nand_async.cpp	558	8019CF28	8019CFA0	override code unique
+src/hle/storage/nand_async.cpp	566	801D9D10	801D9D88	override code unique
+src/hle/storage/nand_async.cpp	578	8020C34C	8020C3C4	override code sequence
+src/hle/storage/nand_async.cpp	582	8020BD30	8020BDA8	override code unique
+src/hle/storage/nand_async.cpp	591	80296F20	80296F98	override code unique
+src/hle/storage/nand_async.cpp	599	8020A920	8020A998	code unique
+src/hle/storage/nand_async.cpp	600	8020A920	8020A998	override code unique
+src/hle/storage/nand_async.cpp	608	8020D900	8020D978	code unique
+src/hle/storage/nand_async.cpp	609	8020D900	8020D978	override code unique
+src/hle/storage/nand_async.cpp	624	8020CAEC	8020CB64	code unique
+src/hle/storage/nand_async.cpp	625	8020CAEC	8020CB64	override code unique
+src/hle/storage/nand_async.cpp	0	RSBE01	RSBJ01	identity x1
+src/hle/storage/nand_internal.h	157	801D95B0	801D9628	code unique
+src/hle/storage/nand_internal.h	157	8019CF30	8019CFA8	code unique
+src/hle/storage/nand_internal.h	0	0x52534245	0x5253424A	identity x1
+src/hle/storage/nand_isfs.cpp	433	802123A8	80212420	override code unique
+src/hle/storage/nand_isfs.cpp	441	801938FC	80193974	code unique
+src/hle/storage/nand_isfs.cpp	443	801938FC	80193974	code unique
+src/hle/storage/nand_isfs.cpp	475	80212588	80212600	override code unique
+src/hle/storage/nand_isfs.cpp	499	80212730	802127A8	override code unique
+src/hle/storage/nand_isfs.cpp	524	80212938	802129B0	override code unique
+src/hle/storage/nand_isfs.cpp	541	80212B20	80212B98	override code unique
+src/hle/storage/nand_isfs.cpp	837	80212D40	80212DB8	override code unique
+src/hle/storage/nand_isfs.cpp	852	80293C70	80293CE8	code unique
+src/hle/storage/nand_isfs.cpp	852	802950E8	80295160	code unique
+src/hle/storage/nand_isfs.cpp	854	r13-5750=8059ECD0	r13-5750=8059E850	sda data referenced
+src/hle/storage/nand_isfs.cpp	855	r13-3844=805A0BDC	r13-3844=805A075C	sda data referenced
+src/hle/storage/nand_isfs.cpp	856	r13-3840=805A0BE0	r13-3840=805A0760	sda data referenced
+src/hle/storage/nand_isfs.cpp	857	r13-380C=805A0C14	r13-380C=805A0794	sda data referenced
+src/hle/storage/nand_isfs.cpp	858	r13-3808=805A0C18	r13-3808=805A0798	sda data referenced
+src/hle/storage/nand_isfs.cpp	859	r13-3804=805A0C1C	r13-3804=805A079C	sda data referenced
+src/hle/storage/nand_isfs.cpp	860	r13-3814=805A0C0C	r13-3814=805A078C	sda data referenced
+src/hle/storage/nand_isfs.cpp	861	r13-3818=805A0C08	r13-3818=805A0788	sda data referenced
+src/hle/storage/nand_isfs.cpp	923	80213B58	80213BD0	code unique
+src/hle/storage/nand_isfs.cpp	924	80211AF0	80211B68	code sequence
+src/hle/storage/nand_isfs.cpp	929	80213B58	80213BD0	code unique
+src/hle/storage/nand_isfs.cpp	930	80213468	802134E0	code unique
+src/hle/storage/nand_isfs.cpp	944	80213B58	80213BD0	code unique
+src/hle/storage/nand_isfs.cpp	1150	80213090	80213108	override code unique
+src/hle/storage/nand_isfs.cpp	0	RSBE01	RSBJ01	identity x1
+src/hle/storage/sdio.cpp	112	800A4000	800A3F98	code unique
+src/hle/storage/sdio.cpp	127	80040040	8004001C	code unique
+src/hle/strap_scene.cpp	18	800077C8	800077C8	data after _bss_init_info (check)
+src/hle/strap_scene.cpp	19	800077C8	800077C8	override data after _bss_init_info (check)
+src/hle/task_thread.cpp	24	80529D68	805298E8	data referenced lbl_80529CF8
+src/hle/task_thread.cpp	34	809BECF0	809BE830	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	34	809BEBA0	809BE6E0	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	37	809BECF0	809BE830	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	38	809BEBA0	809BE6E0	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	56	80550CC0	80550840	data referenced lbl_8053B248
+src/hle/task_thread.cpp	61	80529D68	805298E8	data referenced lbl_80529CF8
+src/hle/task_thread.cpp	64	80551658	805511D8	data referenced lbl_8053B248
+src/hle/task_thread.cpp	65	80550F48	80550AC8	data referenced lbl_8053B248
+src/hle/task_thread.cpp	67	809BEBA0	809BE6E0	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	67	809BEBA0	809BE6E0	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	68	809BEBA0	809BE6E0	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	69	809BEBA4	809BE6E4	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	70	809BEBA5	809BE6E5	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	71	809BEBA6	809BE6E6	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	72	809BEBA7	809BE6E7	module-code sora_melee fn_27_2B3A0C
+src/hle/task_thread.cpp	85	80551D38	805518B8	data referenced lbl_8053B248
+src/hle/task_thread.cpp	86	80550F9C	80550B1C	data referenced lbl_8053B248
+src/hle/task_thread.cpp	96	80551054	80550BD4	data referenced lbl_8053B248
+src/hle/task_thread.cpp	100	8088FDB8	8088F8F8	module-code sora_melee fn_27_184F78
+src/hle/task_thread.cpp	107	80551378	80550EF8	data referenced lbl_8053B248
+src/hle/task_thread.cpp	134	80242D7C	80242DF4	code unique
+src/hle/task_thread.cpp	166	801DE1BC	801DE234	code unique
+src/hle/task_thread.cpp	180	80529D68	805298E8	data referenced lbl_80529CF8
+src/hle/task_thread.cpp	202	801DE0F4	801DE16C	code unique
+src/hle/task_thread.cpp	212	80242D7C	80242DF4	code unique
+src/hle/task_thread.cpp	214	80242D7C	80242DF4	override code unique
+src/hle/trk.cpp	15	8002001C	8002001C	code unique
+src/hle/trk.cpp	17	8002001C	8002001C	override code unique
+src/hle/vi.cpp	163	805A07A0	805A0328	data referenced
+src/hle/vi.cpp	164	805A0810	805A0398	data referenced
+src/hle/vi.cpp	165	804DE644	804DE1C4	data referenced
+src/hle/vi.cpp	166	804DE646	804DE1C6	data referenced
+src/hle/vi.cpp	167	804DE652	804DE1D2	data referenced
+src/hle/vi.cpp	168	804DE65C	804DE1DC	data referenced
+src/hle/vi.cpp	169	805A084C	805A03D4	data referenced
+src/hle/vi.cpp	170	805A07AC	805A0334	data referenced
+src/hle/vi.cpp	171	805A0820	805A03A8	data referenced
+src/hle/vi.cpp	172	805A081C	805A03A4	data referenced
+src/hle/vi.cpp	173	805A0808	805A0390	data referenced
+src/hle/vi.cpp	174	804DE670	804DE1F0	data referenced
+src/hle/vi.cpp	175	805A0828	805A03B0	data referenced
+src/hle/vi.cpp	177	80386F60	80386FD8	code unique
+src/hle/vi.cpp	587	805A06F8	805A0280	data referenced
+src/hle/vi.cpp	937	80406800	80406380	data referenced
+src/hle/vi.cpp	937	805A0EA8	805A0A28	data referenced
+src/hle/vi.cpp	1157	801BC7A0	801BC818	code unique
+src/hle/vi.cpp	1157	801BC5A0	801BC618	code unique
+src/hle/vi.cpp	1174	801E83E4	801E845C	override code unique
+src/hle/vi.cpp	1180	801E81D4	801E824C	override code unique
+src/hle/vi.cpp	1192	801B9934	801B99AC	code unique
+src/hle/vi.cpp	1194	801B9934	801B99AC	override code unique
+src/hle/vi.cpp	1205	801B993C	801B99B4	code unique
+src/hle/vi.cpp	1207	801B993C	801B99B4	override code unique
+src/hle/vi.cpp	1218	801B9944	801B99BC	code unique
+src/hle/vi.cpp	1220	801B9944	801B99BC	override code unique
+src/hle/vi.cpp	1226	801BC3E0	801BC458	code unique
+src/hle/vi.cpp	1241	801E8034	801E80AC	override code sequence
+src/hle/vi.cpp	1244	801BC430	801BC4A8	code sequence
+src/hle/vi.cpp	1259	801E8078	801E80F0	override code sequence
+src/hle/vi.cpp	1262	801BE070	801BE0E8	code unique
+src/hle/vi.cpp	1269	801E9C9C	801E9D14	override code unique
+src/hle/vi.cpp	1311	801E8DC8	801E8E40	override code unique
+src/hle/vi.cpp	1348	801E98B0	801E9928	override code unique
+src/hle/vi.cpp	1365	801E99C4	801E9A3C	override code unique
+src/hle/vi.cpp	1380	801BAB24	801BAB9C	code unique
+src/hle/vi.cpp	1382	801BAB24	801BAB9C	override code unique
+src/hle/vi.cpp	1398	801E9A30	801E9AA8	override code unique
+src/hle/vi.cpp	1411	801E9AA8	801E9B20	override code sequence
+src/hle/vi.cpp	1424	801E9AB0	801E9B28	override code unique
+src/hle/vi.cpp	1457	801E9B4C	801E9BC4	override code unique
+src/hle/vi.cpp	1504	801E892C	801E89A4	override code unique
+src/hle/vi.cpp	1506	8028211C	80282194	code unique
+src/hle/vi.cpp	1509	801E9C3C	801E9CB4	override code unique
+src/main.cpp	922	81700000	81700000	same initial stack seed (high MEM1, not game data)
+src/main.cpp	938	81700000	81700000	same initial stack seed (high MEM1, not game data)
+src/main.cpp	0	RSBE01	RSBJ01	identity x1
+src/music_attenuation.cpp	31	809C2898	809C23D8	module-code sora_melee fn_27_2B745C
+src/music_attenuation.cpp	72	800A35E0	800A3578	code unique
+src/music_attenuation.cpp	99	809C2898	809C23D8	module-code sora_melee fn_27_2B745C
+src/netplay/game_menus.cpp	17	80377A10	80377A88	code unique
+src/netplay/game_menus.cpp	30	809953C0	80994F00	module-code sora_melee fn_27_28A4F8
+src/netplay/game_menus.cpp	31	80995400	80994F40	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	32	80995440	80994F80	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	33	80995480	80994FC0	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	34	809954C0	80995000	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	35	80995500	80995040	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	36	80995540	80995080	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	37	80995580	809950C0	module-code sora_melee fn_27_28A9DC
+src/netplay/game_menus.cpp	41	80992050	80991B90	module-code sora_melee fn_27_285414
+src/netplay/netplay_lobby.cpp	0	/52534245/	/5253424a/	identity x8
+src/netplay/netplay_session.cpp	554	804951C0	80494D40	data referenced
+src/netplay/netplay_session.cpp	554	80495380	80494F00	data referenced
+src/netplay/netplay_start.cpp	0	/52534245/	/5253424a/	identity x5
+src/netplay/netplay_ui.cpp	151	8042B084	8042ACC4	data referenced StageModuleIds
+src/netplay/netplay_ui.cpp	776	8042B084	8042ACC4	data referenced StageModuleIds
+src/netplay/netplay_ui.cpp	1629	80315B90	80315C08	code unique
+src/netplay/world_map_nav.cpp	22	8042A18C	80429DCC	data referenced g_LZEncodedAlertFont
+src/netplay/world_map_nav.cpp	30	8042A1A0	80429DE0	data referenced g_LZEncodedAlertFont
+src/netplay/world_map_nav.cpp	35	8042A3CC	8042A00C	data referenced g_LZEncodedAlertFont
+src/product/engine_loader.cpp	0	RSBE01	RSBJ01	identity x1
+src/recomp_mod_loader.cpp	204	8000A000	8000A000	data after _bss_init_info (check)
+src/recomp_mod_loader.cpp	204	8000A400	8000A400	data after _bss_init_info (check)
+src/recomp_mod_loader.cpp	205	801A6000	801A6078	code unique
+src/recomp_mod_loader.cpp	205	801A7000	801A7078	code unique
+src/settings_menu.inc	0	RSBE01	RSBJ01	identity x6
+src/settings_overlay.cpp	2284	80004338	80004338	code unique
+src/system_bridge.cpp	326	80319180	803191F8	code unique
+src/system_bridge.cpp	412	805B7160	805B6CC0	arena +-0x4a0 after main.dol bss (check)
+src/system_bridge.cpp	414	805B5160	805B4CC0	arena +-0x4a0 after main.dol bss (check)
+src/system_bridge.cpp	415	817DA5A0	817DA5E0	fst arena hi (MEM1 end - the disc's FST)
+src/system_bridge.cpp	0	0x52534245	0x5253424A	identity x3
+src/system_bridge.cpp	0	{0x80000004u, 0x30310001u, "Disc maker/id"});  // "01", disc 0, revision 1 (boot.bin)	{0x80000004u, 0x30310000u, "Disc maker/id"});  // "01", disc 0, revision 0 (the Japanese disc's boot.bin)	identity x1
+src/virtual_remote.cpp	46	80234528	802345A0	code sequence
+src/virtual_remote.cpp	47	80235180	802351F8	code unique
+src/virtual_remote.cpp	85	805A1608	805A1188	data referenced

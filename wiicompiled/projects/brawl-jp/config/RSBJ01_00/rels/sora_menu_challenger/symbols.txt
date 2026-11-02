@@ -1,0 +1,10 @@
+create__24muChallengerApproachTaskFv = .text:0x00000000; // type:function size:0x34  // match:unique
+__ct__24muChallengerApproachTaskFv = .text:0x00000034; // type:function size:0x178  // match:unique
+__dt__24muChallengerApproachTaskFv = .text:0x000001AC; // type:function size:0x58  // match:unique
+processDefault__24muChallengerApproachTaskFv = .text:0x00000204; // type:function size:0x3B8  // match:unique
+initialize__24muChallengerApproachTaskFi = .text:0x000005BC; // type:function size:0x1C  // match:sequence
+release__24muChallengerApproachTaskFv = .text:0x000005D8; // type:function size:0x98  // match:unique
+createData__24muChallengerApproachTaskFP9gfArchive = .text:0x00000670; // type:function size:0x138  // match:unique
+_prolog = .text:0x000007A8; // type:function size:0x48  // match:sequence
+_epilog = .text:0x000007F0; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x00000838; // type:function size:0xC  // match:sequence

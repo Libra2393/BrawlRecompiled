@@ -1,0 +1,10 @@
+create__20muWifiTimeResultTaskFPC25muWifiTimeResultTaskParam = .text:0x00000000; // type:function size:0x1E4  // match:unique
+fn_21_1E4 = .text:0x000001E4; // type:function size:0xDC  // match:unique
+fn_21_2C0 = .text:0x000002C0; // type:function size:0xC  // match:sequence
+fn_21_2CC = .text:0x000002CC; // type:function size:0xEC  // match:unique
+fn_21_3B8 = .text:0x000003B8; // type:function size:0xF8  // match:unique
+fn_21_4B0 = .text:0x000004B0; // type:function size:0x4E0  // match:unique
+fn_21_990 = .text:0x00000990; // type:function size:0x26C  // match:unique
+_prolog = .text:0x00000BFC; // type:function size:0x48  // match:sequence
+_epilog = .text:0x00000C44; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x00000C8C; // type:function size:0xC  // match:sequence

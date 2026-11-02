@@ -1,0 +1,50 @@
+schema_version: 1
+workspace_root: ../..
+
+# Dairantou Smash Brothers X, Japan (RSBJ01 rev 0): main.dol. Function map from the US rev 2 map by masked-instruction
+# matching (projects/brawl-regions/tools); resident module homes in resident_estimate.json.
+# The game's .rel modules (files/module) are pre-linked at their load addresses separately.
+project:
+  id: brawl-rsbj01
+  display_name: Dairantou Smash Brothers X (Japan)
+  game_id: RSBJ01
+  region: J
+  base_manifest_format: brawl-recomp-base-manifest
+  base_manifest_stem: brawl_jp_base
+
+memory:
+  base: 0x80000000
+  size: 0x15800000  # MEM1 plus MEM2 through the module homes (0x94004000..0x95800000): the translator's image window
+  sda_base: 0x805A3FA0
+  sda2_base: 0x805A8EA0
+
+inputs:
+  dol:
+    path: ../game/main_translate.dol  # main.dol plus the resident modules (tools/build_modules.py)
+    sha256: faab791932890f522376ad8ae3c80326eb3181e55359669aaef95d7a719cce16
+  # All 126 files/module/*.rel, each pre-linked at its own home above the game's MEM2 arena, as one synthetic REL
+  # (projects/brawl/tools/build_modules.py; hle/brawl_modules.cpp links them at run time).
+  rel:
+    path: ../game/brawl_modules.rel
+    load_address: 0x94000000
+
+translation:
+  entry_points:
+    - 0x8000403C
+  # Function starts: the decomp's RSBE01_02 symbols placed on the Japanese code (brawl-regions/tools: match_dol.py,
+  # match_modules.py), plus Japan-only starts (add_region_only.py).
+  function_map:
+    path: projects/brawl-jp/MAP_full.txt  # MAP.txt (main.dol) + MAP_modules.txt, written by build_modules.py
+  allow_unsupported_instructions: false
+
+runtime:
+  native_registration_root: runtime/src
+  native_abi_directories:
+    - runtime/src/hle/gx
+
+output:
+  root: generated
+  functions: functions
+  runtime_config: RuntimeConfig.h
+  data_initializer: data_sections_init.cpp
+  base_manifest: ../build/base/brawl_jp_base_manifest.json

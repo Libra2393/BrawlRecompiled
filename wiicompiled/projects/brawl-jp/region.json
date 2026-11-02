@@ -1,0 +1,50 @@
+{
+ "game_id": "RSBJ01",
+ "label": "Japan",
+ "config": "RSBJ01_00",
+ "only_tag": "jp-only",
+ "only_prefix": "fn_jp_",
+ "identity_note": "The Japanese disc's partition boot.bin (read at 0x80000000, checked by game_folder.cpp) and its header both say revision 0. It has Japanese text only, so the default language is jp.",
+ "identity": [
+  [
+   "0x52534245",
+   "0x5253424A"
+  ],
+  [
+   "/52534245/",
+   "/5253424a/"
+  ],
+  [
+   "{0x80000004u, 0x30310001u, \"Disc maker/id\"});  // \"01\", disc 0, revision 1 (boot.bin)",
+   "{0x80000004u, 0x30310000u, \"Disc maker/id\"});  // \"01\", disc 0, revision 0 (the Japanese disc's boot.bin)"
+  ],
+  [
+   "constexpr int kRevision = 1;",
+   "constexpr int kRevision = 0;  // the Japanese disc's boot.bin"
+  ],
+  [
+   "This port runs only revision 0 (Dolphin shows it under Properties > Info).",
+   "This port runs only the Japanese disc, revision 0 (Dolphin shows it under Properties > Info)."
+  ],
+  [
+   "(USA, RSBE01, revision 1)",
+   "(Japan, RSBJ01, revision 0)"
+  ],
+  [
+   "(USA, RSBE01)",
+   "(Japan, RSBJ01)"
+  ],
+  [
+   "(RSBE01 revision 1)",
+   "(Japan, RSBJ01)"
+  ],
+  [
+   "RSBE01",
+   "RSBJ01"
+  ],
+  [
+   "const std::string value = Get().language.value_or(\"en\");",
+   "const std::string value = Get().language.value_or(\"jp\");  // the Japanese disc has only Japanese text"
+  ]
+ ]
+}

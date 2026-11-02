@@ -1,0 +1,1262 @@
+{
+ "sora_scene": {
+  "id": 1,
+  "image": "0x806bafe0",
+  "bss": "0x80708780",
+  "bss_size": "0x1c08",
+  "veneers": "0x80b84920",
+  "veneer_count": 216,
+  "fix_size": "0x4d7a0",
+  "crc32": "0x99519209"
+ },
+ "sora_menu_main": {
+  "id": 2,
+  "image": "0x94004000",
+  "bss": "0x9404a8c0",
+  "bss_size": "0x74",
+  "veneers": "0x9404a940",
+  "veneer_count": 501,
+  "fix_size": "0x468a8",
+  "crc32": "0xeecd4e18"
+ },
+ "sora_menu_tour": {
+  "id": 3,
+  "image": "0x9404e040",
+  "bss": "0x94067e20",
+  "bss_size": "0x4",
+  "veneers": "0x94067e40",
+  "veneer_count": 137,
+  "fix_size": "0x19dd0",
+  "crc32": "0xb1c5223e"
+ },
+ "sora_menu_qm": {
+  "id": 4,
+  "image": "0x94068700",
+  "bss": "0x940740a0",
+  "bss_size": "0x4",
+  "veneers": "0x940740c0",
+  "veneer_count": 102,
+  "fix_size": "0xb9a0",
+  "crc32": "0xcf8ee84a"
+ },
+ "sora_menu_edit": {
+  "id": 5,
+  "image": "0x94074720",
+  "bss": "0x9408c1a0",
+  "bss_size": "0x1d8",
+  "veneers": "0x9408c380",
+  "veneer_count": 164,
+  "fix_size": "0x17a80",
+  "crc32": "0x7d2058d2"
+ },
+ "sora_menu_collect_viewer": {
+  "id": 6,
+  "image": "0x9408cde0",
+  "bss": "0x9409b9c0",
+  "bss_size": "0x14",
+  "veneers": "0x9409b9e0",
+  "veneer_count": 166,
+  "fix_size": "0xebd0",
+  "crc32": "0xcaaba5db"
+ },
+ "sora_menu_replay": {
+  "id": 7,
+  "image": "0x9409c440",
+  "bss": "0x9409fdc0",
+  "bss_size": "0x1d0",
+  "veneers": "0x9409ffa0",
+  "veneer_count": 58,
+  "fix_size": "0x3980",
+  "crc32": "0x426b44f5"
+ },
+ "sora_menu_snap_shot": {
+  "id": 8,
+  "image": "0x940a0340",
+  "bss": "0x940a2f00",
+  "bss_size": "0x1d0",
+  "veneers": "0x940a30e0",
+  "veneer_count": 25,
+  "fix_size": "0x2bc0",
+  "crc32": "0xcec799b0"
+ },
+ "sora_menu_event": {
+  "id": 9,
+  "image": "0x940a3280",
+  "bss": "0x940a86c0",
+  "bss_size": "0x4",
+  "veneers": "0x940a86e0",
+  "veneer_count": 94,
+  "fix_size": "0x5440",
+  "crc32": "0x6de0374d"
+ },
+ "sora_menu_sel_char": {
+  "id": 10,
+  "image": "0x80682360",
+  "bss": "0x806a34c0",
+  "bss_size": "0x14",
+  "veneers": "0x80b85b60",
+  "veneer_count": 0,
+  "fix_size": "0x21148",
+  "crc32": "0xc9d0e85"
+ },
+ "sora_menu_sel_stage": {
+  "id": 11,
+  "image": "0x806b0420",
+  "bss": "0x806baee0",
+  "bss_size": "0x14",
+  "veneers": "0x80b85b60",
+  "veneer_count": 0,
+  "fix_size": "0xaab0",
+  "crc32": "0xadafefaf"
+ },
+ "sora_menu_game_over": {
+  "id": 12,
+  "image": "0x940a8cc0",
+  "bss": "0x940abba0",
+  "bss_size": "0x4",
+  "veneers": "0x940abbc0",
+  "veneer_count": 53,
+  "fix_size": "0x2ed0",
+  "crc32": "0x7fa906b7"
+ },
+ "sora_menu_intro": {
+  "id": 13,
+  "image": "0x940abf20",
+  "bss": "0x940af820",
+  "bss_size": "0x4",
+  "veneers": "0x940af840",
+  "veneer_count": 55,
+  "fix_size": "0x38f0",
+  "crc32": "0x2718a4be"
+ },
+ "sora_menu_friend_list": {
+  "id": 14,
+  "image": "0x940afbc0",
+  "bss": "0x940bbdc0",
+  "bss_size": "0x4",
+  "veneers": "0x940bbde0",
+  "veneer_count": 158,
+  "fix_size": "0xc1f0",
+  "crc32": "0x5c2644f0"
+ },
+ "sora_menu_watch": {
+  "id": 15,
+  "image": "0x940bc800",
+  "bss": "0x940c37e0",
+  "bss_size": "0x1c",
+  "veneers": "0x940c3800",
+  "veneer_count": 121,
+  "fix_size": "0x6fd0",
+  "crc32": "0xc4893f6a"
+ },
+ "sora_menu_name": {
+  "id": 16,
+  "image": "0x80673ae0",
+  "bss": "0x80680600",
+  "bss_size": "0xac",
+  "veneers": "0x80b85b60",
+  "veneer_count": 0,
+  "fix_size": "0xcb10",
+  "crc32": "0xfb224907"
+ },
+ "sora_menu_sel_char_access": {
+  "id": 17,
+  "image": "0x806807a0",
+  "bss": "0x80682280",
+  "bss_size": "0x4",
+  "veneers": "0x80b85b60",
+  "veneer_count": 0,
+  "fix_size": "0x1ad0",
+  "crc32": "0xe81b76d4"
+ },
+ "sora_menu_rule": {
+  "id": 18,
+  "image": "0x806a35c0",
+  "bss": "0x806b0340",
+  "bss_size": "0x4",
+  "veneers": "0x80b85b60",
+  "veneer_count": 0,
+  "fix_size": "0xcd70",
+  "crc32": "0xed2b33a"
+ },
+ "sora_menu_simple_ending": {
+  "id": 19,
+  "image": "0x940c3fa0",
+  "bss": "0x940c7060",
+  "bss_size": "0x4",
+  "veneers": "0x940c7080",
+  "veneer_count": 46,
+  "fix_size": "0x30b0",
+  "crc32": "0x2736a320"
+ },
+ "sora_minigame": {
+  "id": 20,
+  "image": "0x940c7360",
+  "bss": "0x940d7bc0",
+  "bss_size": "0x30",
+  "veneers": "0x940d7c00",
+  "veneer_count": 190,
+  "fix_size": "0x10850",
+  "crc32": "0xf87e4bc6"
+ },
+ "sora_menu_time_result": {
+  "id": 21,
+  "image": "0x940d87e0",
+  "bss": "0x940db0e0",
+  "bss_size": "0x4",
+  "veneers": "0x940db100",
+  "veneer_count": 56,
+  "fix_size": "0x28f0",
+  "crc32": "0x6451d63"
+ },
+ "sora_menu_boot": {
+  "id": 22,
+  "image": "0x940db480",
+  "bss": "0x940df3e0",
+  "bss_size": "0x4",
+  "veneers": "0x940df400",
+  "veneer_count": 46,
+  "fix_size": "0x3f50",
+  "crc32": "0xd8090914"
+ },
+ "sora_menu_challenger": {
+  "id": 23,
+  "image": "0x940df6e0",
+  "bss": "0x940e1ba0",
+  "bss_size": "0x4",
+  "veneers": "0x940e1bc0",
+  "veneer_count": 23,
+  "fix_size": "0x24b0",
+  "crc32": "0xcead04a1"
+ },
+ "sora_menu_title": {
+  "id": 24,
+  "image": "0x940e1d40",
+  "bss": "0x940e74e0",
+  "bss_size": "0x4",
+  "veneers": "0x940e7500",
+  "veneer_count": 71,
+  "fix_size": "0x5790",
+  "crc32": "0xb562d093"
+ },
+ "sora_menu_title_sunset": {
+  "id": 25,
+  "image": "0x940e7980",
+  "bss": "0x940ed8c0",
+  "bss_size": "0x4",
+  "veneers": "0x940ed8e0",
+  "veneer_count": 68,
+  "fix_size": "0x5f30",
+  "crc32": "0x8df8c12"
+ },
+ "sora_menu_fig_get_demo": {
+  "id": 26,
+  "image": "0x940edd20",
+  "bss": "0x940f0e60",
+  "bss_size": "0x18",
+  "veneers": "0x940f0e80",
+  "veneer_count": 61,
+  "fix_size": "0x3130",
+  "crc32": "0xe3661dea"
+ },
+ "sora_melee": {
+  "id": 27,
+  "image": "0x8070a480",
+  "bss": "0x80b84920",
+  "bss_size": "0x8ce8",
+  "veneers": "0x80b85b60",
+  "veneer_count": 25,
+  "fix_size": "0x47a4a0",
+  "crc32": "0xd470385a"
+ },
+ "sora_adv_menu_name": {
+  "id": 28,
+  "image": "0x940f1260",
+  "bss": "0x940f5fa0",
+  "bss_size": "0x4",
+  "veneers": "0x940f5fc0",
+  "veneer_count": 76,
+  "fix_size": "0x4d30",
+  "crc32": "0x909cf91b"
+ },
+ "sora_adv_menu_visual": {
+  "id": 29,
+  "image": "0x940f6480",
+  "bss": "0x940fadc0",
+  "bss_size": "0x4",
+  "veneers": "0x940fade0",
+  "veneer_count": 70,
+  "fix_size": "0x4930",
+  "crc32": "0x87115773"
+ },
+ "sora_adv_menu_sel_char": {
+  "id": 30,
+  "image": "0x940fb240",
+  "bss": "0x940fcca0",
+  "bss_size": "0x4",
+  "veneers": "0x940fccc0",
+  "veneer_count": 1,
+  "fix_size": "0x1a50",
+  "crc32": "0xf88de234"
+ },
+ "sora_adv_menu_sel_map": {
+  "id": 31,
+  "image": "0x940fcce0",
+  "bss": "0x94102de0",
+  "bss_size": "0x4",
+  "veneers": "0x94102e00",
+  "veneer_count": 110,
+  "fix_size": "0x60e8",
+  "crc32": "0x170b51a1"
+ },
+ "sora_adv_menu_difficulty": {
+  "id": 32,
+  "image": "0x94103500",
+  "bss": "0x94105e40",
+  "bss_size": "0x4",
+  "veneers": "0x94105e60",
+  "veneer_count": 55,
+  "fix_size": "0x2930",
+  "crc32": "0x9349a0c5"
+ },
+ "sora_adv_menu_game_over": {
+  "id": 33,
+  "image": "0x941061e0",
+  "bss": "0x9410b700",
+  "bss_size": "0x18",
+  "veneers": "0x9410b720",
+  "veneer_count": 101,
+  "fix_size": "0x5520",
+  "crc32": "0x9cf3ba9b"
+ },
+ "sora_adv_menu_result": {
+  "id": 34,
+  "image": "0x9410bd80",
+  "bss": "0x9410f120",
+  "bss_size": "0x18",
+  "veneers": "0x9410f140",
+  "veneer_count": 64,
+  "fix_size": "0x3388",
+  "crc32": "0xd7bb4e53"
+ },
+ "sora_adv_menu_save_load": {
+  "id": 35,
+  "image": "0x9410f560",
+  "bss": "0x94110fc0",
+  "bss_size": "0x4",
+  "veneers": "0x94110fe0",
+  "veneer_count": 1,
+  "fix_size": "0x1a50",
+  "crc32": "0xb8d86f65"
+ },
+ "sora_adv_menu_seal": {
+  "id": 36,
+  "image": "0x94111000",
+  "bss": "0x94112a60",
+  "bss_size": "0x4",
+  "veneers": "0x94112a80",
+  "veneer_count": 1,
+  "fix_size": "0x1a50",
+  "crc32": "0xc5ab693d"
+ },
+ "sora_adv_menu_ending": {
+  "id": 37,
+  "image": "0x94112aa0",
+  "bss": "0x94116080",
+  "bss_size": "0x4",
+  "veneers": "0x941160a0",
+  "veneer_count": 65,
+  "fix_size": "0x35d0",
+  "crc32": "0xbd32c2b"
+ },
+ "sora_adv_menu_telop": {
+  "id": 38,
+  "image": "0x941164c0",
+  "bss": "0x94118700",
+  "bss_size": "0x4",
+  "veneers": "0x94118720",
+  "veneer_count": 23,
+  "fix_size": "0x2230",
+  "crc32": "0xd4b25cdd"
+ },
+ "sora_adv_menu_save_point": {
+  "id": 39,
+  "image": "0x941188a0",
+  "bss": "0x9411a300",
+  "bss_size": "0x4",
+  "veneers": "0x9411a320",
+  "veneer_count": 1,
+  "fix_size": "0x1a50",
+  "crc32": "0x786105f3"
+ },
+ "sora_adv_stage": {
+  "id": 40,
+  "image": "0x9411a340",
+  "bss": "0x94188180",
+  "bss_size": "0x2a10",
+  "veneers": "0x9418aba0",
+  "veneer_count": 640,
+  "fix_size": "0x6de40",
+  "crc32": "0x37860a63"
+ },
+ "sora_enemy": {
+  "id": 41,
+  "image": "0x94191b00",
+  "bss": "0x94229200",
+  "bss_size": "0x860",
+  "veneers": "0x94229a60",
+  "veneer_count": 666,
+  "fix_size": "0x97700",
+  "crc32": "0xdd6f8e7a"
+ },
+ "st_battles": {
+  "id": 42,
+  "image": "0x942313e0",
+  "bss": "0x94234240",
+  "bss_size": "0x18",
+  "veneers": "0x94234260",
+  "veneer_count": 24,
+  "fix_size": "0x2e58",
+  "crc32": "0xd94953d1"
+ },
+ "st_battle": {
+  "id": 43,
+  "image": "0x94234400",
+  "bss": "0x94237c80",
+  "bss_size": "0x18",
+  "veneers": "0x94237ca0",
+  "veneer_count": 43,
+  "fix_size": "0x3880",
+  "crc32": "0xb4d75b47"
+ },
+ "st_config": {
+  "id": 44,
+  "image": "0x94238020",
+  "bss": "0x9423ace0",
+  "bss_size": "0x18",
+  "veneers": "0x9423ad00",
+  "veneer_count": 21,
+  "fix_size": "0x2cc0",
+  "crc32": "0xaf5ce6ef"
+ },
+ "st_final": {
+  "id": 45,
+  "image": "0x9423ae80",
+  "bss": "0x9423dec0",
+  "bss_size": "0x18",
+  "veneers": "0x9423dee0",
+  "veneer_count": 26,
+  "fix_size": "0x3040",
+  "crc32": "0xed5319bb"
+ },
+ "st_dolpic": {
+  "id": 46,
+  "image": "0x9423e0c0",
+  "bss": "0x9424a860",
+  "bss_size": "0x18",
+  "veneers": "0x9424a880",
+  "veneer_count": 96,
+  "fix_size": "0xc798",
+  "crc32": "0x87d1dd49"
+ },
+ "st_mansion": {
+  "id": 47,
+  "image": "0x9424b380",
+  "bss": "0x9425eb40",
+  "bss_size": "0x140",
+  "veneers": "0x9425ec80",
+  "veneer_count": 122,
+  "fix_size": "0x137c0",
+  "crc32": "0xabcc5f00"
+ },
+ "st_mariopast": {
+  "id": 48,
+  "image": "0x9425fa40",
+  "bss": "0x94272de0",
+  "bss_size": "0x70",
+  "veneers": "0x94272e60",
+  "veneer_count": 133,
+  "fix_size": "0x133a0",
+  "crc32": "0x394503a8"
+ },
+ "st_kart": {
+  "id": 49,
+  "image": "0x94273f60",
+  "bss": "0x942865a0",
+  "bss_size": "0x140",
+  "veneers": "0x942866e0",
+  "veneer_count": 137,
+  "fix_size": "0x12630",
+  "crc32": "0x8070c40b"
+ },
+ "st_donkey": {
+  "id": 50,
+  "image": "0x94287500",
+  "bss": "0x94299be0",
+  "bss_size": "0x128",
+  "veneers": "0x94299d20",
+  "veneer_count": 136,
+  "fix_size": "0x126c8",
+  "crc32": "0x2474574e"
+ },
+ "st_jungle": {
+  "id": 51,
+  "image": "0x9429ada0",
+  "bss": "0x942c29e0",
+  "bss_size": "0x19c",
+  "veneers": "0x942c2b80",
+  "veneer_count": 148,
+  "fix_size": "0x27c38",
+  "crc32": "0x9c0afd26"
+ },
+ "st_pirates": {
+  "id": 52,
+  "image": "0x942c4640",
+  "bss": "0x942e1ce0",
+  "bss_size": "0x128",
+  "veneers": "0x942e1e20",
+  "veneer_count": 134,
+  "fix_size": "0x1d690",
+  "crc32": "0xeff685ed"
+ },
+ "st_oldin": {
+  "id": 53,
+  "image": "0x942e2f20",
+  "bss": "0x942ea220",
+  "bss_size": "0x18",
+  "veneers": "0x942ea240",
+  "veneer_count": 75,
+  "fix_size": "0x72e8",
+  "crc32": "0xb8a2fda9"
+ },
+ "st_norfair": {
+  "id": 54,
+  "image": "0x942eaf20",
+  "bss": "0x94304280",
+  "bss_size": "0x150",
+  "veneers": "0x943043e0",
+  "veneer_count": 166,
+  "fix_size": "0x19360",
+  "crc32": "0x6abb807b"
+ },
+ "st_orpheon": {
+  "id": 55,
+  "image": "0x94305ee0",
+  "bss": "0x9430b080",
+  "bss_size": "0x18",
+  "veneers": "0x9430b0a0",
+  "veneer_count": 71,
+  "fix_size": "0x5198",
+  "crc32": "0x4485525"
+ },
+ "st_crayon": {
+  "id": 56,
+  "image": "0x9430c3a0",
+  "bss": "0x9431d660",
+  "bss_size": "0x160",
+  "veneers": "0x9431d7c0",
+  "veneer_count": 125,
+  "fix_size": "0x112a8",
+  "crc32": "0xedf8fd78"
+ },
+ "st_halberd": {
+  "id": 57,
+  "image": "0x9431e600",
+  "bss": "0x94338020",
+  "bss_size": "0x128",
+  "veneers": "0x94338160",
+  "veneer_count": 147,
+  "fix_size": "0x19a20",
+  "crc32": "0xfa525001"
+ },
+ "st_starfox": {
+  "id": 58,
+  "image": "0x94339420",
+  "bss": "0x9433e8e0",
+  "bss_size": "0x18",
+  "veneers": "0x9433e900",
+  "veneer_count": 65,
+  "fix_size": "0x54b0",
+  "crc32": "0x32c96c0d"
+ },
+ "st_stadium": {
+  "id": 59,
+  "image": "0x9433f540",
+  "bss": "0x94346020",
+  "bss_size": "0x18",
+  "veneers": "0x94346040",
+  "veneer_count": 78,
+  "fix_size": "0x6ac8",
+  "crc32": "0x4f64fb07"
+ },
+ "st_tengan": {
+  "id": 60,
+  "image": "0x94348220",
+  "bss": "0x94354ac0",
+  "bss_size": "0x18",
+  "veneers": "0x94354ae0",
+  "veneer_count": 125,
+  "fix_size": "0xc890",
+  "crc32": "0x64f08d40"
+ },
+ "st_fzero": {
+  "id": 61,
+  "image": "0x94357d20",
+  "bss": "0x9436e3e0",
+  "bss_size": "0x128",
+  "veneers": "0x9436e520",
+  "veneer_count": 126,
+  "fix_size": "0x166b8",
+  "crc32": "0x1431df4b"
+ },
+ "st_ice": {
+  "id": 62,
+  "image": "0x9436f580",
+  "bss": "0x9438b000",
+  "bss_size": "0x15c",
+  "veneers": "0x9438b160",
+  "veneer_count": 158,
+  "fix_size": "0x1ba70",
+  "crc32": "0x726f2e67"
+ },
+ "st_gw": {
+  "id": 63,
+  "image": "0x9438c500",
+  "bss": "0x943b0140",
+  "bss_size": "0x15c",
+  "veneers": "0x943b02a0",
+  "veneer_count": 158,
+  "fix_size": "0x23c30",
+  "crc32": "0xa5307e83"
+ },
+ "st_emblem": {
+  "id": 64,
+  "image": "0x943b16a0",
+  "bss": "0x943b68e0",
+  "bss_size": "0x18",
+  "veneers": "0x943b6900",
+  "veneer_count": 78,
+  "fix_size": "0x5238",
+  "crc32": "0xb8586f02"
+ },
+ "st_madein": {
+  "id": 65,
+  "image": "0x943b7800",
+  "bss": "0x943c2780",
+  "bss_size": "0x28",
+  "veneers": "0x943c27c0",
+  "veneer_count": 89,
+  "fix_size": "0xaf70",
+  "crc32": "0x4fd623ea"
+ },
+ "st_earth": {
+  "id": 66,
+  "image": "0x943c63c0",
+  "bss": "0x943e2840",
+  "bss_size": "0x18c",
+  "veneers": "0x943e29e0",
+  "veneer_count": 187,
+  "fix_size": "0x1c480",
+  "crc32": "0xd529f9bd"
+ },
+ "st_palutena": {
+  "id": 67,
+  "image": "0x943e3f80",
+  "bss": "0x943f7ce0",
+  "bss_size": "0x48",
+  "veneers": "0x943f7d40",
+  "veneer_count": 134,
+  "fix_size": "0x13d48",
+  "crc32": "0x8bcac7b2"
+ },
+ "st_famicom": {
+  "id": 68,
+  "image": "0x943f8cc0",
+  "bss": "0x94413e00",
+  "bss_size": "0x180",
+  "veneers": "0x94413f80",
+  "veneer_count": 182,
+  "fix_size": "0x1b130",
+  "crc32": "0xaf64ccc6"
+ },
+ "st_newpork": {
+  "id": 69,
+  "image": "0x944157c0",
+  "bss": "0x9441bb00",
+  "bss_size": "0x18",
+  "veneers": "0x9441bb20",
+  "veneer_count": 78,
+  "fix_size": "0x6340",
+  "crc32": "0xa5138fae"
+ },
+ "st_village": {
+  "id": 70,
+  "image": "0x9441c800",
+  "bss": "0x944330c0",
+  "bss_size": "0x58",
+  "veneers": "0x94433120",
+  "veneer_count": 139,
+  "fix_size": "0x168b8",
+  "crc32": "0x5576c304"
+ },
+ "st_metalgear": {
+  "id": 71,
+  "image": "0x94433fa0",
+  "bss": "0x9444c800",
+  "bss_size": "0x140",
+  "veneers": "0x9444c940",
+  "veneer_count": 159,
+  "fix_size": "0x18848",
+  "crc32": "0x91ec1e49"
+ },
+ "st_greenhill": {
+  "id": 72,
+  "image": "0x9444dd40",
+  "bss": "0x94462900",
+  "bss_size": "0x14c",
+  "veneers": "0x94462a60",
+  "veneer_count": 130,
+  "fix_size": "0x14bb0",
+  "crc32": "0x3e1d693e"
+ },
+ "st_pictchat": {
+  "id": 73,
+  "image": "0x94463ae0",
+  "bss": "0x9447ecc0",
+  "bss_size": "0x128",
+  "veneers": "0x9447ee00",
+  "veneer_count": 158,
+  "fix_size": "0x1b1d8",
+  "crc32": "0x949382f5"
+ },
+ "st_plankton": {
+  "id": 74,
+  "image": "0x944803a0",
+  "bss": "0x94494440",
+  "bss_size": "0x54",
+  "veneers": "0x944944a0",
+  "veneer_count": 160,
+  "fix_size": "0x14090",
+  "crc32": "0x5850a45f"
+ },
+ "st_dxshrine": {
+  "id": 75,
+  "image": "0x94495620",
+  "bss": "0x944983a0",
+  "bss_size": "0x18",
+  "veneers": "0x944983c0",
+  "veneer_count": 22,
+  "fix_size": "0x2d70",
+  "crc32": "0xef49e86f"
+ },
+ "st_dxyorster": {
+  "id": 76,
+  "image": "0x94498540",
+  "bss": "0x944a52a0",
+  "bss_size": "0x48",
+  "veneers": "0x944a5300",
+  "veneer_count": 98,
+  "fix_size": "0xcd58",
+  "crc32": "0x382fbd3a"
+ },
+ "st_dxgarden": {
+  "id": 77,
+  "image": "0x944a5e40",
+  "bss": "0x944b1640",
+  "bss_size": "0x128",
+  "veneers": "0x944b1780",
+  "veneer_count": 113,
+  "fix_size": "0xb800",
+  "crc32": "0xfdf6f1ab"
+ },
+ "st_dxonett": {
+  "id": 78,
+  "image": "0x944b2220",
+  "bss": "0x944c0900",
+  "bss_size": "0x128",
+  "veneers": "0x944c0a40",
+  "veneer_count": 134,
+  "fix_size": "0xe6d0",
+  "crc32": "0x5c7aaa94"
+ },
+ "st_dxgreens": {
+  "id": 79,
+  "image": "0x944c17c0",
+  "bss": "0x944d3a80",
+  "bss_size": "0x150",
+  "veneers": "0x944d3be0",
+  "veneer_count": 138,
+  "fix_size": "0x122c0",
+  "crc32": "0x25da2037"
+ },
+ "st_dxrcruise": {
+  "id": 80,
+  "image": "0x944d4a60",
+  "bss": "0x944da380",
+  "bss_size": "0x18",
+  "veneers": "0x944da3a0",
+  "veneer_count": 51,
+  "fix_size": "0x5920",
+  "crc32": "0x191af7d7"
+ },
+ "st_dxbigblue": {
+  "id": 81,
+  "image": "0x944db680",
+  "bss": "0x944e9100",
+  "bss_size": "0x18",
+  "veneers": "0x944e9120",
+  "veneer_count": 67,
+  "fix_size": "0xda78",
+  "crc32": "0x14726e8a"
+ },
+ "st_dxcorneria": {
+  "id": 82,
+  "image": "0x944e9800",
+  "bss": "0x944f0ea0",
+  "bss_size": "0x58",
+  "veneers": "0x944f0f00",
+  "veneer_count": 73,
+  "fix_size": "0x7690",
+  "crc32": "0x80d1dacc"
+ },
+ "st_dxpstadium": {
+  "id": 83,
+  "image": "0x944f1840",
+  "bss": "0x944f72c0",
+  "bss_size": "0x18",
+  "veneers": "0x944f72e0",
+  "veneer_count": 75,
+  "fix_size": "0x5a78",
+  "crc32": "0x65bb765c"
+ },
+ "st_dxzebes": {
+  "id": 84,
+  "image": "0x944f89a0",
+  "bss": "0x944ff6e0",
+  "bss_size": "0x18",
+  "veneers": "0x944ff700",
+  "veneer_count": 73,
+  "fix_size": "0x6d40",
+  "crc32": "0x586f33b"
+ },
+ "st_stageedit": {
+  "id": 85,
+  "image": "0x94500a80",
+  "bss": "0x94508b20",
+  "bss_size": "0x18",
+  "veneers": "0x94508b40",
+  "veneer_count": 92,
+  "fix_size": "0x80a0",
+  "crc32": "0x170f84ad"
+ },
+ "st_otrain": {
+  "id": 86,
+  "image": "0x94509340",
+  "bss": "0x9450be60",
+  "bss_size": "0x28",
+  "veneers": "0x9450bea0",
+  "veneer_count": 31,
+  "fix_size": "0x2b10",
+  "crc32": "0x5c1b2b3e"
+ },
+ "st_heal": {
+  "id": 87,
+  "image": "0x9450c1a0",
+  "bss": "0x9450f480",
+  "bss_size": "0x28",
+  "veneers": "0x9450f4c0",
+  "veneer_count": 42,
+  "fix_size": "0x32e0",
+  "crc32": "0xe48a9ba8"
+ },
+ "st_homerun": {
+  "id": 88,
+  "image": "0x9450f900",
+  "bss": "0x9451de20",
+  "bss_size": "0x28",
+  "veneers": "0x9451de60",
+  "veneer_count": 121,
+  "fix_size": "0xe518",
+  "crc32": "0x31640efe"
+ },
+ "st_tbreak": {
+  "id": 89,
+  "image": "0x9451eac0",
+  "bss": "0x94523d20",
+  "bss_size": "0x28",
+  "veneers": "0x94523d60",
+  "veneer_count": 61,
+  "fix_size": "0x5260",
+  "crc32": "0x8196ad9a"
+ },
+ "st_croll": {
+  "id": 90,
+  "image": "0x94524360",
+  "bss": "0x94532800",
+  "bss_size": "0x2c",
+  "veneers": "0x94532840",
+  "veneer_count": 146,
+  "fix_size": "0xe498",
+  "crc32": "0x1e999fad"
+ },
+ "ft_mario": {
+  "id": 91,
+  "image": "0x945333e0",
+  "bss": "0x9455ce00",
+  "bss_size": "0x410",
+  "veneers": "0x9455d220",
+  "veneer_count": 497,
+  "fix_size": "0x29a18",
+  "crc32": "0x69455c79"
+ },
+ "ft_donkey": {
+  "id": 92,
+  "image": "0x94561460",
+  "bss": "0x945831e0",
+  "bss_size": "0x394",
+  "veneers": "0x94583580",
+  "veneer_count": 484,
+  "fix_size": "0x21d78",
+  "crc32": "0x53231e4c"
+ },
+ "ft_link": {
+  "id": 93,
+  "image": "0x94586d00",
+  "bss": "0x945adee0",
+  "bss_size": "0x2e4",
+  "veneers": "0x945ae1e0",
+  "veneer_count": 512,
+  "fix_size": "0x271e0",
+  "crc32": "0xe7702d57"
+ },
+ "ft_samus": {
+  "id": 94,
+  "image": "0x945b1c00",
+  "bss": "0x945e5ea0",
+  "bss_size": "0x488",
+  "veneers": "0x945e6340",
+  "veneer_count": 581,
+  "fix_size": "0x34298",
+  "crc32": "0xf0297620"
+ },
+ "ft_yoshi": {
+  "id": 95,
+  "image": "0x945eb440",
+  "bss": "0x94619380",
+  "bss_size": "0x5fc",
+  "veneers": "0x94619980",
+  "veneer_count": 501,
+  "fix_size": "0x2df38",
+  "crc32": "0x5d21fc96"
+ },
+ "ft_kirby": {
+  "id": 96,
+  "image": "0x9461de20",
+  "bss": "0x94664d80",
+  "bss_size": "0x1344",
+  "veneers": "0x946660e0",
+  "veneer_count": 661,
+  "fix_size": "0x46f60",
+  "crc32": "0x46efbf67"
+ },
+ "ft_fox": {
+  "id": 97,
+  "image": "0x9466c480",
+  "bss": "0x946893c0",
+  "bss_size": "0x278",
+  "veneers": "0x94689640",
+  "veneer_count": 494,
+  "fix_size": "0x1cf30",
+  "crc32": "0xa988caa8"
+ },
+ "ft_pikachu": {
+  "id": 98,
+  "image": "0x9468c7a0",
+  "bss": "0x946b7d60",
+  "bss_size": "0x488",
+  "veneers": "0x946b8200",
+  "veneer_count": 499,
+  "fix_size": "0x2b5c0",
+  "crc32": "0x461ad44"
+ },
+ "ft_luigi": {
+  "id": 99,
+  "image": "0x946bbee0",
+  "bss": "0x946d7fc0",
+  "bss_size": "0x2c0",
+  "veneers": "0x946d8280",
+  "veneer_count": 478,
+  "fix_size": "0x1c0c8",
+  "crc32": "0x80b9cd4a"
+ },
+ "ft_captain": {
+  "id": 100,
+  "image": "0x946db2c0",
+  "bss": "0x946fd040",
+  "bss_size": "0x3cc",
+  "veneers": "0x946fd420",
+  "veneer_count": 502,
+  "fix_size": "0x21d68",
+  "crc32": "0x129542c5"
+ },
+ "ft_ness": {
+  "id": 101,
+  "image": "0x94700980",
+  "bss": "0x947393c0",
+  "bss_size": "0x5a8",
+  "veneers": "0x94739980",
+  "veneer_count": 537,
+  "fix_size": "0x38a40",
+  "crc32": "0x6360cffc"
+ },
+ "ft_koopa": {
+  "id": 102,
+  "image": "0x9473f0a0",
+  "bss": "0x94768ce0",
+  "bss_size": "0x628",
+  "veneers": "0x94769320",
+  "veneer_count": 495,
+  "fix_size": "0x29c30",
+  "crc32": "0xfba101cd"
+ },
+ "ft_peach": {
+  "id": 103,
+  "image": "0x9476d2a0",
+  "bss": "0x9478be60",
+  "bss_size": "0x2a0",
+  "veneers": "0x9478c100",
+  "veneer_count": 520,
+  "fix_size": "0x1ebc0",
+  "crc32": "0x2da370b5"
+ },
+ "ft_zelda": {
+  "id": 104,
+  "image": "0x9478f3a0",
+  "bss": "0x947c8d20",
+  "bss_size": "0x658",
+  "veneers": "0x947c9380",
+  "veneer_count": 559,
+  "fix_size": "0x39970",
+  "crc32": "0xc054b2f3"
+ },
+ "ft_iceclimber": {
+  "id": 105,
+  "image": "0x947cecc0",
+  "bss": "0x94800b80",
+  "bss_size": "0x50c",
+  "veneers": "0x948010a0",
+  "veneer_count": 564,
+  "fix_size": "0x31eb8",
+  "crc32": "0x2bf715ec"
+ },
+ "ft_marth": {
+  "id": 106,
+  "image": "0x94805d60",
+  "bss": "0x9481c480",
+  "bss_size": "0x1d8",
+  "veneers": "0x9481c660",
+  "veneer_count": 399,
+  "fix_size": "0x16720",
+  "crc32": "0x6a03d017"
+ },
+ "ft_gamewatch": {
+  "id": 107,
+  "image": "0x9481e940",
+  "bss": "0x94853f60",
+  "bss_size": "0x480",
+  "veneers": "0x948543e0",
+  "veneer_count": 506,
+  "fix_size": "0x35608",
+  "crc32": "0xec8a59c9"
+ },
+ "ft_falco": {
+  "id": 108,
+  "image": "0x94859ce0",
+  "bss": "0x94876be0",
+  "bss_size": "0x250",
+  "veneers": "0x94876e40",
+  "veneer_count": 497,
+  "fix_size": "0x1cef0",
+  "crc32": "0x2608877"
+ },
+ "ft_ganon": {
+  "id": 109,
+  "image": "0x94879f60",
+  "bss": "0x94897620",
+  "bss_size": "0x2e0",
+  "veneers": "0x94897900",
+  "veneer_count": 472,
+  "fix_size": "0x1d6b0",
+  "crc32": "0xc2e3b21c"
+ },
+ "ft_wario": {
+  "id": 110,
+  "image": "0x9489a900",
+  "bss": "0x948cb960",
+  "bss_size": "0x5ec",
+  "veneers": "0x948cbf60",
+  "veneer_count": 547,
+  "fix_size": "0x31048",
+  "crc32": "0x16cb2f38"
+ },
+ "ft_metaknight": {
+  "id": 111,
+  "image": "0x948d0020",
+  "bss": "0x948ebcc0",
+  "bss_size": "0x25c",
+  "veneers": "0x948ebf20",
+  "veneer_count": 473,
+  "fix_size": "0x1bc98",
+  "crc32": "0xe169ef93"
+ },
+ "ft_pit": {
+  "id": 112,
+  "image": "0x948eebc0",
+  "bss": "0x94914500",
+  "bss_size": "0x314",
+  "veneers": "0x94914820",
+  "veneer_count": 510,
+  "fix_size": "0x25930",
+  "crc32": "0x3d9fb988"
+ },
+ "ft_pikmin": {
+  "id": 113,
+  "image": "0x94918060",
+  "bss": "0x949585e0",
+  "bss_size": "0x390",
+  "veneers": "0x94958980",
+  "veneer_count": 620,
+  "fix_size": "0x40570",
+  "crc32": "0x12d45202"
+ },
+ "ft_lucas": {
+  "id": 114,
+  "image": "0x9495de00",
+  "bss": "0x94991440",
+  "bss_size": "0x510",
+  "veneers": "0x94991960",
+  "veneer_count": 533,
+  "fix_size": "0x33640",
+  "crc32": "0x86ad0a5f"
+ },
+ "ft_diddy": {
+  "id": 115,
+  "image": "0x94996b00",
+  "bss": "0x949c21c0",
+  "bss_size": "0x448",
+  "veneers": "0x949c2620",
+  "veneer_count": 508,
+  "fix_size": "0x2b6a8",
+  "crc32": "0x273fb57"
+ },
+ "ft_poke": {
+  "id": 116,
+  "image": "0x949c64a0",
+  "bss": "0x94a01900",
+  "bss_size": "0x68c",
+  "veneers": "0x94a01fa0",
+  "veneer_count": 590,
+  "fix_size": "0x3b450",
+  "crc32": "0x654d6860"
+ },
+ "ft_dedede": {
+  "id": 117,
+  "image": "0x94a08820",
+  "bss": "0x94a3f220",
+  "bss_size": "0x518",
+  "veneers": "0x94a3f740",
+  "veneer_count": 531,
+  "fix_size": "0x369f8",
+  "crc32": "0xe8e45045"
+ },
+ "ft_lucario": {
+  "id": 118,
+  "image": "0x94a44060",
+  "bss": "0x94a63740",
+  "bss_size": "0x394",
+  "veneers": "0x94a63ae0",
+  "veneer_count": 479,
+  "fix_size": "0x1f6c8",
+  "crc32": "0xb678d14e"
+ },
+ "ft_ike": {
+  "id": 119,
+  "image": "0x94a66940",
+  "bss": "0x94a85300",
+  "bss_size": "0x320",
+  "veneers": "0x94a85620",
+  "veneer_count": 484,
+  "fix_size": "0x1e9c0",
+  "crc32": "0xac6144ba"
+ },
+ "ft_robot": {
+  "id": 120,
+  "image": "0x94a88620",
+  "bss": "0x94aae9c0",
+  "bss_size": "0x46c",
+  "veneers": "0x94aaee40",
+  "veneer_count": 494,
+  "fix_size": "0x263a0",
+  "crc32": "0xfa65ed39"
+ },
+ "ft_toonlink": {
+  "id": 121,
+  "image": "0x94ab2bc0",
+  "bss": "0x94ad9f20",
+  "bss_size": "0x2e4",
+  "veneers": "0x94ada220",
+  "veneer_count": 511,
+  "fix_size": "0x27358",
+  "crc32": "0xdba807c7"
+ },
+ "ft_snake": {
+  "id": 122,
+  "image": "0x94addc40",
+  "bss": "0x94b1e120",
+  "bss_size": "0x4e8",
+  "veneers": "0x94b1e620",
+  "veneer_count": 610,
+  "fix_size": "0x404d8",
+  "crc32": "0xcc94ce6d"
+ },
+ "ft_sonic": {
+  "id": 123,
+  "image": "0x94b24840",
+  "bss": "0x94b4a060",
+  "bss_size": "0x468",
+  "veneers": "0x94b4a4e0",
+  "veneer_count": 525,
+  "fix_size": "0x25808",
+  "crc32": "0x985a5062"
+ },
+ "ft_purin": {
+  "id": 124,
+  "image": "0x94b4e380",
+  "bss": "0x94b63a80",
+  "bss_size": "0x260",
+  "veneers": "0x94b63ce0",
+  "veneer_count": 393,
+  "fix_size": "0x156e8",
+  "crc32": "0xed3de1de"
+ },
+ "ft_wolf": {
+  "id": 125,
+  "image": "0x94b65e80",
+  "bss": "0x94b82c60",
+  "bss_size": "0x278",
+  "veneers": "0x94b82ee0",
+  "veneer_count": 493,
+  "fix_size": "0x1cde0",
+  "crc32": "0x6ab052c7"
+ },
+ "ft_zako": {
+  "id": 126,
+  "image": "0x94b85f20",
+  "bss": "0x94ba1800",
+  "bss_size": "0x1e4",
+  "veneers": "0x94ba1a00",
+  "veneer_count": 354,
+  "fix_size": "0x1b8d8",
+  "crc32": "0xa93982be"
+ }
+}

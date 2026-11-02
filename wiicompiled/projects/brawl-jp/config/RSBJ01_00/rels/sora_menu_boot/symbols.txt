@@ -1,0 +1,17 @@
+fn_22_0 = .text:0x00000000; // type:function size:0x8C  // match:sequence
+fn_22_8C = .text:0x0000008C; // type:function size:0x58  // match:sequence
+fn_22_E4 = .text:0x000000E4; // type:function size:0x1370  // match:unique
+fn_22_1454 = .text:0x00001454; // type:function size:0x6C  // match:unique
+fn_22_14C0 = .text:0x000014C0; // type:function size:0xA4  // match:unique
+fn_22_1564 = .text:0x00001564; // type:function size:0x124  // match:unique
+fn_22_1688 = .text:0x00001688; // type:function size:0x8C  // match:sequence
+fn_22_1714 = .text:0x00001714; // type:function size:0x58  // match:sequence
+fn_22_176C = .text:0x0000176C; // type:function size:0x480  // match:unique
+fn_22_1BEC = .text:0x00001BEC; // type:function size:0x54  // match:unique
+fn_22_1C40 = .text:0x00001C40; // type:function size:0x4C  // match:unique
+fn_22_1C8C = .text:0x00001C8C; // type:function size:0x150  // match:unique
+fn_22_1DDC = .text:0x00001DDC; // type:function size:0x8C  // match:unique
+fn_22_1E68 = .text:0x00001E68; // type:function size:0x2D0  // match:unique
+_prolog = .text:0x00002138; // type:function size:0x48  // match:sequence
+_epilog = .text:0x00002180; // type:function size:0x48  // match:sequence
+_unresolved = .text:0x000021C8; // type:function size:0xC  // match:sequence

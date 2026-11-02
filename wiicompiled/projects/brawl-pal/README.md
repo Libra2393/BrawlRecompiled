@@ -28,12 +28,12 @@ match, Subspace, saves and mods have not been tried. Windows has not been built.
    (`resident_estimate.json`): sora_melee's was read from a PAL boot log, the other 6 follow from it by the US layout
    rule (bss = align32(image + fix size), next image = align32(previous end + 0xDC), which reproduces all 7 US
    addresses), and the next boot loaded all 7 exactly there.
-4. **Runtime** (`tools/remap_runtime_pal.py`): a copy of `wiicompiled/runtime` with every guest address rewritten:
+4. **Runtime** (`../brawl-regions/tools/remap_runtime_region.py`, with this folder's `region.json`): a copy of `wiicompiled/runtime` with every guest address rewritten:
    390 function overrides, 268 code and 134 data literals, 28 in resident modules, 20 r13 offsets, 22 calls to
    translated functions by name, the arena bounds (MEM1 0x805B6F60-0x817D63C0, as PAL's OSInit reports) and the disc
    identity (RSBP01; the partition's boot.bin says revision 0, the disc header 1). Two literals stay unmapped, both
    harmless (a debug-only lr check in a draw dump, and a comment). Every change is in `remap_runtime_log.tsv`.
-5. **Build** (`tools/build-pal-linux.sh`): runs all of the above into `~/brawl-linux/pal`, translates (40 s), and compiles
+5. **Build** (`../brawl-regions/tools/build-region-linux.sh`): runs the layout and runtime steps into `~/brawl-linux/brawl-pal`, translates (40 s), and compiles
    with clang/lld (about 2 minutes on 14 jobs).
 
 ## Building on Linux
@@ -42,10 +42,11 @@ Extract both discs with Dolphin (game partition: `sys/` and `files/`): a USA rev
 the PAL disc. Then, with python3, a .NET 8 SDK, CMake, Ninja, clang and lld (tested: CMake 4.3.3, clang 23):
 
 ```
-bash wiicompiled/projects/brawl-pal/tools/build-pal-linux.sh <USA rev 2 DATA> <PAL DATA> <doldecomp/brawl config/RSBE01_02>
+bash wiicompiled/projects/brawl-regions/tools/make-region-maps.sh wiicompiled/projects/brawl-pal <USA rev 2 DATA> <PAL DATA> <doldecomp/brawl config/RSBE01_02>
+bash wiicompiled/projects/brawl-regions/tools/build-region-linux.sh wiicompiled/projects/brawl-pal <USA rev 2 DATA> <PAL DATA> <doldecomp/brawl config/RSBE01_02>
 ```
 
-To run it, put next to `~/brawl-linux/pal/build/WiiCompiled`: `portable.txt` (from `Play/`), `dsp_coef.bin` and
+To run it, put next to `~/brawl-linux/brawl-pal/build/WiiCompiled`: `portable.txt` (from `Play/`), `dsp_coef.bin` and
 `cacert.pem` (from the build folder), `wiicompiled/runtime/assets/wii` as `wii_bootstrap/`, and
 `UserData/Config.toml` with `[paths] dvd_root = "<PAL DATA>"` and `[game] language = "en"` (or de, fr, es, it).
 
