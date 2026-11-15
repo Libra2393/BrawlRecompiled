@@ -18,6 +18,9 @@ namespace aurora::gx::fifo { extern float g_spmScreenWiden; }
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <mutex>
+#include <string>
+#include <unordered_set>
 
 namespace {
 struct CopyClearState {
@@ -519,6 +522,34 @@ void GXCopyTex(void* dest, GXBool clear) {
   const auto logicalDstWidth = std::max<u32>(std::min<u32>(g_gxState.texCopyDstWidth, std::max<u32>(copiedWidth, 1)), 1);
   const auto logicalDstHeight = std::max<u32>(std::min<u32>(g_gxState.texCopyDstHeight, std::max<u32>(copiedHeight, 1)), 1);
   const auto [scaledDstWidth, scaledDstHeight] = scale_copy_dst(logicalDstWidth, logicalDstHeight);
+  // BRAWL_COPY_LOG=1: every distinct texture copy once (guest source rectangle and destination, the viewport it
+  // was made under, and where it samples the scaled render target), to find copies whose pieces leave seams.
+  static const bool copyLog = std::getenv("BRAWL_COPY_LOG") != nullptr;
+  if (copyLog) {
+    static std::mutex copyLogMutex;
+    static std::unordered_set<std::string> copyLogSeen;
+    const auto [targetW, targetH] = aurora::gfx::get_render_target_size();
+    const auto [logicalW, logicalH] = aurora::gx::logical_fb_size();
+    char line[512];
+    std::snprintf(line, sizeof(line),
+                  "src %d,%d %dx%d dst %ux%u (logical %ux%u, scaled %ux%u) half %d fmt %d renderSpace %d "
+                  "viewport %.1f,%.1f %.1fx%.1f patch %d | sample %.3f,%.3f %.3fx%.3f clear %d,%d %dx%d | "
+                  "fb %ux%u target %ux%u",
+                  g_gxState.texCopySrc.x, g_gxState.texCopySrc.y, g_gxState.texCopySrc.width,
+                  g_gxState.texCopySrc.height, g_gxState.texCopyDstWidth, g_gxState.texCopyDstHeight, logicalDstWidth,
+                  logicalDstHeight, scaledDstWidth, scaledDstHeight, static_cast<int>(g_gxState.texCopyHalfScale),
+                  static_cast<int>(g_gxState.texCopyFmt), static_cast<int>(g_gxState.texCopySrcRenderSpace),
+                  g_gxState.xfViewport[3] - 342.0f - g_gxState.xfViewport[0],
+                  g_gxState.xfViewport[4] - 342.0f + g_gxState.xfViewport[1],
+                  g_gxState.xfViewport[0] * 2.0f, -g_gxState.xfViewport[1] * 2.0f,
+                  static_cast<int>(g_gxState.texCopyDstWidth > logicalDstWidth), sourceRect.sampleRect.x(),
+                  sourceRect.sampleRect.y(), sourceRect.sampleRect.z(), sourceRect.sampleRect.w(), rect.x, rect.y,
+                  rect.width, rect.height, logicalW, logicalH, targetW, targetH);
+    std::lock_guard<std::mutex> lock(copyLogMutex);
+    if (copyLogSeen.size() < 512 && copyLogSeen.insert(line).second) {
+      std::fprintf(stderr, "[aurora] [2] [copylog] frame %u dest %p %s\n", aurora::gfx::current_frame(), dest, line);
+    }
+  }
   const auto texCopyFmt = g_gxState.texCopyFmt;
   const bool sourceHasAlpha = aurora::gx::render_target_has_alpha(g_gxState.pixelFmt);
   const bool forceOpaqueAlpha = !sourceHasAlpha && !aurora::gx::is_depth_format(texCopyFmt);
