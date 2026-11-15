@@ -552,11 +552,11 @@ void GXCopyTex(void* dest, GXBool clear) {
     static std::unordered_set<std::string> copyLogSeen;
     const auto [targetW, targetH] = aurora::gfx::get_render_target_size();
     const auto [logicalW, logicalH] = aurora::gx::logical_fb_size();
-    char line[512];
+    char line[640];
     std::snprintf(line, sizeof(line),
                   "src %d,%d %dx%d dst %ux%u (logical %ux%u, scaled %ux%u) half %d fmt %d renderSpace %d "
                   "viewport %.1f,%.1f %.1fx%.1f patch %d | sample %.3f,%.3f %.3fx%.3f clear %d,%d %dx%d | "
-                  "fb %ux%u target %ux%u",
+                  "fb %ux%u target %ux%u | clear %d (color %d alpha %d depth %d) cover %d,%d %dx%d msaa %u",
                   g_gxState.texCopySrc.x, g_gxState.texCopySrc.y, g_gxState.texCopySrc.width,
                   g_gxState.texCopySrc.height, g_gxState.texCopyDstWidth, g_gxState.texCopyDstHeight, logicalDstWidth,
                   logicalDstHeight, scaledDstWidth, scaledDstHeight, static_cast<int>(g_gxState.texCopyHalfScale),
@@ -566,7 +566,10 @@ void GXCopyTex(void* dest, GXBool clear) {
                   g_gxState.xfViewport[0] * 2.0f, -g_gxState.xfViewport[1] * 2.0f,
                   static_cast<int>(g_gxState.texCopyDstWidth > logicalDstWidth), sourceRect.sampleRect.x(),
                   sourceRect.sampleRect.y(), sourceRect.sampleRect.z(), sourceRect.sampleRect.w(), rect.x, rect.y,
-                  rect.width, rect.height, logicalW, logicalH, targetW, targetH);
+                  rect.width, rect.height, logicalW, logicalH, targetW, targetH, static_cast<int>(clear),
+                  static_cast<int>(clear && g_gxState.colorUpdate), static_cast<int>(clear && g_gxState.alphaUpdate),
+                  static_cast<int>(clear && g_gxState.depthUpdate), sourceRect.coverRect.x, sourceRect.coverRect.y,
+                  sourceRect.coverRect.width, sourceRect.coverRect.height, aurora::gfx::get_sample_count());
     std::lock_guard<std::mutex> lock(copyLogMutex);
     if (copyLogSeen.size() < 512 && copyLogSeen.insert(line).second) {
       std::fprintf(stderr, "[aurora] [2] [copylog] frame %u dest %p %s\n", aurora::gfx::current_frame(), dest, line);
