@@ -30,6 +30,16 @@
 #include "runtime_log.h"
 #include "system_bridge.h"
 
+// PPC_INTERP_THREADED: threaded dispatch through a table of label addresses (computed goto), where the compiler
+// has it; 0 builds the same handlers as one switch. Both are made from the same source (see Run).
+#ifndef PPC_INTERP_THREADED
+#if defined(__GNUC__) || defined(__clang__)
+#define PPC_INTERP_THREADED 1
+#else
+#define PPC_INTERP_THREADED 0
+#endif
+#endif
+
 namespace PpcInterpreter {
 namespace {
 
@@ -50,6 +60,8 @@ thread_local uint32_t t_recentBranchCount = 0;
 // after a call that interpreted code of its own. Recorded at those points, not checked at every instruction (the
 // per-instruction check through thread-local storage was a tenth of the interpreter's time).
 inline void NoteJump(uint32_t pc) { t_recentBranches[t_recentBranchCount++ % kRecentBranches] = pc; }
+// Out of line for the dispatch path: each copy of it has to stay small enough for the compiler to keep it a copy.
+[[gnu::noinline]] void NoteJumpOutOfLine(uint32_t pc) { NoteJump(pc); }
 
 // The instruction count only feeds the FPS log's per-frame figure: a locked add on every return from an interpreted
 // function (3% of the interpreter's time) is batched per thread instead.
@@ -94,6 +106,13 @@ void TracePc(const CpuContext* c, uint32_t pc) {
     }
     RT_LOGF(RT_TAG_RUNTIME, "[trace] 0x%08X lr=%08X ctr=%08X%s\n", pc, c->lr, c->ctr, regs.c_str());
 }
+
+// BRAWL_TRACE_PC, out of line: the dispatch path only tests a flag.
+[[gnu::noinline, gnu::cold]] void TraceIfListed(CpuContext* ctx, uint32_t pc) {
+    const auto& pcs = TracePcs();
+    if (std::find(pcs.begin(), pcs.end(), pc) != pcs.end()) TracePc(ctx, pc);
+}
+
 
 enum class Form : uint8_t { Unknown, Scalar, Paired };
 
@@ -318,6 +337,49 @@ void Run(CpuContext* ctx, uint32_t entry) {
     const auto& tracePcs = TracePcs();
     const bool tracing = !tracePcs.empty();  // decided once: the vector's bounds were reloaded every instruction
     NoteJump(entry);
+#if PPC_INTERP_THREADED
+    // Threaded dispatch: every handler ends by fetching the next instruction and jumping through the opcode table
+    // itself (PPC_NEXT), so each has its own indirect jump for the branch predictor to learn, instead of all of
+    // them sharing the switch's one.
+    static const void* const kOps[64] = {
+        &&op_default, &&op_default, &&op_default, &&op_3, &&op_4, &&op_default, &&op_default, &&op_7,
+        &&op_8, &&op_default, &&op_10, &&op_11, &&op_12, &&op_13, &&op_14, &&op_15,
+        &&op_16, &&op_17, &&op_18, &&op_19, &&op_20, &&op_21, &&op_default, &&op_23,
+        &&op_24, &&op_25, &&op_26, &&op_27, &&op_28, &&op_29, &&op_default, &&op_31,
+        &&op_32, &&op_33, &&op_34, &&op_35, &&op_36, &&op_37, &&op_38, &&op_39,
+        &&op_40, &&op_41, &&op_42, &&op_43, &&op_44, &&op_45, &&op_46, &&op_47,
+        &&op_48, &&op_49, &&op_50, &&op_51, &&op_52, &&op_53, &&op_54, &&op_55,
+        &&op_56, &&op_57, &&op_default, &&op_59, &&op_60, &&op_61, &&op_default, &&op_63
+    };
+    uint32_t pc, w, next;
+    CpuContext* const c = ctx;
+#define PPC_FETCH()                                                                                              \
+    pc = f.pc;                                                                                                   \
+    w = MemoryInline::FlatRead32(pc);                                                                            \
+    ctx->pc = pc;                                                                                                \
+    ++executed;                                                                                                  \
+    if (tracing) [[unlikely]] TraceIfListed(ctx, pc);                                                            \
+    next = pc + 4
+#define PPC_NEXT                                                                                                 \
+    do {                                                                                                         \
+        if (next != pc + 4) NoteJumpOutOfLine(next);                                                             \
+        f.pc = next;                                                                                             \
+        PPC_FETCH();                                                                                             \
+        PPC_DISPATCH_SITE();                                                                                     \
+        goto *kOps[w >> 26];                                                                                     \
+    } while (0)
+// An empty asm with a per-site number: emits nothing, but no two copies of PPC_NEXT are identical, so the compiler
+// cannot merge them back into one shared block (Clang did, leaving all handlers one indirect jump again).
+#define PPC_DISPATCH_SITE() __asm__ volatile("" ::"i"(__COUNTER__))
+#define PPC_OP(n) op_##n:
+#define PPC_OP_DEFAULT op_default:
+    PPC_FETCH();
+    goto *kOps[w >> 26];
+    {
+#else
+#define PPC_NEXT break
+#define PPC_OP(n) case n:
+#define PPC_OP_DEFAULT default:
     for (;;) {
         const uint32_t pc = f.pc;
         const uint32_t w = MemoryInline::FlatRead32(pc);
@@ -327,8 +389,9 @@ void Run(CpuContext* ctx, uint32_t entry) {
         uint32_t next = pc + 4;
         CpuContext* const c = ctx;
         switch (w >> 26) {
-        case 3: break;  // twi: traps are debug asserts
-        case 4: {  // paired singles
+#endif
+        PPC_OP(3) PPC_NEXT;  // twi: traps are debug asserts
+        PPC_OP(4) {  // paired singles
             const uint32_t xo10 = Bits(w, 1, 10);
             const uint32_t xo6 = Bits(w, 1, 6);
             const uint32_t xo5 = Bits(w, 1, 5);
@@ -339,7 +402,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 if (xo6 == 6 || xo6 == 38) SetPaired(f, d, PPC_PsqL(ea, wBit, i));
                 else PPC_PsqSt(ea, Paired(f, d), wBit, i);
                 if (xo6 & 32u) c->gpr[a] = ea;
-                break;
+                PPC_NEXT;
             }
             switch (xo10) {
             case 0: case 32: case 64: case 96: {  // ps_cmpu0, ps_cmpo0, ps_cmpu1, ps_cmpo1
@@ -386,54 +449,54 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 }
             }
             if (Rc(w) && xo10 != 1014) SetCr1FromFpscr(c);
-            break;
+            PPC_NEXT;
         }
-        case 7: c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int32_t>(c->gpr[RA(w)]) * Simm(w)); break;  // mulli
-        case 8: {  // subfic
+        PPC_OP(7) c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int32_t>(c->gpr[RA(w)]) * Simm(w)); PPC_NEXT;  // mulli
+        PPC_OP(8) {  // subfic
             bool carry, ov;
             c->gpr[RD(w)] = AddCarry(~c->gpr[RA(w)], static_cast<uint32_t>(Simm(w)), 1, carry, ov);
             SetCa(c, carry);
-            break;
+            PPC_NEXT;
         }
-        case 10: SetCRResident(c->cr, c->xer, static_cast<int>(RD(w) >> 2), c->gpr[RA(w)], Uimm(w)); break;  // cmpli
-        case 11:  // cmpi
+        PPC_OP(10) SetCRResident(c->cr, c->xer, static_cast<int>(RD(w) >> 2), c->gpr[RA(w)], Uimm(w)); PPC_NEXT;  // cmpli
+        PPC_OP(11)  // cmpi
             SetCRResident(c->cr, c->xer, static_cast<int>(RD(w) >> 2), static_cast<int32_t>(c->gpr[RA(w)]), Simm(w));
-            break;
-        case 12: case 13: {  // addic, addic.
+            PPC_NEXT;
+        PPC_OP(12) PPC_OP(13) {  // addic, addic.
             bool carry, ov;
             c->gpr[RD(w)] = AddCarry(c->gpr[RA(w)], static_cast<uint32_t>(Simm(w)), 0, carry, ov);
             SetCa(c, carry);
             if ((w >> 26) == 13) SetCr0(c, c->gpr[RD(w)]);
-            break;
+            PPC_NEXT;
         }
-        case 14: c->gpr[RD(w)] = (RA(w) ? c->gpr[RA(w)] : 0) + static_cast<uint32_t>(Simm(w)); break;  // addi
-        case 15: c->gpr[RD(w)] = (RA(w) ? c->gpr[RA(w)] : 0) + (Uimm(w) << 16); break;  // addis
-        case 16: {  // bc
+        PPC_OP(14) c->gpr[RD(w)] = (RA(w) ? c->gpr[RA(w)] : 0) + static_cast<uint32_t>(Simm(w)); PPC_NEXT;  // addi
+        PPC_OP(15) c->gpr[RD(w)] = (RA(w) ? c->gpr[RA(w)] : 0) + (Uimm(w) << 16); PPC_NEXT;  // addis
+        PPC_OP(16) {  // bc
             const int32_t disp = static_cast<int16_t>(w & 0xFFFCu);
             const uint32_t target = (w & 2u) ? static_cast<uint32_t>(disp) : pc + static_cast<uint32_t>(disp);
             if (BranchTaken(c, RD(w), RA(w))) {
                 if (!(w & 1u) || !Call(f, target, pc + 4)) next = target;
             }
-            break;
+            PPC_NEXT;
         }
-        case 17: RT_LOGF(RT_TAG_RUNTIME, "interpreter: sc at 0x%08X ignored\n", pc); break;
-        case 18: {  // b
+        PPC_OP(17) RT_LOGF(RT_TAG_RUNTIME, "interpreter: sc at 0x%08X ignored\n", pc); PPC_NEXT;
+        PPC_OP(18) {  // b
             int32_t disp = static_cast<int32_t>(w & 0x03FFFFFCu);
             if (disp & 0x02000000) disp -= 0x04000000;
             uint32_t target = (w & 2u) ? static_cast<uint32_t>(disp) : pc + static_cast<uint32_t>(disp);
             // ba/bla to low addresses: mods (Project+) map virtual 0 onto MEM1 with an IBAT, so they reach MEM1 code.
             if (target < 0x01800000u) target |= 0x80000000u;
-            if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
+            if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; PPC_NEXT; }
             // A branch to another function's start is a tail call (a Gecko hook ending a function with b 0x800018A8).
             if (FindTranslated(target) != nullptr) {
                 if (TailCall(f, target, returnAddress)) { AddInstructions(executed); return; }
                 next = c->lr & ~3u;
-                break;
+                PPC_NEXT;
             }
             next = target;
-            break;
+            PPC_NEXT;
         }
-        case 19: {
+        PPC_OP(19) {
             const uint32_t xo = Bits(w, 1, 10);
             switch (xo) {
             case 0: c->cr = PpcMcrfResident(c->cr, RD(w) >> 2, RA(w) >> 2); break;  // mcrf
@@ -473,30 +536,30 @@ void Run(CpuContext* ctx, uint32_t entry) {
             }
             default: Undefined(c, pc, w, "interpreter: opcode 19");
             }
-            break;
+            PPC_NEXT;
         }
-        case 20: {  // rlwimi
+        PPC_OP(20) {  // rlwimi
             const uint32_t m = Mask(Bits(w, 6, 5), Bits(w, 1, 5));
             const uint32_t r = PpcRotl32Inline(c->gpr[RD(w)], RB(w));
             c->gpr[RA(w)] = (r & m) | (c->gpr[RA(w)] & ~m);
             if (Rc(w)) SetCr0(c, c->gpr[RA(w)]);
-            break;
+            PPC_NEXT;
         }
-        case 21:  // rlwinm
+        PPC_OP(21)  // rlwinm
             c->gpr[RA(w)] = PpcRotl32Inline(c->gpr[RD(w)], RB(w)) & Mask(Bits(w, 6, 5), Bits(w, 1, 5));
             if (Rc(w)) SetCr0(c, c->gpr[RA(w)]);
-            break;
-        case 23:  // rlwnm
+            PPC_NEXT;
+        PPC_OP(23)  // rlwnm
             c->gpr[RA(w)] = PpcRotl32Inline(c->gpr[RD(w)], c->gpr[RB(w)] & 31u) & Mask(Bits(w, 6, 5), Bits(w, 1, 5));
             if (Rc(w)) SetCr0(c, c->gpr[RA(w)]);
-            break;
-        case 24: c->gpr[RA(w)] = c->gpr[RD(w)] | Uimm(w); break;
-        case 25: c->gpr[RA(w)] = c->gpr[RD(w)] | (Uimm(w) << 16); break;
-        case 26: c->gpr[RA(w)] = c->gpr[RD(w)] ^ Uimm(w); break;
-        case 27: c->gpr[RA(w)] = c->gpr[RD(w)] ^ (Uimm(w) << 16); break;
-        case 28: c->gpr[RA(w)] = c->gpr[RD(w)] & Uimm(w); SetCr0(c, c->gpr[RA(w)]); break;
-        case 29: c->gpr[RA(w)] = c->gpr[RD(w)] & (Uimm(w) << 16); SetCr0(c, c->gpr[RA(w)]); break;
-        case 31: {
+            PPC_NEXT;
+        PPC_OP(24) c->gpr[RA(w)] = c->gpr[RD(w)] | Uimm(w); PPC_NEXT;
+        PPC_OP(25) c->gpr[RA(w)] = c->gpr[RD(w)] | (Uimm(w) << 16); PPC_NEXT;
+        PPC_OP(26) c->gpr[RA(w)] = c->gpr[RD(w)] ^ Uimm(w); PPC_NEXT;
+        PPC_OP(27) c->gpr[RA(w)] = c->gpr[RD(w)] ^ (Uimm(w) << 16); PPC_NEXT;
+        PPC_OP(28) c->gpr[RA(w)] = c->gpr[RD(w)] & Uimm(w); SetCr0(c, c->gpr[RA(w)]); PPC_NEXT;
+        PPC_OP(29) c->gpr[RA(w)] = c->gpr[RD(w)] & (Uimm(w) << 16); SetCr0(c, c->gpr[RA(w)]); PPC_NEXT;
+        PPC_OP(31) {
             const uint32_t xo = Bits(w, 1, 10);
             const uint32_t d = RD(w), a = RA(w), b = RB(w);
             const bool oe = (w & 0x400u) != 0;
@@ -538,7 +601,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 if (carryOut) SetCa(c, carry);
                 if (oe) SetOv(c, ov);
                 if (Rc(w)) SetCr0(c, result);
-                break;
+                PPC_NEXT;
             }
             switch (xo) {
             case 0: SetCRResident(c->cr, c->xer, static_cast<int>(d >> 2), static_cast<int32_t>(c->gpr[a]), static_cast<int32_t>(c->gpr[b])); break;
@@ -654,41 +717,41 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 c->gpr[a] = result;
                 if (Rc(w)) SetCr0(c, result);
             }
-            break;
+            PPC_NEXT;
         }
-        case 32: c->gpr[RD(w)] = MemoryInline::FlatRead32(Ea(c, w)); break;
-        case 33: { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead32(ea); c->gpr[RA(w)] = ea; break; }
-        case 34: c->gpr[RD(w)] = MemoryInline::FlatRead8(Ea(c, w)); break;
-        case 35: { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead8(ea); c->gpr[RA(w)] = ea; break; }
-        case 36: MemoryInline::FlatWrite32(Ea(c, w), c->gpr[RD(w)]); break;
-        case 37: { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite32(ea, c->gpr[RD(w)]); c->gpr[RA(w)] = ea; break; }
-        case 38: MemoryInline::FlatWrite8(Ea(c, w), static_cast<uint8_t>(c->gpr[RD(w)])); break;
-        case 39: { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite8(ea, static_cast<uint8_t>(c->gpr[RD(w)])); c->gpr[RA(w)] = ea; break; }
-        case 40: c->gpr[RD(w)] = MemoryInline::FlatRead16(Ea(c, w)); break;
-        case 41: { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead16(ea); c->gpr[RA(w)] = ea; break; }
-        case 42: c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int16_t>(MemoryInline::FlatRead16(Ea(c, w)))); break;
-        case 43: { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int16_t>(MemoryInline::FlatRead16(ea))); c->gpr[RA(w)] = ea; break; }
-        case 44: MemoryInline::FlatWrite16(Ea(c, w), static_cast<uint16_t>(c->gpr[RD(w)])); break;
-        case 45: { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite16(ea, static_cast<uint16_t>(c->gpr[RD(w)])); c->gpr[RA(w)] = ea; break; }
-        case 46: {  // lmw
+        PPC_OP(32) c->gpr[RD(w)] = MemoryInline::FlatRead32(Ea(c, w)); PPC_NEXT;
+        PPC_OP(33) { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead32(ea); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(34) c->gpr[RD(w)] = MemoryInline::FlatRead8(Ea(c, w)); PPC_NEXT;
+        PPC_OP(35) { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead8(ea); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(36) MemoryInline::FlatWrite32(Ea(c, w), c->gpr[RD(w)]); PPC_NEXT;
+        PPC_OP(37) { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite32(ea, c->gpr[RD(w)]); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(38) MemoryInline::FlatWrite8(Ea(c, w), static_cast<uint8_t>(c->gpr[RD(w)])); PPC_NEXT;
+        PPC_OP(39) { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite8(ea, static_cast<uint8_t>(c->gpr[RD(w)])); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(40) c->gpr[RD(w)] = MemoryInline::FlatRead16(Ea(c, w)); PPC_NEXT;
+        PPC_OP(41) { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = MemoryInline::FlatRead16(ea); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(42) c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int16_t>(MemoryInline::FlatRead16(Ea(c, w)))); PPC_NEXT;
+        PPC_OP(43) { const uint32_t ea = Ea(c, w); c->gpr[RD(w)] = static_cast<uint32_t>(static_cast<int16_t>(MemoryInline::FlatRead16(ea))); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(44) MemoryInline::FlatWrite16(Ea(c, w), static_cast<uint16_t>(c->gpr[RD(w)])); PPC_NEXT;
+        PPC_OP(45) { const uint32_t ea = Ea(c, w); MemoryInline::FlatWrite16(ea, static_cast<uint16_t>(c->gpr[RD(w)])); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(46) {  // lmw
             uint32_t ea = Ea(c, w);
             for (uint32_t r = RD(w); r < 32; ++r, ea += 4) c->gpr[r] = MemoryInline::FlatRead32(ea);
-            break;
+            PPC_NEXT;
         }
-        case 47: {  // stmw
+        PPC_OP(47) {  // stmw
             uint32_t ea = Ea(c, w);
             for (uint32_t r = RD(w); r < 32; ++r, ea += 4) MemoryInline::FlatWrite32(ea, c->gpr[r]);
-            break;
+            PPC_NEXT;
         }
-        case 48: SetScalar(f, RD(w), MemoryInline::FlatReadFloat32(Ea(c, w))); break;
-        case 49: { const uint32_t ea = Ea(c, w); SetScalar(f, RD(w), MemoryInline::FlatReadFloat32(ea)); c->gpr[RA(w)] = ea; break; }
-        case 50: SetScalar(f, RD(w), MemoryInline::FlatReadFloat64(Ea(c, w))); break;
-        case 51: { const uint32_t ea = Ea(c, w); SetScalar(f, RD(w), MemoryInline::FlatReadFloat64(ea)); c->gpr[RA(w)] = ea; break; }
-        case 52: MemoryInline::FlatWriteFloat32(Ea(c, w), Scalar(f, RD(w))); break;
-        case 53: { const uint32_t ea = Ea(c, w); MemoryInline::FlatWriteFloat32(ea, Scalar(f, RD(w))); c->gpr[RA(w)] = ea; break; }
-        case 54: MemoryInline::FlatWriteFloat64(Ea(c, w), Scalar(f, RD(w))); break;
-        case 55: { const uint32_t ea = Ea(c, w); MemoryInline::FlatWriteFloat64(ea, Scalar(f, RD(w))); c->gpr[RA(w)] = ea; break; }
-        case 56: case 57: case 60: case 61: {  // psq_l, psq_lu, psq_st, psq_stu: 12-bit displacement
+        PPC_OP(48) SetScalar(f, RD(w), MemoryInline::FlatReadFloat32(Ea(c, w))); PPC_NEXT;
+        PPC_OP(49) { const uint32_t ea = Ea(c, w); SetScalar(f, RD(w), MemoryInline::FlatReadFloat32(ea)); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(50) SetScalar(f, RD(w), MemoryInline::FlatReadFloat64(Ea(c, w))); PPC_NEXT;
+        PPC_OP(51) { const uint32_t ea = Ea(c, w); SetScalar(f, RD(w), MemoryInline::FlatReadFloat64(ea)); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(52) MemoryInline::FlatWriteFloat32(Ea(c, w), Scalar(f, RD(w))); PPC_NEXT;
+        PPC_OP(53) { const uint32_t ea = Ea(c, w); MemoryInline::FlatWriteFloat32(ea, Scalar(f, RD(w))); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(54) MemoryInline::FlatWriteFloat64(Ea(c, w), Scalar(f, RD(w))); PPC_NEXT;
+        PPC_OP(55) { const uint32_t ea = Ea(c, w); MemoryInline::FlatWriteFloat64(ea, Scalar(f, RD(w))); c->gpr[RA(w)] = ea; PPC_NEXT; }
+        PPC_OP(56) PPC_OP(57) PPC_OP(60) PPC_OP(61) {  // psq_l, psq_lu, psq_st, psq_stu: 12-bit displacement
             int32_t disp = static_cast<int32_t>(w & 0xFFFu);
             if (disp & 0x800) disp -= 0x1000;
             const uint32_t op = w >> 26, a = RA(w);
@@ -697,9 +760,9 @@ void Run(CpuContext* ctx, uint32_t entry) {
             if (op <= 57) SetPaired(f, RD(w), PPC_PsqL(ea, wBit, i));
             else PPC_PsqSt(ea, Paired(f, RD(w)), wBit, i);
             if (op == 57 || op == 61) c->gpr[a] = ea;
-            break;
+            PPC_NEXT;
         }
-        case 59: {  // single-precision arithmetic
+        PPC_OP(59) {  // single-precision arithmetic
             const uint32_t d = RD(w), a = RA(w), b = RB(w), cc = RC(w);
             switch (Bits(w, 1, 5)) {
             case 18: SetScalar(f, d, PpcForceSingleValueInline(Scalar(f, a) / Scalar(f, b))); break;
@@ -715,9 +778,9 @@ void Run(CpuContext* ctx, uint32_t entry) {
             default: Undefined(c, pc, w, "interpreter: opcode 59");
             }
             if (Rc(w)) SetCr1FromFpscr(c);
-            break;
+            PPC_NEXT;
         }
-        case 63: {  // double-precision arithmetic, moves, compares, FPSCR
+        PPC_OP(63) {  // double-precision arithmetic, moves, compares, FPSCR
             const uint32_t d = RD(w), a = RA(w), b = RB(w), cc = RC(w);
             const uint32_t xo5 = Bits(w, 1, 5);
             if (xo5 >= 18 && xo5 != 22 && xo5 != 24 && xo5 != 26 && xo5 <= 31) {
@@ -734,7 +797,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 default: Undefined(c, pc, w, "interpreter: opcode 63 A-form");
                 }
                 if (Rc(w)) SetCr1FromFpscr(c);
-                break;
+                PPC_NEXT;
             }
             switch (Bits(w, 1, 10)) {
             case 0: case 32: SetCRFloatResident(c->cr, static_cast<int>(d >> 2), Scalar(f, a), Scalar(f, b)); break;
@@ -776,14 +839,24 @@ void Run(CpuContext* ctx, uint32_t entry) {
             default: Undefined(c, pc, w, "interpreter: opcode 63");
             }
             if (Rc(w)) SetCr1FromFpscr(c);
-            break;
+            PPC_NEXT;
         }
-        default:
+        PPC_OP_DEFAULT
             Undefined(c, pc, w, "interpreter: primary opcode");
+#if PPC_INTERP_THREADED
+        PPC_NEXT;  // off the end of the last handler
+    }
+#else
         }
         if (next != pc + 4) NoteJump(next);
         f.pc = next;
     }
+#endif
+#undef PPC_FETCH
+#undef PPC_DISPATCH_SITE
+#undef PPC_NEXT
+#undef PPC_OP
+#undef PPC_OP_DEFAULT
 }
 
 }  // namespace PpcInterpreter
