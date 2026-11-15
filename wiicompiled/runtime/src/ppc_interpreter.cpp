@@ -45,7 +45,22 @@ std::atomic<uint64_t> g_instructions{0};
 constexpr uint32_t kRecentBranches = 64;
 thread_local uint32_t t_recentBranches[kRecentBranches];
 thread_local uint32_t t_recentBranchCount = 0;
-thread_local uint32_t t_lastPc = 0;
+
+// The trail records where control arrived by a jump: Run's entry, every taken branch, and the return into a frame
+// after a call that interpreted code of its own. Recorded at those points, not checked at every instruction (the
+// per-instruction check through thread-local storage was a tenth of the interpreter's time).
+inline void NoteJump(uint32_t pc) { t_recentBranches[t_recentBranchCount++ % kRecentBranches] = pc; }
+
+// The instruction count only feeds the FPS log's per-frame figure: a locked add on every return from an interpreted
+// function (3% of the interpreter's time) is batched per thread instead.
+inline void AddInstructions(uint64_t executed) {
+    thread_local uint64_t pending = 0;
+    pending += executed;
+    if (pending >= 65536) {
+        g_instructions.fetch_add(pending, std::memory_order_relaxed);
+        pending = 0;
+    }
+}
 
 // BRAWL_TRACE_PC=<hex>,<hex>...: a debugging aid for mods; the registers whenever interpreted code reaches one of
 // those addresses (the first 20 times each).
@@ -235,7 +250,9 @@ const TranslatedFunctionInfo* FindTranslated(uint32_t address) {
 bool Call(Frame& f, uint32_t target, uint32_t returnTo) {
     f.ctx->lr = returnTo;
     if (FindTranslated(target) == nullptr && CanRun(target)) return false;
+    const uint32_t trail = t_recentBranchCount;
     InvokeIndirectCpu(target, f.ctx);
+    if (t_recentBranchCount != trail) NoteJump(returnTo);
     ForgetVolatileForms(f);
     return true;
 }
@@ -246,7 +263,9 @@ bool Call(Frame& f, uint32_t target, uint32_t returnTo) {
 // the function the frame was entered for.
 bool TailCall(Frame& f, uint32_t target, uint32_t returnAddress) {
     const uint32_t back = f.ctx->lr & ~3u;
+    const uint32_t trail = t_recentBranchCount;
     InvokeIndirectCpu(target, f.ctx);
+    if (t_recentBranchCount != trail) NoteJump(back);
     ForgetVolatileForms(f);
     f.ctx->lr = back;
     return back == (returnAddress & ~3u);
@@ -297,14 +316,14 @@ void Run(CpuContext* ctx, uint32_t entry) {
     const uint32_t returnAddress = ctx->lr;
     uint64_t executed = 0;
     const auto& tracePcs = TracePcs();
+    const bool tracing = !tracePcs.empty();  // decided once: the vector's bounds were reloaded every instruction
+    NoteJump(entry);
     for (;;) {
         const uint32_t pc = f.pc;
         const uint32_t w = MemoryInline::FlatRead32(pc);
         ctx->pc = pc;
         ++executed;
-        if (pc != t_lastPc + 4) t_recentBranches[t_recentBranchCount++ % kRecentBranches] = pc;
-        t_lastPc = pc;
-        if (!tracePcs.empty() && std::find(tracePcs.begin(), tracePcs.end(), pc) != tracePcs.end()) TracePc(ctx, pc);
+        if (tracing && std::find(tracePcs.begin(), tracePcs.end(), pc) != tracePcs.end()) TracePc(ctx, pc);
         uint32_t next = pc + 4;
         CpuContext* const c = ctx;
         switch (w >> 26) {
@@ -407,7 +426,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
             if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
             // A branch to another function's start is a tail call (a Gecko hook ending a function with b 0x800018A8).
             if (FindTranslated(target) != nullptr) {
-                if (TailCall(f, target, returnAddress)) { g_instructions.fetch_add(executed, std::memory_order_relaxed); return; }
+                if (TailCall(f, target, returnAddress)) { AddInstructions(executed); return; }
                 next = c->lr & ~3u;
                 break;
             }
@@ -424,7 +443,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                     if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
                     if (target == (returnAddress & ~3u)) {
                         SetScalar(f, 1, Scalar(f, 1));  // the caller takes f1 as the scalar return value
-                        g_instructions.fetch_add(executed, std::memory_order_relaxed);
+                        AddInstructions(executed);
                         return;
                     }
                     next = target;  // a computed jump through lr inside the function
@@ -444,7 +463,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                     if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
                     // bctr: a switch-table jump inside this function, or a tail call to another function.
                     if (FindTranslated(target) != nullptr) {
-                        if (TailCall(f, target, returnAddress)) { g_instructions.fetch_add(executed, std::memory_order_relaxed); return; }
+                        if (TailCall(f, target, returnAddress)) { AddInstructions(executed); return; }
                         next = c->lr & ~3u;
                         break;
                     }
@@ -762,6 +781,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
         default:
             Undefined(c, pc, w, "interpreter: primary opcode");
         }
+        if (next != pc + 4) NoteJump(next);
         f.pc = next;
     }
 }
