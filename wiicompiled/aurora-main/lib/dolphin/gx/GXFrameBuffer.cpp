@@ -530,8 +530,9 @@ void GXCopyTex(void* dest, GXBool clear) {
   const auto [scaledDstWidth, scaledDstHeight] = scale_copy_dst(logicalDstWidth, logicalDstHeight);
   // BRAWL_COPY_LOG=1: every distinct texture copy once (guest source rectangle and destination, the viewport it
   // was made under, and where it samples the scaled render target), to find copies whose pieces leave seams.
+  // Copies of 8x8 or less (the game's screen-edge probes, hundreds of positions) are left out: they filled the log.
   static const bool copyLog = std::getenv("BRAWL_COPY_LOG") != nullptr;
-  if (copyLog) {
+  if (copyLog && (g_gxState.texCopySrc.width > 8 || g_gxState.texCopySrc.height > 8)) {
     static std::mutex copyLogMutex;
     static std::unordered_set<std::string> copyLogSeen;
     const auto [targetW, targetH] = aurora::gfx::get_render_target_size();
