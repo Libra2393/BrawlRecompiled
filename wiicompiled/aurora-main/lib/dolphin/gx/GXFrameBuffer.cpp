@@ -18,6 +18,9 @@ namespace aurora::gx::fifo { extern float g_spmScreenWiden; }
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <mutex>
+#include <string>
+#include <unordered_set>
 
 namespace {
 struct CopyClearState {
@@ -50,6 +53,8 @@ CopyClearState get_copy_clear_state(GXBool clear) {
 struct CopySourceRect {
   aurora::gfx::ClipRect clearRect;
   aurora::Vec4<float> sampleRect;
+  // Every target pixel the guest rectangle touches (edges rounded outward): what the copy's clear must reach.
+  aurora::gfx::ClipRect coverRect = clearRect;
 };
 
 CopySourceRect map_texture_copy_source(const aurora::gfx::ClipRect& source, bool renderSpace) {
@@ -74,6 +79,8 @@ CopySourceRect map_texture_copy_source(const aurora::gfx::ClipRect& source, bool
   struct MappedEdge {
     float sample;
     int32_t nearest;
+    int32_t floor;
+    int32_t ceil;
   };
   const auto mapEdge = [](int32_t edge, uint32_t logicalSize, uint32_t targetSize) {
     // Round scaled copy edges consistently to avoid seams and off-by-one pixels.
@@ -85,24 +92,41 @@ CopySourceRect map_texture_copy_source(const aurora::gfx::ClipRect& source, bool
     const int64_t roundingThreshold = (denominator + 1) / 2;
     const int64_t nearestValue =
         quotient + (remainderMagnitude >= roundingThreshold ? (numerator < 0 ? -1 : 1) : 0);
+    const int64_t floorValue = quotient - (remainder < 0 ? 1 : 0);
+    const int64_t ceilValue = quotient + (remainder > 0 ? 1 : 0);
     return MappedEdge{
         .sample = static_cast<float>(static_cast<double>(numerator) / static_cast<double>(denominator)),
         .nearest = static_cast<int32_t>(nearestValue),
+        .floor = static_cast<int32_t>(floorValue),
+        .ceil = static_cast<int32_t>(ceilValue),
     };
   };
   const auto left = mapEdge(source.x, logicalWidth, targetWidth);
   const auto top = mapEdge(source.y, logicalHeight, targetHeight);
   const auto right = mapEdge(source.x + source.width, logicalWidth, targetWidth);
   const auto bottom = mapEdge(source.y + source.height, logicalHeight, targetHeight);
+  const aurora::gfx::ClipRect pixels{
+      .x = left.nearest,
+      .y = top.nearest,
+      .width = std::max<int32_t>(right.nearest - left.nearest, 1),
+      .height = std::max<int32_t>(bottom.nearest - top.nearest, 1),
+  };
+  // Brawl: the copy samples the same whole pixels it clears. At a non-integer scale (Fill Window: 853/640) the exact
+  // edges are fractional: a 512x512 render-to-texture pass (the shadow texture) maps to 682.4 pixels, which made the
+  // copy shader-sampled and linearly filtered, so its last column took 40% of a pixel the pass never drew. Projected
+  // with the shadows, that column was a line across the stage that appeared at some camera angles. Snapped, a copy
+  // whose destination is the same size is an exact 1:1 copy.
   return {
-      .clearRect =
+      .clearRect = pixels,
+      .sampleRect = {static_cast<float>(pixels.x), static_cast<float>(pixels.y), static_cast<float>(pixels.width),
+                     static_cast<float>(pixels.height)},
+      .coverRect =
           {
-              .x = left.nearest,
-              .y = top.nearest,
-              .width = std::max<int32_t>(right.nearest - left.nearest, 1),
-              .height = std::max<int32_t>(bottom.nearest - top.nearest, 1),
+              .x = left.floor,
+              .y = top.floor,
+              .width = std::max<int32_t>(right.ceil - left.floor, 1),
+              .height = std::max<int32_t>(bottom.ceil - top.floor, 1),
           },
-      .sampleRect = {left.sample, top.sample, right.sample - left.sample, bottom.sample - top.sample},
   };
 }
 
@@ -519,6 +543,38 @@ void GXCopyTex(void* dest, GXBool clear) {
   const auto logicalDstWidth = std::max<u32>(std::min<u32>(g_gxState.texCopyDstWidth, std::max<u32>(copiedWidth, 1)), 1);
   const auto logicalDstHeight = std::max<u32>(std::min<u32>(g_gxState.texCopyDstHeight, std::max<u32>(copiedHeight, 1)), 1);
   const auto [scaledDstWidth, scaledDstHeight] = scale_copy_dst(logicalDstWidth, logicalDstHeight);
+  // BRAWL_COPY_LOG=1: every distinct texture copy once (guest source rectangle and destination, the viewport it
+  // was made under, and where it samples the scaled render target), to find copies whose pieces leave seams.
+  // Copies of 8x8 or less (the game's screen-edge probes, hundreds of positions) are left out: they filled the log.
+  static const bool copyLog = std::getenv("BRAWL_COPY_LOG") != nullptr;
+  if (copyLog && (g_gxState.texCopySrc.width > 8 || g_gxState.texCopySrc.height > 8)) {
+    static std::mutex copyLogMutex;
+    static std::unordered_set<std::string> copyLogSeen;
+    const auto [targetW, targetH] = aurora::gfx::get_render_target_size();
+    const auto [logicalW, logicalH] = aurora::gx::logical_fb_size();
+    char line[640];
+    std::snprintf(line, sizeof(line),
+                  "src %d,%d %dx%d dst %ux%u (logical %ux%u, scaled %ux%u) half %d fmt %d renderSpace %d "
+                  "viewport %.1f,%.1f %.1fx%.1f patch %d | sample %.3f,%.3f %.3fx%.3f clear %d,%d %dx%d | "
+                  "fb %ux%u target %ux%u | clear %d (color %d alpha %d depth %d) cover %d,%d %dx%d msaa %u",
+                  g_gxState.texCopySrc.x, g_gxState.texCopySrc.y, g_gxState.texCopySrc.width,
+                  g_gxState.texCopySrc.height, g_gxState.texCopyDstWidth, g_gxState.texCopyDstHeight, logicalDstWidth,
+                  logicalDstHeight, scaledDstWidth, scaledDstHeight, static_cast<int>(g_gxState.texCopyHalfScale),
+                  static_cast<int>(g_gxState.texCopyFmt), static_cast<int>(g_gxState.texCopySrcRenderSpace),
+                  g_gxState.xfViewport[3] - 342.0f - g_gxState.xfViewport[0],
+                  g_gxState.xfViewport[4] - 342.0f + g_gxState.xfViewport[1],
+                  g_gxState.xfViewport[0] * 2.0f, -g_gxState.xfViewport[1] * 2.0f,
+                  static_cast<int>(g_gxState.texCopyDstWidth > logicalDstWidth), sourceRect.sampleRect.x(),
+                  sourceRect.sampleRect.y(), sourceRect.sampleRect.z(), sourceRect.sampleRect.w(), rect.x, rect.y,
+                  rect.width, rect.height, logicalW, logicalH, targetW, targetH, static_cast<int>(clear),
+                  static_cast<int>(clear && g_gxState.colorUpdate), static_cast<int>(clear && g_gxState.alphaUpdate),
+                  static_cast<int>(clear && g_gxState.depthUpdate), sourceRect.coverRect.x, sourceRect.coverRect.y,
+                  sourceRect.coverRect.width, sourceRect.coverRect.height, aurora::gfx::get_sample_count());
+    std::lock_guard<std::mutex> lock(copyLogMutex);
+    if (copyLogSeen.size() < 512 && copyLogSeen.insert(line).second) {
+      std::fprintf(stderr, "[aurora] [2] [copylog] frame %u dest %p %s\n", aurora::gfx::current_frame(), dest, line);
+    }
+  }
   const auto texCopyFmt = g_gxState.texCopyFmt;
   const bool sourceHasAlpha = aurora::gx::render_target_has_alpha(g_gxState.pixelFmt);
   const bool forceOpaqueAlpha = !sourceHasAlpha && !aurora::gx::is_depth_format(texCopyFmt);
@@ -610,7 +666,7 @@ void GXCopyTex(void* dest, GXBool clear) {
                             &sourceRect.sampleRect, g_gxState.texCopyHalfScale, &copyFilter, forceOpaqueAlpha,
                             sourceRect.sampleRect.w() / std::max<float>(g_gxState.texCopySrc.height, 1.0f),
                             (g_gxState.copyClamp & GX_CLAMP_TOP) != 0,
-                            (g_gxState.copyClamp & GX_CLAMP_BOTTOM) != 0, persistentCopy);
+                            (g_gxState.copyClamp & GX_CLAMP_BOTTOM) != 0, persistentCopy, &sourceRect.coverRect);
   ++handle.revision;
   handle.lastProducedFrame = currentFrame;
   handle.width = logicalDstWidth;
