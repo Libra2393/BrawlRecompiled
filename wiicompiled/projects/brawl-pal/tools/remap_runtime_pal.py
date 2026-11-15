@@ -1,33 +1,31 @@
 """Write a PAL copy of wiicompiled/runtime: every guest address literal of the US build rewritten for RSBP01 rev 1.
-Usage: remap_runtime_pal.py <wiicompiled> <US DATA> <PAL DATA> <decomp RSBE01_02> <brawl-pal dir> <out runtime dir>
+Usage: remap_runtime_pal.py <wiicompiled> <US DATA> <PAL DATA> <decomp RSBE01_02> <brawl-pal dir> <out runtime dir> [--force]
 Literals that cannot be mapped are left as they are and logged (UNMAPPED) in <brawl-pal>/remap_runtime_log.tsv for
 a hand fix. third_party/ is copied untouched; hle/brawl_module_layout.inc comes from brawl-pal/."""
 import re, shutil, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from pal_addr import PalAddr
+from remap_patterns_pal import LIT, MACRO, FUNC, SDA, NOT_ADDR, TEXT
 
+if len(sys.argv) < 7:
+    sys.exit(__doc__.split("\n")[1])
 wc, usd, pald, dec, pal, out = map(Path, sys.argv[1:7])
+force = "--force" in sys.argv[7:]
+
+# The output tree is deleted and rebuilt below. Never let it overlap the runtime it copies or the brawl-pal dir, and only
+# replace a non-empty dir that looks like an earlier output (every output gets src/hle/brawl_module_layout.inc).
+_o = out.resolve()
+for _keep in ((wc / "runtime").resolve(), pal.resolve()):
+    if _o == _keep or _keep.is_relative_to(_o) or _o.is_relative_to(_keep):
+        sys.exit(f"refusing to use {out} as the output: it overlaps {_keep}")
+if out.exists():
+    if not out.is_dir():
+        sys.exit(f"output path exists and is not a directory: {out}")
+    if any(out.iterdir()) and not (out / "src/hle/brawl_module_layout.inc").is_file() and not force:
+        sys.exit(f"refusing to delete {out}: not empty and not an earlier output "
+                 "(no src/hle/brawl_module_layout.inc); pass --force to replace it")
 M = PalAddr(wc / "projects/brawl/tools", usd, pald, dec, wc / "projects/brawl/module_layout.json", pal)
-LIT = re.compile(r"(?<![0-9A-Za-z_])0x(8[01][0-9A-Fa-f]{6}|9[4-7][0-9A-Fa-f]{6})(u?)(?![0-9A-Fa-f])")
-# Function overrides take the address bare: PPC_NATIVE_OVERRIDE_VOID(801D8690, ...). (NSMBW_GX_POKE_NOOP's address
-# only names the function it defines; the override after it carries the real one.)
-MACRO = re.compile(r"\b(PPC_NATIVE_OVERRIDE\w*\(\s*)([0-9A-Fa-f]{8})\b")
-# Calls into translated guest code by the translator's own symbol name: func_801D66A8(cpu).
-FUNC = re.compile(r"\bfunc_([0-9A-Fa-f]{8})\b")
-SDA = re.compile(r"(r13 - 0x|Sda1Offset = 0x|OffsetFromR13 = 0x)([0-9A-Fa-f]{4})")
-# Values in the address range that are not guest addresses.
-NOT_ADDR = {("src/hle/gx/gx_dl.cpp", 0x80808081)}
-# After the addresses: the disc's identity (text, so the address pass never sees it). Partition boot.bin, which the
-# game reads at 0x80000000 and game_folder.cpp checks, says revision 0 on the PAL disc (its outer header says 1).
-TEXT = [("0x52534245", "0x52534250"), ("/52534245/", "/52534250/"),  # game code RSBE -> RSBP, NAND title folders
-        ('{0x80000004u, 0x30310001u, "Disc maker/id"});  // "01", disc 0, revision 1 (boot.bin)',
-         '{0x80000004u, 0x30310000u, "Disc maker/id"});  // "01", disc 0, revision 0 (the PAL partition\'s boot.bin)'),
-        ("constexpr int kRevision = 1;", "constexpr int kRevision = 0;  // the PAL partition's boot.bin (Dolphin shows 1)"),
-        ("This port runs only revision 0 (Dolphin shows it under Properties > Info).",
-         "This port runs only the PAL disc Dolphin shows as revision 1 (Properties > Info)."),
-        ("(USA, RSBE01, revision 1)", "(Europe, RSBP01, revision 1)"), ("(USA, RSBE01)", "(Europe, RSBP01)"),
-        ("(RSBE01 revision 1)", "(Europe, RSBP01)"), ("RSBE01", "RSBP01")]
 if out.exists(): shutil.rmtree(out)
 shutil.copytree(wc / "runtime", out)
 shutil.copy(pal / "brawl_module_layout.inc", out / "src/hle/brawl_module_layout.inc")
