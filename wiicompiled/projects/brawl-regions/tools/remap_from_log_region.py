@@ -8,18 +8,29 @@ so a user can build with only their own disc. It holds only while the runtime ma
 an edit that moves a line holding a logged address shows up as "not in log" (MISSING below), and then the log has to
 be made again with remap_runtime_region.py and both discs.
 
-Usage: remap_from_log_region.py <wiicompiled> <project dir: brawl-pal, brawl-jp> <out runtime dir>"""
+Usage: remap_from_log_region.py <wiicompiled> <project dir: brawl-pal, brawl-jp> <out runtime dir> [--force]"""
 import json, re, shutil, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
+from remap_patterns_region import LIT, MACRO, FUNC, SDA, NOT_ADDR
 
+if len(sys.argv) < 4:
+    sys.exit(next(l for l in __doc__.splitlines() if l.startswith("Usage:")))
 wc, pal, out = map(Path, sys.argv[1:4])
-src = (Path(__file__).parent / "remap_runtime_region.py").read_text()
-ns = {}
-for name in ("LIT", "MACRO", "FUNC", "SDA", "NOT_ADDR"):
-    m = re.search(r"^%s = (.+?)\n(?=[A-Z#]|if out)" % name, src, re.S | re.M)
-    exec(name + " = " + m.group(1), {"re": re}, ns)
-LIT, MACRO, FUNC, SDA, NOT_ADDR = (ns[k] for k in ("LIT", "MACRO", "FUNC", "SDA", "NOT_ADDR"))
+force = "--force" in sys.argv[4:]
+
+# The output tree is deleted and rebuilt below. Never let it overlap the runtime it copies or the project dir, and only
+# replace a non-empty dir that looks like an earlier output (every output gets src/hle/brawl_module_layout.inc).
+_o = out.resolve()
+for _keep in ((wc / "runtime").resolve(), pal.resolve()):
+    if _o == _keep or _keep.is_relative_to(_o) or _o.is_relative_to(_keep):
+        sys.exit(f"refusing to use {out} as the output: it overlaps {_keep}")
+if out.exists():
+    if not out.is_dir():
+        sys.exit(f"output path exists and is not a directory: {out}")
+    if any(out.iterdir()) and not (out / "src/hle/brawl_module_layout.inc").is_file() and not force:
+        sys.exit(f"refusing to delete {out}: not empty and not an earlier output "
+                 "(no src/hle/brawl_module_layout.inc); pass --force to replace it")
 TEXT = [tuple(x) for x in json.loads((pal / "region.json").read_text())["identity"]]
 
 table = {}
