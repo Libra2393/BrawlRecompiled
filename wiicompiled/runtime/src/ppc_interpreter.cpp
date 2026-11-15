@@ -209,12 +209,32 @@ void ForgetVolatileForms(Frame& f) {
     f.form[1] = Form::Scalar;
 }
 
+// The interpreter asks at every call, b and bctr whether the target is a translated function's start. The registry's
+// own memo (512 entries, shared with every indirect call in the game) thrashed on a mod's branch targets, most of
+// them misses: 4% of a Smash 128 match went to its slow-path hash lookup. This memo is the interpreter's own, 16K
+// entries per thread, and keeps the misses too. The registry does not change once its lookup is published.
+const TranslatedFunctionInfo* FindTranslated(uint32_t address) {
+    if (!TranslatedFunctionRegistry::IsLookupPublished()) return TranslatedFunctionRegistry::FindByAddressPtr(address);
+    struct Entry {
+        uint32_t address;  // 0: empty (no guest code at address 0)
+        const TranslatedFunctionInfo* info;
+    };
+    constexpr uint32_t kBits = 14;
+    thread_local Entry* memo = nullptr;
+    if (memo == nullptr) memo = new Entry[1u << kBits]();
+    Entry& e = memo[((address >> 2) * 2654435761u) >> (32 - kBits)];
+    if (e.address == address) return e.info;
+    const auto* info = TranslatedFunctionRegistry::FindByAddressPtr(address);
+    e = {address, info};
+    return info;
+}
+
 // A call (bl, bcl, blrl, bctrl). Translated, native and patched code runs through the function registry; other code
 // (a mod's) returns false and is interpreted right here, as the processor would run it: code that does not return the
 // usual way (bl to read its own address, a hook that branches back) must not leave a host call frame behind.
 bool Call(Frame& f, uint32_t target, uint32_t returnTo) {
     f.ctx->lr = returnTo;
-    if (TranslatedFunctionRegistry::FindByAddressPtr(target) == nullptr && CanRun(target)) return false;
+    if (FindTranslated(target) == nullptr && CanRun(target)) return false;
     InvokeIndirectCpu(target, f.ctx);
     ForgetVolatileForms(f);
     return true;
@@ -255,8 +275,13 @@ bool CanRun(uint32_t address) {
 
 void Run(CpuContext* ctx, uint32_t entry) {
     // Each entry is logged once; the per-thread set keeps the lock off the path of every later call.
+    // The hash set alone cost a lookup on every call into mod code (3% of a Smash 128 match): a direct-mapped
+    // array of recent entries answers almost every call first.
     thread_local std::unordered_set<uint32_t> seen;
-    if (seen.insert(entry).second) {
+    thread_local uint32_t* recentEntries = nullptr;
+    if (recentEntries == nullptr) recentEntries = new uint32_t[4096]();
+    uint32_t& recent = recentEntries[((entry >> 2) * 2654435761u) >> 20];
+    if (recent != entry && (recent = entry, seen.insert(entry).second)) {
         static std::mutex logMutex;
         static std::unordered_set<uint32_t> logged;
         std::lock_guard<std::mutex> lock(logMutex);
@@ -381,7 +406,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
             if (target < 0x01800000u) target |= 0x80000000u;
             if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
             // A branch to another function's start is a tail call (a Gecko hook ending a function with b 0x800018A8).
-            if (TranslatedFunctionRegistry::FindByAddressPtr(target) != nullptr) {
+            if (FindTranslated(target) != nullptr) {
                 if (TailCall(f, target, returnAddress)) { g_instructions.fetch_add(executed, std::memory_order_relaxed); return; }
                 next = c->lr & ~3u;
                 break;
@@ -418,7 +443,7 @@ void Run(CpuContext* ctx, uint32_t entry) {
                 if (BranchTaken(c, RD(w) | 0x04u, RA(w))) {
                     if (w & 1u) { if (!Call(f, target, pc + 4)) next = target; break; }
                     // bctr: a switch-table jump inside this function, or a tail call to another function.
-                    if (TranslatedFunctionRegistry::FindByAddressPtr(target) != nullptr) {
+                    if (FindTranslated(target) != nullptr) {
                         if (TailCall(f, target, returnAddress)) { g_instructions.fetch_add(executed, std::memory_order_relaxed); return; }
                         next = c->lr & ~3u;
                         break;
