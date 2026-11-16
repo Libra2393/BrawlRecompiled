@@ -30,6 +30,12 @@
 #endif
 
 namespace NetplayLobby {
+
+// Input delay picked by hand on the Host screen: 0 = automatic (planned from the measured round trips).
+std::atomic<int> g_inputDelayChoice{0};
+void SetInputDelay(int frames) { g_inputDelayChoice = std::clamp(frames, 0, 10); }
+int InputDelayChoice() { return g_inputDelayChoice; }
+
 namespace {
 
 using Clock = std::chrono::steady_clock;
@@ -124,6 +130,14 @@ struct HostMember {
     uint32_t nonce = 0;
     Clock::time_point lastHeard{};
     uint32_t rttMs = 0;
+    // The last 16 round trips: the input delay is planned from the worst, since a single sample hides the jitter.
+    uint32_t rttSamples[16] = {};
+    uint32_t rttCount = 0;
+    uint32_t RttWorst() const {
+        uint32_t worst = rttMs;
+        for (uint32_t i = 0; i < std::min<uint32_t>(rttCount, 16); ++i) worst = std::max(worst, rttSamples[i]);
+        return worst;
+    }
     // Start: which chunks it has, and whether it stored everything.
     std::vector<bool> chunks;
     bool started = false;
@@ -645,6 +659,7 @@ void HostPacketLocked(State& s, const Netplay::Address& from, uint8_t type, uint
         }
         if (echo != 0 && NowMs() >= echo + echoDelay) {
             member->rttMs = NowMs() - echo - echoDelay;
+            member->rttSamples[member->rttCount++ % 16] = member->rttMs;
         }
         if (phase >= static_cast<uint8_t>(Phase::Starting)) {
             member->started = true;
@@ -1271,12 +1286,15 @@ void Start() {
         s.members[i].slot = static_cast<uint8_t>(i + 1);
         s.members[i].chunks.assign((blob.size() + kChunk - 1) / kChunk, false);
         s.members[i].started = s.members[i].ready = false;
-        worstRtt = std::max(worstRtt, s.members[i].rttMs);
+        worstRtt = std::max(worstRtt, s.members[i].RttWorst());
     }
     plan.players = static_cast<uint8_t>(1 + s.members.size());
     plan.localSlot = 0;
-    // Enough frames of input delay to cover half a round trip (clients' input goes through the host).
-    plan.inputDelay = std::clamp<uint32_t>((worstRtt / 2 + 12 + 16) / 17, 2, 8);
+    // Enough frames of input delay to cover half the worst recent round trip (clients' input goes through the
+    // host) plus ~25 ms of internet jitter, at least 3 frames: with 2 a frame often has to wait for the other
+    // player, which feels like stutter. The host can also pick it by hand (SetInputDelay, the Host screen).
+    const uint32_t autoDelay = std::clamp<uint32_t>((worstRtt / 2 + 25 + 16) / 17, 3, 10);
+    plan.inputDelay = InputDelayChoice() > 0 ? static_cast<uint32_t>(InputDelayChoice()) : autoDelay;
     plan.saveFile = s.saveFile;
     plan.names = {Netplay::DeviceName()};
     for (const auto& m : s.members) {

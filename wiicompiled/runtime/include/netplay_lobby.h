@@ -56,6 +56,9 @@ Snapshot Get();
 
 // Opens a room for `maxPlayers` (2-4). `saveFile` is the save slot (0-2) the host picked.
 void Host(uint8_t maxPlayers, int saveFile);
+// Input delay for the next session this game hosts: 0 = automatic, 1-10 = that many frames.
+void SetInputDelay(int frames);
+int InputDelayChoice();
 void Browse();
 void Join(uint64_t roomId);
 // Host: start the session with everyone in the room.
