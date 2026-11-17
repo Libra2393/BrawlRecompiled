@@ -553,7 +553,7 @@ uint64_t HashSlice(uint32_t frame) {
     };
     // Brawl's 0x804951C0..0x80495380 (0x1C0 bytes of .bss, audio-level-like values) rounds differently on Windows
     // and Linux while every other byte of a match stays equal (tested 700 frames in), so the check skips it.
-    // That block is lbl_804951C0 on the US disc and moves to 0x80496FC0 on the PAL one (projects/brawl-pal/
+    // That block is lbl_804951C0 on the US disc and moves to 80496FC0 on the PAL one (projects/brawl-pal/
     // data_map.tsv); skipping only the US address made PAL matches report false desyncs, so both are skipped.
     const uint64_t mem1From = std::min(begin, kMem1), mem1To = std::min(end, kMem1);
     constexpr uint64_t kSkips[2][2] = {{0x004951C0u, 0x00495380u}, {0x00496FC0u, 0x00497180u}};
