@@ -21,6 +21,8 @@
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
+#include <fstream>
 #include <memory>
 #include <string>
 #include <vector>
@@ -181,13 +183,36 @@ void MainScreen(const Canvas& c, const Nav& nav) {
     if (nav.back) g.open = false;
 }
 
+// The input delay picked on the Host screen, kept beside the online id (Netplay/input_delay): 0 = automatic.
+std::filesystem::path DelayFile() { return RuntimeConfigFile::ApplicationDataDirectory() / "Netplay" / "input_delay"; }
+int LoadDelayChoice() {
+    int frames = 0;
+    if (std::ifstream in(DelayFile()); in) in >> frames;
+    return std::clamp(frames, 0, 8);
+}
+void SaveDelayChoice(int frames) {
+    std::error_code ec;
+    std::filesystem::create_directories(DelayFile().parent_path(), ec);
+    std::ofstream(DelayFile()) << frames << "\n";
+}
+
 void HostScreen(const Canvas& c, const Nav& nav) {
     Banner(c, "HOST A ROOM");
+    static bool delayLoaded = false;
+    if (!delayLoaded) { delayLoaded = true; NetplayLobby::SetInputDelay(LoadDelayChoice()); }
     int& f = g.focus;
-    if (nav.up) f = (f + 2) % 3;
-    if (nav.down) f = (f + 1) % 3;
+    if (nav.up) f = (f + 3) % 4;
+    if (nav.down) f = (f + 1) % 4;
     int playerOption = g.players - 2;
     if (Selector(c, 0, f, nav, 90, "Players", std::to_string(g.players) + " PLAYERS", playerOption, 3)) g.players = playerOption + 2;
+    // Input delay: AUTO, or 2-8 frames by hand (more = smoother over a long distance, less = snappier).
+    int delayOption = std::max(0, NetplayLobby::InputDelayChoice() - 1);
+    const std::string delayText = delayOption == 0 ? "AUTO" : std::to_string(delayOption + 1) + " FRAMES";
+    if (Selector(c, 2, f, nav, -36, "Input delay", delayText, delayOption, 8)) {
+        const int frames = delayOption == 0 ? 0 : delayOption + 1;
+        NetplayLobby::SetInputDelay(frames);
+        SaveDelayChoice(frames);
+    }
     const int whoCount = ServerReady() ? 3 : 1;
     if (!ServerReady()) g.who = 2;
     const char* whoNames[3] = {"ANYONE", "FRIENDS WITH THE CODE", "THIS NETWORK ONLY"};
@@ -198,8 +223,9 @@ void HostScreen(const Canvas& c, const Nav& nav) {
     const char* whoHint[3] = {"Listed on the online server: anyone looking for a room can join.",
                               "Not listed: friends join with your room code.",
                               "Players on your own network, or over Tailscale."};
-    Body(c, whoHint[ServerReady() ? g.who : 2], 0, -10, 16, kDim, 1, 600);
-    if (Button(c, 2, f, nav.confirm, -200, -90, 200, -40, "OPEN ROOM", kPlayer[0])) HostRoom();
+    Body(c, whoHint[ServerReady() ? g.who : 2], 0, 4, 16, kDim, 1, 600);
+    if (f == 2) Body(c, "AUTO measures the ping. Stutters online? Raise it to 4-5. Feels slow? Lower it.", 0, -64, 15, kDim, 1, 760);
+    if (Button(c, 3, f, nav.confirm, -200, -150, 200, -100, "OPEN ROOM", kPlayer[0])) HostRoom();
     Footer(c, "Everyone in the room plays on their own PC, with their own controller.");
     if (nav.back) g.screen = Screen::Main, g.focus = 0;
 }
